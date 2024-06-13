@@ -1,0 +1,182 @@
+@font-face {
+  font-family: "Arial";
+  font-weight: 400;
+  src: url("../fonts/ArialMT.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Arial";
+  font-weight: 400;
+  src: url("../fonts/ArialMT.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Arial";
+  font-weight: 700;
+  src: url("../fonts/Arial-BoldMT.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Arial";
+  font-weight: 700;
+  src: url("../fonts/Arial-BoldMT.woff2") format("woff2");
+  font-display: swap;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+header,
+footer {
+  display: block;
+}
+
+html,
+body {
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #000;
+  font-family: "Arial", sans-serif;
+  scroll-behavior: smooth;
+  background-color: #fff;
+  overflow-x: hidden;
+  scroll-padding-top: 100px;
+}
+
+body.lock {
+  overflow: hidden;
+  height: 100px;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+}
+
+.title {
+  color: #252520;
+  font-family: Arial;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 115%;
+  /* 36.8px */
+}
+.indent {
+  margin-top: 120px;
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 750px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+  .indent {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    max-width: none;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}

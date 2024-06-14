@@ -200,6 +200,22 @@
                 <h2 class="video-slider__title title">Погрузитесь в мир инноваций, <br><span>видеоматериалы о сельскохоз технике.</span></h2>
                 <div class="swiper video__slider">
                     <div class="swiper-wrapper">
+                        @foreach ($videos as $video)
+                            <div class="swiper-slide video__slider-slide">
+                                <div class="video__slide">
+                                    <div class="video__slide-video">
+                                        <iframe width="560" height="315" src="{{$video->url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                        {{-- <div class="swiper-slide video__slider-slide">
+                            <div class="video__slide">
+                                <div class="video__slide-video">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/aWjtf9VWYUM?si=LinI_HE9-qmZu_YS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
                         <div class="swiper-slide video__slider-slide">
                             <div class="video__slide">
                                 <div class="video__slide-video">
@@ -213,21 +229,7 @@
                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/aWjtf9VWYUM?si=LinI_HE9-qmZu_YS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                 </div>
                             </div>
-                        </div>
-                        <div class="swiper-slide video__slider-slide">
-                            <div class="video__slide">
-                                <div class="video__slide-video">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mjMVWQEGrOQ?si=isrJ1bLmfUBYmSoY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide video__slider-slide">
-                            <div class="video__slide">
-                                <div class="video__slide-video">
-                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/aWjtf9VWYUM?si=LinI_HE9-qmZu_YS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="nav-btn">
                         <div class="swiper-button-prev">

@@ -8,6 +8,7 @@ use App\Models\News;
 use App\Models\Offer;
 use App\Models\Partner;
 use App\Models\Type;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -15,8 +16,11 @@ class PageController extends Controller
     public function index(){
         $untrMeds = Med::paginate(5);
         $meds = $this->translateCollection($untrMeds ,app()->getLocale());
+
+        $videos = Video::All();
         return view('index', [
-            'meds'=>$meds
+            'meds'=>$meds,
+            'videos'=>$videos,
         ]);
     }
     public function about(){

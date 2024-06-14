@@ -19,13 +19,15 @@
                 <h2 class="equipment__title title">Мы предлагаем современные сельскохозяйственные технологии и
                     оборудование, помогающие увеличить урожайность и эффективность вашего хозяйства.</h2>
                 <div class="equipment__wrapper">
-                    <a href="#" class="equipment__card">
-                        <div class="equipment__card-img">
-                            <img src="./img/about-img.png" alt="">
-                            <span>Сельхозтехника</span>
-                        </div>
-                    </a>
-                    <a href="#" class="equipment__card">
+                    @foreach ($types as $type)
+                        <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}" class="equipment__card">
+                            <div class="equipment__card-img">
+                                <img src="{{asset("storage/".$type->image)}}" alt="">
+                                <span>{{ $type->title }}</span>
+                            </div>
+                        </a>
+                    @endforeach
+                    {{-- <a href="#" class="equipment__card">
                         <div class="equipment__card-img">
                             <img src="./img/equipment-img.png" alt="">
                             <span>Сельхозтехника</span>
@@ -42,7 +44,7 @@
                             <img src="./img/equipment-img.png" alt="">
                             <span>Библиотека каталогов</span>
                         </div>
-                    </a>
+                    </a> --}}
                 </div>
             </section>
             <section class="guarantee container indent">

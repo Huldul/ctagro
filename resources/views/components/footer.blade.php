@@ -5,49 +5,51 @@
                 <ul class="navigation__list">
                     <h3>О компании</h3>
                     <li>
-                        <a href="./about.html">Миссия компании</a>
+                        <a href="{{ route('about', ['locale' => app()->getLocale()]) }}">Миссия компании</a>
                     </li>
                     <li>
-                        <a href="./partners.html">Наши партнеры</a>
+                        <a href="{{ route('partners', ['locale' => app()->getLocale()]) }}">Наши партнеры</a>
                     </li>
                     <li>
-                        <a href="./offers.html">Спецпредложения</a>
+                        <a href="{{ route('offers', ['locale' => app()->getLocale()]) }}">Спецпредложения</a>
                     </li>
                     <li>
-                        <a href="./#">Сборочное предприятие CTAssembly</a>
+                        <a href="{{setting('site.ct_assembly')}}">Сборочное предприятие CTAssembly</a>
                     </li>
                     <li>
-                        <a href="./news.html">Новости</a>
+                        <a href="{{ route('news', ['locale' => app()->getLocale()]) }}">Новости</a>
                     </li>
                     <li>
-                        <a href="./media.html">Пресса о нас</a>
+                        <a href="{{ route('media', ['locale' => app()->getLocale()]) }}">Пресса о нас</a>
                     </li>
                     <li>
-                        <a href="./reviews.html">Отзывы</a>
+                        <a href="{{ route('reviews', ['locale' => app()->getLocale()]) }}">Отзывы</a>
                     </li>
                 </ul>
                 <ul class="navigation__list">
                     <h3>Техника</h3>
+                    @foreach ($types as $type)
                     <li>
-                        <a href="./catalog-inner.html">Сельхозтехника</a>
+                        <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">Сельхозтехника</a>
                     </li>
-                    <li>
+                    @endforeach
+                    {{-- <li>
                         <a href="./catalog-inner.html">Техника для овощеводства</a>
                     </li>
                     <li>
                         <a href="./catalog-inner.html">Орошение</a>
-                    </li>
+                    </li> --}}
                     <li>
-                        <a href="./catalog-library.html">Библиотека каталогов</a>
+                        <a href="{{ route('catalog-library', ['locale' => app()->getLocale()]) }}">Библиотека каталогов</a>
                     </li>
                 </ul>
                 <ul class="navigation__list">
                     <h3>Запчасти и сервис</h3>
                     <li>
-                        <a href="./service.html">Сервис</a>
+                        <a href="{{ route('service', ['locale' => app()->getLocale()]) }}">Сервис</a>
                     </li>
                     <li>
-                        <a href="./spares.html">Запасные части</a>
+                        <a href="{{ route('spares', ['locale' => app()->getLocale()]) }}">Запасные части</a>
                     </li>
                     <li>
                         <a href="#">Ремонт двигателей</a>
@@ -56,7 +58,7 @@
                 <ul class="navigation__list">
                     <h3>Контакты</h3>
                     <li>
-                        <a href="./contacts.html">Карта присутствия</a>
+                        <a href="{{ route('contacts', ['locale' => app()->getLocale()]) }}">Карта присутствия</a>
                     </li>
                 </ul>
                 <ul class="navigation__socials">

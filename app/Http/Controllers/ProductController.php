@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -11,9 +12,10 @@ class ProductController extends Controller
         $untrProduct = Product::Where('slug', $slug)->first();
 
         $product = $untrProduct->translate(app()->getLocale());
-
+        $videos = Video::All();
         return view('products-inner', [
-            'product'=>$product
+            'product'=>$product,
+            'videos'=>$videos,
         ]);
     }
 

@@ -119,7 +119,16 @@
                 <h2 class="products-inner__title title">Хотите узнать о наc больше? <br><span>Переходите на наш youtube
                         канал.</span></h2>
                 <div class="products-inner__video-wrapper">
-                    <div class="products-inner-video">
+                    @foreach ($videos as $video)
+                        <div class="products-inner-video">
+                            <iframe width="560" height="315"
+                                src="{{$video->url}}"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
+                        </div>
+                    @endforeach
+                    {{-- <div class="products-inner-video">
                         <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/mjMVWQEGrOQ?si=isrJ1bLmfUBYmSoY"
                             title="YouTube video player" frameborder="0"
@@ -132,14 +141,7 @@
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-                    </div>
-                    <div class="products-inner-video">
-                        <iframe width="560" height="315"
-                            src="https://www.youtube.com/embed/mjMVWQEGrOQ?si=isrJ1bLmfUBYmSoY"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="products-inner__video-wrapper">
                     <div class="products-inner__card">

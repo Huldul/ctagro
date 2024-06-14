@@ -13,8 +13,11 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function index(){
-
-        return view('index');
+        $untrMeds = Med::paginate(5);
+        $meds = $this->translateCollection($untrMeds ,app()->getLocale());
+        return view('index', [
+            'meds'=>$meds
+        ]);
     }
     public function about(){
         return view('about');

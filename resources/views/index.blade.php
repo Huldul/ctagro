@@ -124,17 +124,20 @@
                 </div>
                 <div class="swiper news__slider">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide news__slider-slide">
-                            <div class="news__slide">
-                                <div class="news__slide-img">
-                                    <img src="./img/news-slide-img.png" alt="">
-                                    <span>11 сент. 2023</span>
+
+                        @foreach ($meds as $med)
+                            <div class="swiper-slide news__slider-slide">
+                                <div class="news__slide">
+                                    <div class="news__slide-img">
+                                        <img src="{{ asset('storage/' . $med->image1) }}" alt="">
+                                        <span>{{ \Carbon\Carbon::parse($med->published_at)->format('d M. Y') }}</span>
+                                    </div>
+                                    <p>{{ $med->title }}</p>
+                                    <a href="{{ url(app()->getLocale() . '/media-inner/' . $med->slug) }}">Подробнее</a>
                                 </div>
-                                <p>Приглашаем вас посетить наш стенд на выставке AGRITECHNICA 2023 в Ганновере, Германия</p>
-                                <a href="./news-inner.html">Подробнее</a>
                             </div>
-                        </div>
-                        <div class="swiper-slide news__slider-slide">
+                        @endforeach
+                        {{-- <div class="swiper-slide news__slider-slide">
                             <div class="news__slide">
                                 <div class="news__slide-img">
                                     <img src="./img/news-slide-img.png" alt="">
@@ -173,7 +176,7 @@
                                 <p>Приглашаем вас посетить наш стенд на выставке AGRITECHNICA 2023 в Ганновере, Германия</p>
                                 <a href="./news-inner.html">Подробнее</a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="nav-btn">
                         <div class="swiper-button-prev">

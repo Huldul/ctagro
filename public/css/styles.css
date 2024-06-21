@@ -700,7 +700,7 @@
     content: '';
     bottom: 20px;
     left: 20px;
-    background: url('../img/play-btn.svg') center no-repeat;
+    background: url('/img/play-btn.svg') center no-repeat;
     width: 44px;
     height: 44px;
 }

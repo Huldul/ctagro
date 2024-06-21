@@ -712,11 +712,11 @@
     background: rgba(49, 49, 47, 0.40);
     height: 100%;
     width: 30%;
-    opacity: 0;
+    transform: translateX(-100%);
     transition: .3s;
 }
 .video__slide-video:hover::before{
- opacity: 1;
+    transform: translateX(0);
 }
 .video__slide-video img {
     width: 100%;

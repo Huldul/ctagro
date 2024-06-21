@@ -202,11 +202,11 @@
                     <div class="swiper-wrapper">
                         @foreach ($videos as $video)
                             <div class="swiper-slide video__slider-slide">
-                                <div class="video__slide">
-                                    <div class="video__slide-video">
-                                        <iframe width="560" height="315" src="{{$video->url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                    </div>
+                            <div class="video__slide">
+                                <div class="video__slide-video">
+                                    <img src="./img/about-img.png" alt="">
                                 </div>
+                            </div>
                             </div>
                         @endforeach
                         {{-- <div class="swiper-slide video__slider-slide">

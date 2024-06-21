@@ -7,7 +7,7 @@
     <title>Миссия компании</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{{asset("css/main.css")}}">
-    <link rel="stylesheet" href="{{asset("css/styles.css")}}">
+    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.0">
 </head>
 
 <body>
@@ -145,10 +145,21 @@
             </div>
         </div>
     </div>
+    <div class="popup">
+        <div class="popup__wrapper">
+            <button class="close-popup">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.10547 2L18.1456 18" stroke="#B9B9B9" stroke-width="2"/>
+                    <path d="M17.8945 2L1.85443 18" stroke="#B9B9B9" stroke-width="2"/>
+                    </svg>
+            </button>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/aWjtf9VWYUM?si=LinI_HE9-qmZu_YS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+    </div>
     <script src="{{asset("js/jquery-3.6.0.min.js")}}"></script>
     <script src="{{asset("js/jquery.maskedinput.min.js")}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{asset("js/index.js")}}"></script>
+    <script src="{{asset("js/index.js")}}?v=1.0"></script>
 </body>
 
 </html>

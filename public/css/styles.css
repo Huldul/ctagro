@@ -32,7 +32,42 @@
 .header__logo img {
     display: none;
 }
+.header__logo svg path {
+    transition: .3s;
+}
 
+.header__logo:hover svg path:nth-child(1) {
+    fill: #79C08F;
+    opacity: 0.4;
+}
+.header__logo:hover svg path:nth-child(2) {
+    fill: #878787;
+}
+.header__logo:hover svg path:nth-child(3) {
+    fill: #878787;
+}
+.header__logo:hover svg path:nth-child(4) {
+    fill: #d01210;
+}
+.header__logo:hover svg path:nth-child(5) {
+    fill: #d01210;
+}
+.header__logo:hover svg path:nth-child(6) {
+    fill: #d01210;
+}
+.header__logo:hover svg path:nth-child(7) {
+    fill: #75b72a;
+}
+.header__logo:hover svg path:nth-child(8),
+.header__logo:hover svg path:nth-child(9) {
+    stroke: #878787;
+}
+.header__logo:hover svg path:nth-child(11),
+.header__logo:hover svg path:nth-child(12),
+.header__logo:hover svg path:nth-child(13),
+.header__logo:hover svg path:nth-child(14) {
+    fill: #878787;
+}
 .header__nav-group {
     display: flex;
     align-items: center;
@@ -656,10 +691,37 @@
     height: 100%;
 }
 
-.video__slide-video iframe,
-.video__slide-video video {
+.video__slide-video {
+    position: relative;
+    cursor: pointer;
+}
+.video__slide-video::after {
+    position: absolute;
+    content: '';
+    bottom: 20px;
+    left: 20px;
+    background: url('../img/play-btn.svg') center no-repeat;
+    width: 44px;
+    height: 44px;
+}
+.video__slide-video::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    background: rgba(49, 49, 47, 0.40);
+    height: 100%;
+    width: 30%;
+    opacity: 0;
+    transition: .3s;
+}
+.video__slide-video:hover::before{
+ opacity: 1;
+}
+.video__slide-video img {
     width: 100%;
     height: 100%;
+    transition: .3s;
 }
 
 .form__wrapper {
@@ -2899,7 +2961,47 @@
     background: #F7F7F7;
     width: 100%;
 }
+.popup {
+    margin: 0;
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    padding: 0 15px;
+    background: rgba(37, 37, 32, 0.40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+.popup.active {
+    opacity: 1;
+    visibility: visible;
+}
 
+.popup__wrapper {
+    background-color: #fff;
+    padding: 50px;
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 100%;
+    max-height: 500px;
+}
+.popup__wrapper iframe {
+    width: 100%;
+    height: 315px;
+}
+.close-popup {
+    background-color: transparent;
+    margin-left: auto;
+    display: block;
+    margin-bottom: 20px;
+}
 @media (max-width:1200px) {
     .modal__container {
         grid-template-columns: repeat(1, 1fr);

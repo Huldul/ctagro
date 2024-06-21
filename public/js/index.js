@@ -266,3 +266,28 @@ if(modal) {
     hideModal()
   });
 }
+
+
+const popup = document.querySelector('.popup');
+const openPopup = document.querySelectorAll('.video__slide-video');
+const closePopup = document.querySelector('.close-popup');
+
+const showPopup = () => {
+  popup.classList.add('active');
+  document.documentElement.style.overflow = "hidden";
+};
+
+const hidePopup = () => {
+  popup.classList.remove('active');
+  document.documentElement.style.overflow = "auto";
+};
+
+openPopup.forEach((open) => {
+  open.addEventListener('click', () => {
+    showPopup()
+  })
+});
+
+closePopup.addEventListener('click', () => {
+  hidePopup()
+});

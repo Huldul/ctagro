@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
       openMenu.textContent = 'Меню';
       header.style.backgroundColor = originalHeaderBg;
       if (window.scrollY > 100) {
-        header.style.background = "#6EB513";
+        header.style.background = "#31312F";
       } else {
         header.style.background = "";
       }

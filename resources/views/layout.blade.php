@@ -7,7 +7,7 @@
     <title>Миссия компании</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{{asset("css/main.css")}}">
-    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.2">
+    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.3">
 </head>
 
 <body>

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.addEventListener("scroll", function () {
       if (!header.classList.contains('active')) {
         if (window.scrollY > 100) {
-          header.style.background = "#6EB513";
+          header.style.background = "#31312F";
         } else {
           header.style.background = "";
         }

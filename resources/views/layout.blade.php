@@ -7,7 +7,7 @@
     <title>Миссия компании</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{{asset("css/main.css")}}">
-    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.1">
+    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.2">
 </head>
 
 <body>
@@ -159,7 +159,7 @@
     <script src="{{asset("js/jquery-3.6.0.min.js")}}"></script>
     <script src="{{asset("js/jquery.maskedinput.min.js")}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{asset("js/index.js")}}?v=1.0"></script>
+    <script src="{{asset("js/index.js")}}?v=1.1"></script>
 </body>
 
 </html>

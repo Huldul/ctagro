@@ -33,6 +33,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'm
     Route::get('/partners-inner/{slug}',[PageController::class, "partners_inner"])->name('partners-inner')->where('locale', '[a-zA-Z]{2}');
     Route::get('/offers-inner/{slug}',[PageController::class, "offers_inner"])->name('offers-inner')->where('locale', '[a-zA-Z]{2}');
     Route::get('/news-inner/{slug}',[PageController::class, "news_inner"])->name('news-inner')->where('locale', '[a-zA-Z]{2}');
+    Route::get('/reviews-inner/{slug}',[PageController::class, "reviews_inner"])->name('reviews-inner')->where('locale', '[a-zA-Z]{2}');
     Route::get('/media-inner/{slug}',[PageController::class, "media_inner"])->name('media-inner')->where('locale', '[a-zA-Z]{2}');
     Route::get('/catalog-inner/{slug}',[PageController::class, "catalog_inner"])->name('catalog-inner')->where('locale', '[a-zA-Z]{2}');
     Route::get('/product/{slug}',[ProductController::class, "show"])->name('product.show')->where('locale', '[a-zA-Z]{2}');
@@ -72,6 +73,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/partners-inner/{slug}', [PageController::class, 'partners_inner'])->name('partners-inner.without_locale');
     Route::get('/offers-inner/{slug}', [PageController::class, 'offers_inner'])->name('offers-inner.without_locale');
     Route::get('/onews-inner/{slug}', [PageController::class, 'news_inner'])->name('news-inner.without_locale');
+    Route::get('/reviews-inner/{slug}',[PageController::class, "reviews_inner"])->name('reviews-inner.without_locale');
     Route::get('/media-inner/{slug}', [PageController::class, 'media_inner'])->name('media-inner.without_locale');
     Route::get('/catalog-inner/{slug}', [PageController::class, 'catalog_inner'])->name('catalog-inner.without_locale');
     Route::get('/product/{slug}', [PageController::class, 'show'])->name('product.show.without_locale');

@@ -10,10 +10,10 @@ class ProductController extends Controller
 {
     public function show($locale, $slug){
         // Получаем текущий продукт по его slug
-        $untrProduct = Product::Where('slug', $slug)->first();
+        $untrProduct = Product::where('slug', $slug)->firstOrFail();
 
         // Получаем все продукты из той же категории, исключая текущий продукт
-        $untrProducts = Product::where('type', $untrProduct->type)
+        $untrProducts = Product::where('type_id', $untrProduct->type_id)
                                ->where('id', '!=', $untrProduct->id)
                                ->orderBy('created_at', 'desc')
                                ->paginate(3);
@@ -34,6 +34,7 @@ class ProductController extends Controller
             'videos' => $videos,
         ]);
     }
+
 
 
     private function translateCollection($paginator, $lang) {

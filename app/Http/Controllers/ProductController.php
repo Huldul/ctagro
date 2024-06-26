@@ -9,18 +9,32 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     public function show($locale, $slug){
+        // Получаем текущий продукт по его slug
         $untrProduct = Product::Where('slug', $slug)->first();
-        $untrProducts = Product::orderBy('created_at', 'desc')->paginate(3);
-        $products = $this->translateCollection($untrProducts ,app()->getLocale());
 
+        // Получаем все продукты из той же категории, исключая текущий продукт
+        $untrProducts = Product::where('type', $untrProduct->type)
+                               ->where('id', '!=', $untrProduct->id)
+                               ->orderBy('created_at', 'desc')
+                               ->paginate(3);
+
+        // Переводим коллекцию продуктов
+        $products = $this->translateCollection($untrProducts, app()->getLocale());
+
+        // Переводим текущий продукт
         $product = $untrProduct->translate(app()->getLocale());
-        $videos = Video::All();
+
+        // Получаем все видео
+        $videos = Video::all();
+
+        // Возвращаем представление с переданными данными
         return view('products-inner', [
-            'products'=>$products,
-            'product'=>$product,
-            'videos'=>$videos,
+            'products' => $products,
+            'product' => $product,
+            'videos' => $videos,
         ]);
     }
+
 
     private function translateCollection($paginator, $lang) {
         if ($paginator instanceof \Illuminate\Pagination\LengthAwarePaginator || $paginator instanceof \Illuminate\Pagination\Paginator) {

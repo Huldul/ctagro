@@ -164,7 +164,7 @@
                         @endphp
                         <li>
                             <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">
-                                <img src="{{ asset("storage/{$svgPath}") }}" style="width: 75px; height: 75px;" alt="{{ $type->title }}">
+                                <img src="{{ asset("storage/{$svgPath}") }}" style="width: 22px; height: 22px;" alt="{{ $type->title }}">
                                 {{ $type->title }}
                             </a>
                         </li>

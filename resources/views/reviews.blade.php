@@ -3,7 +3,7 @@
 @section('content')
         <main>
             <section class="first__block">
-                <img src="./img/first-block-img.png" alt="">
+                <img src="{{asset("img/first-block-img.png")}}" alt="">
                 <div class="first__block-wrapper container">
                     <h1>Отзывы</h1>
                 </div>
@@ -29,40 +29,20 @@
             </div>
             <section class="reviews container">
                 <div class="reviews__wrapper">
-                    <div class="reviews__card">
-                        <div class="reviews__img">
-                            <img src="./img/equipment-img.png" alt="">
+
+                    @foreach ($reviews as $review)
+                        <div class="reviews__card">
+                            <div class="reviews__img">
+                                <img src="{{asset("storage/".$review->image)}}" alt="">
+                            </div>
+                            <h2>{{$review->title}}</h2>
+                            <a href="{{ route('reviews-inner', ['locale' => app()->getLocale(), 'slug' => $review->slug]) }}">Подробнее</a>
                         </div>
-                        <h2>ТОО «Магжан и К» Сагидула Сыздыков</h2>
-                        <a href="#">Подробнее</a>
-                    </div>
+                    @endforeach
                 </div>
             </section>
             <div class="pagination container">
-                <ul>
-                    <li>
-                        <a class="active" href="#">1</a>
-                    </li>
-                    <li>
-                        <a href="#">2</a>
-                    </li>
-                    <li>
-                        <a href="#">3</a>
-                    </li>
-                    <li>
-                        <a href="#">4</a>
-                    </li>
-                    <li>
-                        <a href="#">5</a>
-                    </li>
-                    <li>
-                        <a href="#">...</a>
-                    </li>
-                    <li>
-                        <a href="#">159</a>
-                    </li>
-                </ul>
-                <a href="#">Вперёд</a>
+                {{ $reviews->links() }}
             </div>
         </main>
         @endsection

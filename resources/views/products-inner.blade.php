@@ -144,7 +144,16 @@
                     </div> --}}
                 </div>
                 <div class="products-inner__video-wrapper">
-                    <div class="products-inner__card">
+                    @foreach ($products as $item)
+                        <div class="products-inner__card">
+                            <img src="{{asset("storage/".$item->image)}}" alt="">
+                            <div class="products-inner__content">
+                                <p>{{$item->title}}</p>
+                                <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $item->slug]) }}">Подробнее</a>
+                            </div>
+                        </div>
+                    @endforeach
+                    {{-- <div class="products-inner__card">
                         <img src="{{asset("img/products-inner-img.png")}}" alt="">
                         <div class="products-inner__content">
                             <p>Успех любого бизнеса зависит от качества и развития партнерских связей.</p>
@@ -157,14 +166,7 @@
                             <p>Успех любого бизнеса зависит от качества и развития партнерских связей.</p>
                             <a href="#">Подробнее</a>
                         </div>
-                    </div>
-                    <div class="products-inner__card">
-                        <img src="{{asset("img/products-inner-img.png")}}" alt="">
-                        <div class="products-inner__content">
-                            <p>Успех любого бизнеса зависит от качества и развития партнерских связей.</p>
-                            <a href="#">Подробнее</a>
-                        </div>
-                    </div>
+                    </div> --}}
                 </div>
             </section>
             @include('components.form')

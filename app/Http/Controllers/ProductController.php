@@ -10,10 +10,13 @@ class ProductController extends Controller
 {
     public function show($locale, $slug){
         $untrProduct = Product::Where('slug', $slug)->first();
+        $untrProducts = Product::orderBy('created_at', 'desc')->paginate(3);
+        $products = $this->translateCollection($untrProducts ,app()->getLocale());
 
         $product = $untrProduct->translate(app()->getLocale());
         $videos = Video::All();
         return view('products-inner', [
+            'products'=>$products,
             'product'=>$product,
             'videos'=>$videos,
         ]);

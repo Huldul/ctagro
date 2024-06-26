@@ -11,7 +11,7 @@ class Review extends Model
 {
     use HasFactory;
     use Translatable;
-    protected $translatable = ['title', 'main', 'seo_title', 'seo_subtitle', 'seo_keywords'];
+    protected $translatable = ['title', 'main', 'subtitle','seo_title', 'seo_subtitle', 'seo_keywords'];
 
     public static function boot(){
         parent::boot();

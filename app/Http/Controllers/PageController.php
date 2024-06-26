@@ -7,6 +7,7 @@ use App\Models\Med;
 use App\Models\News;
 use App\Models\Offer;
 use App\Models\Partner;
+use App\Models\Review;
 use App\Models\Type;
 use App\Models\Video;
 use Illuminate\Http\Request;
@@ -47,6 +48,22 @@ class PageController extends Controller
         $offers = $this->translateCollection($untrOff ,app()->getLocale());
         return view('offers', [
             'offers'=>$offers,
+        ]);
+    }
+    public function reviews(){
+        $untrReviews = Review::paginate(16);
+        $reviews = $this->translateCollection($untrReviews ,app()->getLocale());
+        return view('reviews', [
+            'reviews'=>$reviews,
+        ]);
+    }
+    public function reviews_inner($locale,$slug){
+        $untrReview = Review::Where('slug', $slug)->first();
+
+        $review = $untrReview->translate(app()->getLocale());
+
+        return view('reviews-inner', [
+            'review'=>$review,
         ]);
     }
     public function offers_inner($locale,$slug){

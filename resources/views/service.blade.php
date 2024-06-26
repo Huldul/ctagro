@@ -182,7 +182,7 @@
                         </div>
                     </div>
                     <div class="products-inner__card">
-                        <img src="{{asset("img/products-inner-img.png")}}" alt="">
+                        <img src="{{asset ("img/products-inner-img.png")}}" alt="">
                         <div class="products-inner__content">
                             <p>Успех любого бизнеса зависит от качества и развития партнерских связей.</p>
                             <a href="#">Подробнее</a>

@@ -7,7 +7,7 @@
                     <img src="{{asset("storage/".$page->head_image)}}" alt="">
                     <div class="container">
                         <div class="main-block__content">
-                            <h1>{{$page->title}}</h1>
+                            <h1>{!!$page->title!!}</h1>
                             {!!$page->desc1!!}
                             <a href="#">Подробнее</a>
                         </div>

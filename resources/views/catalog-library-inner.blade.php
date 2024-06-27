@@ -46,6 +46,8 @@
             @endforeach
         </div>
     </section>
-
+    <div class="pagination container">
+        {{ $inner_types->links() }}
+    </div>
 </main>
 @endsection

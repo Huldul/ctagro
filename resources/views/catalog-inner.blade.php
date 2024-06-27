@@ -31,7 +31,7 @@
             <section class="catalog-inner container">
                 <div class="catalog-inner__wrapper">
                     @foreach ($products as $product)
-                        <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}" class="catalog-inner__card">
+                        <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}" class="catalog-inner__card">
                             <div class="catalog-inner__img">
                                 <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}">
                             </div>
@@ -40,7 +40,9 @@
                     @endforeach
                 </div>
             </section>
-
+            <div class="pagination container">
+                {{ $inner_types->links() }}
+            </div>
             @include('components.form')
         </main>
         @endsection

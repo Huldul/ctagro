@@ -121,7 +121,7 @@ class PageController extends Controller
             abort(404, 'Type not found');
         }
         $transtype = $type->translate(app()->getLocale());
-        $untrProds = $type->products; // Получаем коллекцию продуктов
+        $untrProds = $type->subtypes; // Получаем коллекцию продуктов
         $prods = $this->translateCollection($untrProds, app()->getLocale());
 
         return view('catalog-inner', [

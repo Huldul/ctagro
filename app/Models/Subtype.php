@@ -11,7 +11,7 @@ class Subtype extends Model
 {
     use HasFactory;
     use Translatable;
-    protected $translatable = ['title', 'seo_title', 'seo_subtitle', 'seo_keywords'];
+    protected $translatable = ['title', 'subtitle', 'main', 'seo_title', 'seo_subtitle', 'seo_keywords'];
     public static function boot(){
         parent::boot();
 

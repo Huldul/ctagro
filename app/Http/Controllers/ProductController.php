@@ -5,15 +5,34 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Video;
 use Illuminate\Http\Request;
+use App\Models\Subtype;
 
 class ProductController extends Controller
 {
+    public function subtypes($locale, $slug){
+        $subtype = Subtype::where("slug", $slug)->first();
+        if (!$subtype) {
+            abort(404, 'Type not found');
+        }
+        $transtype = $subtype->translate(app()->getLocale());
+        $untrProds = $transtype->products; // Получаем коллекцию продуктов
+        $products = $this->translateCollection($untrProds, app()->getLocale());
+        // Получаем все видео
+
+
+        // Возвращаем представление с переданными данными
+        return view('products', [
+            'products' => $products,
+            'subtype' => $transtype,
+
+        ]);
+    }
     public function show($locale, $slug){
         // Получаем текущий продукт по его slug
         $untrProduct = Product::where('slug', $slug)->firstOrFail();
 
         // Получаем все продукты из той же категории, исключая текущий продукт
-        $untrProducts = Product::where('type_id', $untrProduct->type_id)
+        $untrProducts = Product::where('subtype_id', $untrProduct->subtype_id)
                                ->where('id', '!=', $untrProduct->id)
                                ->orderBy('created_at', 'desc')
                                ->paginate(3);

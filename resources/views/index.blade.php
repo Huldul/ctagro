@@ -206,11 +206,26 @@
                     <div class="swiper-wrapper">
                         @foreach ($videos as $video)
                             <?php
-                            // Извлекаем идентификатор видео из URL YouTube
-                            preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $video->url, $matches);
-                            $video_id = $matches[1];
-                            // Формируем URL превью изображения
-                            $thumbnail_url = "https://img.youtube.com/vi/{$video_id}/hqdefault.jpg";
+                            $thumbnail_url = './img/about-img.png'; // URL изображения по умолчанию
+
+                            // Проверка для YouTube с форматом /embed/
+                            if (preg_match('/youtube\.com\/embed\/([^\\?\\&]+)/', $video->url, $matches)) {
+                                if (isset($matches[1])) {
+                                    $video_id = $matches[1];
+                                    $thumbnail_url = "https://img.youtube.com/vi/{$video_id}/hqdefault.jpg";
+                                }
+                            }
+                            // Проверка для Vimeo
+                            elseif (preg_match('/vimeo\.com\/(\d+)/', $video->url, $matches)) {
+                                if (isset($matches[1])) {
+                                    $video_id = $matches[1];
+                                    $vimeo_api_url = "https://vimeo.com/api/v2/video/{$video_id}.json";
+                                    $vimeo_response = json_decode(file_get_contents($vimeo_api_url), true);
+                                    if (isset($vimeo_response[0]['thumbnail_large'])) {
+                                        $thumbnail_url = $vimeo_response[0]['thumbnail_large'];
+                                    }
+                                }
+                            }
                             ?>
                             <div class="swiper-slide video__slider-slide">
                                 <div class="video__slide">
@@ -220,6 +235,7 @@
                                 </div>
                             </div>
                         @endforeach
+
 
                         {{-- <div class="swiper-slide video__slider-slide">
                             <div class="video__slide">

@@ -124,7 +124,7 @@
             <section class="news-slider container indent">
                 <div class="news-slider__wrapper">
                     {!!$page->main1!!}
-                    <a href="./news.html">Все новости</a>
+                    <a href="{{ route('news', ['locale' => app()->getLocale()]) }}">Все новости</a>
                 </div>
                 <div class="swiper news__slider">
                     <div class="swiper-wrapper">

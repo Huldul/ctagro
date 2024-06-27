@@ -31,19 +31,21 @@
                             <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
                         </svg>
                     </li>
-                    <li>{{ $subtype->itle }}</li>
+                    <li>{{ $subtype->title }}</li>
                 </ul>
             </div>
             <section class="products container">
                 <div class="products__wrapper">
-                    <div class="products__card">
-                        <div class="products__img">
-                            <img src="{{ asset('storage/' . $product->image) }}" alt="">
-                        </div>
-                        <h2>{{$products->title}}</h2>
-                        <span>{{$products->hp}}</span>
-                        <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">Подробнее</a>
-                    </div>
+                   @foreach ($products as $products)
+                     <div class="products__card">
+                         <div class="products__img">
+                             <img src="{{ asset('storage/' . $product->image) }}" alt="">
+                         </div>
+                         <h2>{{$product->title}}</h2>
+                         <span>{{$product->hp}}</span>
+                         <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">Подробнее</a>
+                     </div>
+                   @endforeach
                 </div>
                 <h3 class="title">{{$subtype->subtitle}}</h3>
                 {!!$subtype->main!!}

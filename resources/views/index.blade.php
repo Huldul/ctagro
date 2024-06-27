@@ -205,14 +205,22 @@
                 <div class="swiper video__slider">
                     <div class="swiper-wrapper">
                         @foreach ($videos as $video)
+                            <?php
+                            // Извлекаем идентификатор видео из URL YouTube
+                            preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $video->url, $matches);
+                            $video_id = $matches[1];
+                            // Формируем URL превью изображения
+                            $thumbnail_url = "https://img.youtube.com/vi/{$video_id}/hqdefault.jpg";
+                            ?>
                             <div class="swiper-slide video__slider-slide">
-                            <div class="video__slide">
-                                <div class="video__slide-video">
-                                    <img src="./img/about-img.png" alt="">
+                                <div class="video__slide">
+                                    <div class="video__slide-video">
+                                        <img src="{{ $thumbnail_url }}" alt="">
+                                    </div>
                                 </div>
                             </div>
-                            </div>
                         @endforeach
+
                         {{-- <div class="swiper-slide video__slider-slide">
                             <div class="video__slide">
                                 <div class="video__slide-video">

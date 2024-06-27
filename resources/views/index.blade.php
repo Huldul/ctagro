@@ -53,7 +53,7 @@
                         <a href="#">Подробнее</a>
                     </div>
                     <div class="guarantee__right">
-                        <img src="{{asset({"storage/".$page->image1})}}" alt="">
+                        <img src="{{asset("storage/".$page->image1)}}" alt="">
                     </div>
                 </div>
                 <div class="guarantee__container">

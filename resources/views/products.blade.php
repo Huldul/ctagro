@@ -36,7 +36,7 @@
             </div>
             <section class="products container">
                 <div class="products__wrapper">
-                   @foreach ($products as $products)
+                   @foreach ($products as $product)
                      <div class="products__card">
                          <div class="products__img">
                              <img src="{{ asset('storage/' . $product->image) }}" alt="">

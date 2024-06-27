@@ -5,7 +5,7 @@
     <section class="first__block">
         <img src="{{ asset("storage/".$page->head_image) }}" alt="">
         <div class="first__block-wrapper container">
-            <h1>{{ $page->title }}</h1>
+            <h1>{!! $page->title !!}</h1>
         </div>
     </section>
     <div class="breadcrumbs container">
@@ -24,7 +24,7 @@
                     <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
                 </svg>
             </li>
-            <li>{{ $page->subtitle1 }}</li>
+            <li>{!! $page->title !!}</li>
         </ul>
     </div>
     <section class="service container">

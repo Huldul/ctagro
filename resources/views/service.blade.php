@@ -24,7 +24,7 @@
                             <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
                         </svg>
                     </li>
-                    <li>{!! $page->subtitle1!!}</li>
+                    <li>{!! $page->title!!}</li>
                 </ul>
             </div>
             <section class="service container">

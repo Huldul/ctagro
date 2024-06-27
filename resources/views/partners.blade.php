@@ -42,8 +42,9 @@
                 </div>
             </section>
             <div class="pagination container">
-                {{ $partners->links() }}
+                {{ $partners->links('vendor.pagination.custom') }}
             </div>
+
 
 
         </main>

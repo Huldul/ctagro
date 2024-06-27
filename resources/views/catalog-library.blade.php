@@ -37,7 +37,6 @@
             @foreach ($inner_types as $inner_type)
                 <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $inner_type->slug]) }}" class="catalog-library__card">
                     <img src="{{ asset('storage/' . $inner_type->image) }}" alt="{{ $inner_type->title }}">
-                    <span>{{ $inner_type->title }}</span>
                 </a>
             @endforeach
         </div>

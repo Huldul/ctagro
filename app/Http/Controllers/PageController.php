@@ -128,11 +128,17 @@ class PageController extends Controller
         // Переводим коллекцию с учетом пагинации
         $prods = $this->translateCollection($untrProds, app()->getLocale());
 
+        // Проверка на тип объекта
+        if (!($prods instanceof \Illuminate\Pagination\LengthAwarePaginator)) {
+            throw new \Exception('Expected a LengthAwarePaginator instance.');
+        }
+
         return view('catalog-inner', [
             'products' => $prods,
             'type' => $transtype,
         ]);
     }
+
 
 
     public function catalog_library(){
@@ -214,4 +220,5 @@ class PageController extends Controller
             return $item->translate($lang);
         });
     }
+
 }

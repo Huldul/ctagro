@@ -18,7 +18,7 @@ class PageController extends Controller
     public function index(){
         $untrMeds = Med::paginate(5);
         $meds = $this->translateCollection($untrMeds ,app()->getLocale());
-        $untrpage = CustomPage::find(1)->first();
+        $untrpage = CustomPage::findById(1)->first();
         $page = $untrpage->translate(app()->getLocale());
         $videos = Video::All();
         return view('index', [
@@ -175,7 +175,7 @@ class PageController extends Controller
 
 
     public function service(){
-        $untrpage = CustomPage::find(2)->first();
+        $untrpage = CustomPage::findById(2)->first();
         $page = $untrpage->translate(app()->getLocale());
 
         $videos = Video::All();
@@ -189,7 +189,7 @@ class PageController extends Controller
         ]);
     }
     public function spares(){
-        $untrpage = CustomPage::find(3)->first();
+        $untrpage = CustomPage::findById(3)->first();
         $page = $untrpage->translate(app()->getLocale());
 
         $videos = Video::All();

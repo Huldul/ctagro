@@ -41,7 +41,7 @@
                 </div>
             </section>
             <div class="pagination container">
-                {{ $inner_types->links() }}
+                {{ $product->links() }}
             </div>
             @include('components.form')
         </main>

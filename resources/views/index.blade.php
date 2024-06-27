@@ -64,7 +64,7 @@
                             $svgPath = $svgData[0]['download_link'] ?? '';
                         @endphp
                         <div class="guarantee__card">
-                            <img src="{{ asset("storage/{$svgPath}") }}" style="width: 59px; height: 59px;">
+                            <img src="{{ asset("storage/{$svgPath}") }}" width="59" height="59" viewBox="0 0 59 59" fill="none">
                             {{-- <svg width="59" height="59" viewBox="0 0 59 59" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M15.6254 33.1541H23.8151V31.4259C23.8151 28.4766 21.4242 26.0856 18.4749 26.0856H12.3403C9.39092 26.0856 7 28.4766 7 31.4259V39.7645H15.6254V33.1541Z"

@@ -18,8 +18,8 @@ class PageController extends Controller
     public function index(){
         $untrMeds = Med::paginate(5);
         $meds = $this->translateCollection($untrMeds ,app()->getLocale());
-        $page = CustomPage::find(1)->first();
-
+        $untrpage = CustomPage::find(1)->first();
+        $page = $untrpage->translate(app()->getLocale());
         $videos = Video::All();
         return view('index', [
             'meds'=>$meds,
@@ -175,10 +175,33 @@ class PageController extends Controller
 
 
     public function service(){
-        return view('service');
+        $untrpage = CustomPage::find(2)->first();
+        $page = $untrpage->translate(app()->getLocale());
+
+        $videos = Video::All();
+
+        $untrNews = News::paginate(3);
+        $news = $this->translateCollection($untrNews ,app()->getLocale());
+        return view('service', [
+            'page'=>$page,
+            'videos'=>$videos,
+            'news'=>$news,
+        ]);
     }
     public function spares(){
-        return view('spares');
+        $untrpage = CustomPage::find(3)->first();
+        $page = $untrpage->translate(app()->getLocale());
+
+        $videos = Video::All();
+
+        $untrNews = News::paginate(3);
+        $news = $this->translateCollection($untrNews ,app()->getLocale());
+
+        return view('spares', [
+            'page'=>$page,
+            'videos'=>$videos,
+            'news'=>$news,
+        ]);
     }
     public function contacts(){
         return view('contacts');

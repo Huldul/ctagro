@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Traits\Translatable;
 
-class MapKeys extends Model
+class MapKey extends Model
 {
     use HasFactory;
     use Translatable;

@@ -11,7 +11,7 @@ class CustomPage extends Model
     use HasFactory;
     use Translatable;
     protected $translatable = ['title', 'subtitle1', 'subtitle2', 'desc1', 'desc2', 'main1', 'main2', 'seo_title', 'seo_subtitle', 'seo_keywords'];
-    public function products()
+    public function advantages()
     {
         return $this->hasMany(Advantage::class);
     }

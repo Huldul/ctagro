@@ -19,11 +19,12 @@ class PageController extends Controller
         $untrMeds = Med::paginate(5);
         $meds = $this->translateCollection($untrMeds ,app()->getLocale());
         $page = CustomPage::find(1)->first();
-        dd($page);
+
         $videos = Video::All();
         return view('index', [
             'meds'=>$meds,
             'videos'=>$videos,
+            'page'=>$page,
         ]);
     }
     public function about(){

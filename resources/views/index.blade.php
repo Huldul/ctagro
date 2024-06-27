@@ -4,20 +4,18 @@
         <main class="main">
             <section class="main-block">
                 <div class="main-block__wrapper">
-                    <img src="./img/main-img.png" alt="">
+                    <img src="{{asset("storage/".$page->head_image)}}" alt="">
                     <div class="container">
                         <div class="main-block__content">
-                            <h1>Превратите свою землю <br><span>в источник богатства</span></h1>
-                            <p>Мы предлагаем широкий выбор качественной сельскохозяйственной техники, отвечающей самым
-                                высоким стандартам.</p>
+                            <h1>{{$page->title}}</h1>
+                            {!!$page->desc1!!}
                             <a href="#">Подробнее</a>
                         </div>
                     </div>
                 </div>
             </section>
             <section class="equipment container indent">
-                <h2 class="equipment__title title">Мы предлагаем современные сельскохозяйственные технологии и
-                    оборудование, помогающие увеличить урожайность и эффективность вашего хозяйства.</h2>
+                <h2 class="equipment__title title">{{$page->subtitle1}}</h2>
                 <div class="equipment__wrapper">
                     @foreach ($types as $type)
                         <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}" class="equipment__card">
@@ -50,13 +48,12 @@
             <section class="guarantee container indent">
                 <div class="guarantee__wrapper">
                     <div class="guarantee__left">
-                        <h2 class="guarantee__title title">CT AGRO — это гарантия вашего успеха сегодня и завтра.</h2>
-                        <p>Мы осуществляем поставки и комплексное обслуживание сельскохозяйственной техники и
-                            оборудования ведущих мировых брендов.</p>
+                        <h2 class="guarantee__title title">{{$page->subtitle2}}</h2>
+                       {!!$page->desc2!!}
                         <a href="#">Подробнее</a>
                     </div>
                     <div class="guarantee__right">
-                        <img src="./img/equipment-img.png" alt="">
+                        <img src="{{asset({"storage/".$page->image1})}}" alt="">
                     </div>
                 </div>
                 <div class="guarantee__container">
@@ -118,8 +115,7 @@
             </section>
             <section class="news-slider container indent">
                 <div class="news-slider__wrapper">
-                    <h2 class="news-slider__title title">Узнайте о последних событиях <br><span>в сфере сельского
-                            хозяйства.</span></h2>
+                    {!!$page->main1!!}
                     <a href="./news.html">Все новости</a>
                 </div>
                 <div class="swiper news__slider">
@@ -197,7 +193,7 @@
                 </div>
             </section>
             <section class="video-slider news-slider container indent">
-                <h2 class="video-slider__title title">Погрузитесь в мир инноваций, <br><span>видеоматериалы о сельскохоз технике.</span></h2>
+                {!!$page->main2!!}
                 <div class="swiper video__slider">
                     <div class="swiper-wrapper">
                         @foreach ($videos as $video)
@@ -249,38 +245,7 @@
                     </div>
                 </div>
             </section>
-            <section class="form indent">
-                <div class="form__wrapper">
-                    <img src="./img/form-bg.png" alt="">
-                    <div class="form__content container">
-                        <h2 class="form__title title">Свяжитесь с нами для обсуждения деталей</h2>
-                        <form action="#">
-                            <div class="form__group">
-                                <input type="text" name="" id="" placeholder="Имя*" required>
-                                <input type="tel" name="" id="" placeholder="Телефон*" required>
-                                <div class="select-wrapp">
-                                    <select name="" id="" required>
-                                        <option value="" disabled selected>Регион*</option>
-                                        <option value="Astana">Астана</option>
-                                        <option value="Astana">Астана</option>
-                                    </select>
-                                </div>
-                                <input type="email" name="" id="" placeholder="Почта*" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$" title="Введите корректный email в формате user@example.com">
-                            </div>
-                            <div class="form__group">
-                                <div class="select-wrapp">
-                                    <select>
-                                        <option value="" disabled selected>Тема</option>
-                                        <option value="lorem">lorem</option>
-                                    </select>
-                                </div>
-                                <button type="submit">Отправить</button>
-                            </div>
-                            <span>Нажимая кнопку “Отправить” вы даёте согласие на обработку  <a href="#">персональных данных</a></span>
-                        </form>
-                    </div>
-                </div>
-            </section>
+            @include('components.form')
             <section class="map indent container">
                 <h2 class="map__title title">Карта присутствия</h2>
                 <svg width="1320" height="700" viewBox="0 0 1320 700" fill="none" xmlns="http://www.w3.org/2000/svg">

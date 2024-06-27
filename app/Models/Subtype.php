@@ -7,27 +7,30 @@ use Illuminate\Database\Eloquent\Model;
 use TCG\Voyager\Traits\Translatable;
 use Illuminate\Support\Str;
 
-class Type extends Model
+class Subtype extends Model
 {
     use HasFactory;
     use Translatable;
     protected $translatable = ['title', 'seo_title', 'seo_subtitle', 'seo_keywords'];
-
     public static function boot(){
         parent::boot();
 
         self::creating(function($model){
             $slug = Str::slug($model->title);
-            $model->slug = Type::where('slug', $slug)->exists() ? $slug.'-'.uniqid() : $slug;
+            $model->slug = Subtype::where('slug', $slug)->exists() ? $slug.'-'.uniqid() : $slug;
         });
 
         self::updating(function($model){
             $slug = Str::slug($model->title);
-            $model->slug = Type::where('slug', '!=', $model->slug)->where('slug', $slug)->exists() ? $slug.'-'.uniqid() : $slug;
+            $model->slug = Subtype::where('slug', '!=', $model->slug)->where('slug', $slug)->exists() ? $slug.'-'.uniqid() : $slug;
         });
     }
-    public function subtypes()
+    public function products()
     {
-        return $this->hasMany(Subtype::class);
+        return $this->hasMany(Product::class);
+    }
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
     }
 }

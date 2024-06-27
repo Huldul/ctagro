@@ -32,8 +32,8 @@ class Product extends Model
     }
 
     // Define the relationship to Type
-    public function type()
+    public function subtype()
     {
-        return $this->belongsTo(Type::class);
+        return $this->belongsTo(Subtype::class);
     }
 }

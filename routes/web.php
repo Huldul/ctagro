@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => 'locale'], function() {
     Route::get('/',[PageController::class, "index"])->name('home');
     Route::get('/about',[PageController::class, "about"])->name('about');
+    Route::get('/policy',[PageController::class, "policy"])->name('policy');
     Route::get('/partners',[PageController::class, "partners"])->name('partners');
     Route::get('/offers',[PageController::class, "offers"])->name('offers');
     Route::get('/news',[PageController::class, "news"])->name('news');
@@ -58,6 +59,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'm
 Route::group(['middleware' => 'web'], function () {
     Route::get('/', [PageController::class, 'index'])->name('home.without_locale');
     Route::get('/about',[PageController::class, "about"])->name('about.without_locale');
+    Route::get('/policy',[PageController::class, "policy"])->name('policy.without_locale');
     Route::get('/partners',[PageController::class, "partners"])->name('partners.without_locale');
     Route::get('/offers',[PageController::class, "offers"])->name('offers.without_locale');
     Route::get('/news',[PageController::class, "news"])->name('news.without_locale');

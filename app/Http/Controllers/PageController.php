@@ -207,6 +207,9 @@ class PageController extends Controller
         return view('contacts');
     }
 
+    public function policy(){
+        return view('policy');
+    }
     // about
     // partners
     // offers

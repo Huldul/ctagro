@@ -30,7 +30,7 @@
                     <h3>Техника</h3>
                     @foreach ($types as $type)
                     <li>
-                        <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">Сельхозтехника</a>
+                        <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">{{ $type->title }}</a>
                     </li>
                     @endforeach
                     {{-- <li>

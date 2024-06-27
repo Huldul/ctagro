@@ -121,8 +121,12 @@ class PageController extends Controller
             abort(404, 'Type not found');
         }
         $transtype = $type->translate(app()->getLocale());
-        $untrProds = $type->subtypes; // Получаем коллекцию продуктов
-        $prods = $this->translateCollection($untrProds, app()->getLocale())->paginate(10);
+
+        // Получаем коллекцию подтипов с пагинацией
+        $untrProds = $type->subtypes()->paginate(10); // Примените нужный вам размер страницы
+
+        // Переводим коллекцию с учетом пагинации
+        $prods = $this->translateCollection($untrProds, app()->getLocale());
 
         return view('catalog-inner', [
             'products' => $prods,
@@ -152,7 +156,7 @@ class PageController extends Controller
         }
         $transtype = $type->translate(app()->getLocale());
         $untrProds = $type->products; // Получаем коллекцию продуктов
-        $prods = $this->translateCollection($untrProds, app()->getLocale())->paginate(10);
+        $prods = $this->translateCollection($untrProds, app()->getLocale());
 
         return view('catalog-library-inner', [
             'products' => $prods,

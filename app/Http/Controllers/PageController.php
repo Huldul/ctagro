@@ -122,7 +122,7 @@ class PageController extends Controller
         }
         $transtype = $type->translate(app()->getLocale());
         $untrProds = $type->subtypes; // Получаем коллекцию продуктов
-        $prods = $this->translateCollection($untrProds, app()->getLocale());
+        $prods = $this->translateCollection($untrProds, app()->getLocale())->paginate(10);
 
         return view('catalog-inner', [
             'products' => $prods,
@@ -152,7 +152,7 @@ class PageController extends Controller
         }
         $transtype = $type->translate(app()->getLocale());
         $untrProds = $type->products; // Получаем коллекцию продуктов
-        $prods = $this->translateCollection($untrProds, app()->getLocale());
+        $prods = $this->translateCollection($untrProds, app()->getLocale())->paginate(10);
 
         return view('catalog-library-inner', [
             'products' => $prods,

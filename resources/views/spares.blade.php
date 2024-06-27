@@ -3,7 +3,7 @@
 @section('content')
 <main>
     <section class="first__block">
-        <img src="{{ asset($page->head_image) }}" alt="">
+        <img src="{{ asset("storage/".$page->head_image) }}" alt="">
         <div class="first__block-wrapper container">
             <h1>{{ $page->title }}</h1>
         </div>
@@ -36,7 +36,7 @@
                 <button class="more-btn">Подробнее</button>
             </div>
             <div class="service__right">
-                <img src="{{ asset($page->image1) }}" alt="">
+                <img src="{{ asset("storage/".$page->image1) }}" alt="">
             </div>
         </div>
         <div class="service__info">
@@ -54,7 +54,7 @@
         </div>
         <div class="service__container about__container">
             <div class="service__right">
-                <img src="{{ asset($page->image2) }}" alt="">
+                <img src="{{ asset("storage/".$page->image2) }}" alt="">
             </div>
             <div class="service__left">
                 <h2 class="title">{{ $page->subtitle2 }}</h2>

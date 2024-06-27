@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Brand;
+use App\Models\CustomPage;
 use App\Models\Med;
 use App\Models\News;
 use App\Models\Offer;
@@ -17,7 +18,8 @@ class PageController extends Controller
     public function index(){
         $untrMeds = Med::paginate(5);
         $meds = $this->translateCollection($untrMeds ,app()->getLocale());
-
+        $page = CustomPage::find(1)->first();
+        dd($page);
         $videos = Video::All();
         return view('index', [
             'meds'=>$meds,

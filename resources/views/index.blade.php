@@ -137,7 +137,7 @@
                                         <span>{{ \Carbon\Carbon::parse($med->published_at)->format('d M. Y') }}</span>
                                     </div>
                                     <p>{{ $med->title }}</p>
-                                    <a href="{{ url(app()->getLocale() . '/media-inner/' . $med->slug) }}">Подробнее</a>
+                                    <a href="{{ url(app()->getLocale() . '/news-inner/' . $med->slug) }}">Подробнее</a>
                                 </div>
                             </div>
                         @endforeach

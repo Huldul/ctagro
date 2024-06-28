@@ -16,7 +16,7 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function index(){
-        $untrMeds = Med::paginate(5);
+        $untrMeds = News::paginate(5);
         $meds = $this->translateCollection($untrMeds ,app()->getLocale());
         $untrpage = CustomPage::findOrFail(1);
         $page = $untrpage->translate(app()->getLocale());

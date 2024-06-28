@@ -158,11 +158,11 @@
             <iframe width="560" height="315" src="https://www.youtube.com/embed/aWjtf9VWYUM?si=LinI_HE9-qmZu_YS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
-    <script src="{{asset("js/jquery-3.6.0.min.js")}}"></script>
-    <script src="{{asset("js/jquery.maskedinput.min.js")}}"></script>
-    <script src="/js/dflip/js/libs/jquery.min.js"></script>
+    <!-- <script src="{{asset("js/jquery-3.6.0.min.js")}}"></script> -->
+    <script src="{{asset("js/dflip/js/libs/jquery.min.js")}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="/js/dflip/js/dflip.min.js"></script>
+    <script src="{{asset("js/dflip/js/dflip.min.js")}}"></script>
+    <script src="{{asset("js/jquery.maskedinput.min.js")}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{asset("js/index.js")}}?v=1.3"></script>
 </body>

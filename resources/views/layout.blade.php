@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Миссия компании</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/js/dflip/css/dflip.min.css">
+    <link rel="stylesheet" href="/js/dflip/css/themify-icons.min.css">
     <link rel="stylesheet" href="{{asset("css/main.css")}}">
     <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.3">
 </head>
@@ -158,6 +160,9 @@
     </div>
     <script src="{{asset("js/jquery-3.6.0.min.js")}}"></script>
     <script src="{{asset("js/jquery.maskedinput.min.js")}}"></script>
+    <script src="/js/dflip/js/libs/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="/js/dflip/js/dflip.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{asset("js/index.js")}}?v=1.3"></script>
 </body>

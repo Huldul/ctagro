@@ -119,7 +119,7 @@
         </main>
         @endsection
 
-        <div data-id="1" class="modal__wrapper">
+        <!-- <div data-id="1" class="modal__wrapper">
             <div class="modal__group">
                 <h2 data-title="Костанайская область, ул. Уалиханова, 187" class="title">Костанайская область, ул. Уалиханова, 187</h2>
                 <button class="close-modal">
@@ -245,5 +245,5 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>

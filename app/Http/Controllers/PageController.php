@@ -30,6 +30,9 @@ class PageController extends Controller
     public function about(){
         return view('about');
     }
+    public function catalog_online(){
+        return view('catalog-online');
+    }
     public function partners(){
         $untrPart = Partner::paginate(12);
         $partners = $this->translateCollection($untrPart ,app()->getLocale());

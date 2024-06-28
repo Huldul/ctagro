@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+@dd($product)
         <main>
             <section class="first__block">
                 <img src="{{asset("img/first-block-img.png")}}" alt="">

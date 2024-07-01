@@ -808,7 +808,11 @@
     font-size: 16px;
     pointer-events: none;
 }
-
+.form__wrapper .input-container div span {
+    color: red;
+    margin-top: 0;
+    font-size: 20px;
+}
 .select-wrapp {
     position: relative;
     width: 100%;

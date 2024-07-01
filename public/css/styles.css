@@ -2810,10 +2810,13 @@
     min-height: 160px;
 }
 
-.service__info-card svg {
+.service__info-card img {
     position: absolute;
     bottom: 0;
     right: 0;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
 .service__info-card span {

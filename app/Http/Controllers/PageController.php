@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AboutPage;
 use App\Models\Brand;
 use App\Models\CustomPage;
 use App\Models\Med;
@@ -28,7 +29,11 @@ class PageController extends Controller
         ]);
     }
     public function about(){
-        return view('about');
+        $untrpage = AboutPage::firstOrFail();
+        $page = $untrpage->translate(app()->getLocale());
+        return view('about', [
+            'page'=>$page,
+        ]);
     }
     public function catalog_online(){
         return view('catalog-online');

@@ -3,9 +3,9 @@
 @section('content')
         <main>
             <section class="first__block">
-                <img src="{{asset("img/first-block-img.png")}}" alt="">
+                <img src="{{asset("storage/".$page->head_image)}}" alt="">
                 <div class="first__block-wrapper container">
-                    <h1>О компании</h1>
+                    <h1>{{$page->head_title}}</h1>
                 </div>
             </section>
             <div class="breadcrumbs container">
@@ -18,7 +18,7 @@
                             <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
                         </svg>
                     </li>
-                    <li>О компании</li>
+                    <li>{{$page->head_title}}</li>
                     <li>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
@@ -31,62 +31,63 @@
                 <div class="about__wrapper">
                     <div class="about__container">
                         <div class="about__left">
-                            <h2 class="about__title title">СТ AGRO — поставщик сельскохозяйственной техники известных мировых брендов <span>и ведущий игрок рынка услуг для аграрного сектора в Казахстане.</span></h2>
-                            <p>Основанная в 2000 году инициативным предпринимателем из Германии Клаусом Тишером, компания СТ AGRO стала известна прежде всего как официальный дилер немецкого производителя сельхозтехники CLAAS. Уникальным на тот момент было то, что СТ AGRO не только поставляла образцы новейших зарубежных сельхозмашин, но и предлагала их системное обслуживание.</p>
-                            <p class="hidden-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestias porro vero tenetur eos ratione distinctio facilis nisi sunt magni nostrum aliquid, doloremque minima illum itaque totam eum ab beatae? Doloremque!</p>
+                            <h2 class="about__title title">{{$page->head_subtitle}}</h2>
+                            {!!$page->head_main!!}
+                            <p class="hidden-text"> {!!$page->head_desc!!}</p>
                             <button class="more-btn" type="button">Подробнее</button>
                         </div>
                         <div class="about__right">
                             <div class="about__img">
-                                <img src="{{asset("img/about-img.png")}}" alt="">
+                                <img src="{{asset("storage/".$page->image1)}}" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="about__container reverse">
                         <div class="about__right">
                             <div class="about__img">
-                                <img src="{{asset("img/about-img.png")}}" alt="">
+                                <img src="{{asset("storage/".$page->image2)}}" alt="">
                             </div>
                         </div>
                         <div class="about__left">
-                            <h2 class="about__title title"><span>Многолетнее сотрудничество с известными мировыми брендами и разнообразие производимых ими машин и агрегатов</span> позволяют СТ AGRO реагировать на конкретные запросы аграриев и учитывать специфику условий производства в каждом отдельном хозяйстве.</h2>
+                            {!!$page->sec_main!!}
+                            <p class="hidden-text"> {!!$page->sec_desc!!}</p>
                             <button class="more-btn" type="button">Подробнее</button>
                         </div>
                     </div>
                     <div class="about__container">
                         <div class="about__left">
-                            <h2 class="about__title title"><span>CT AGRO — это команда профессионалов,</span> хорошо знающих не только технику, но и технологии сельскохозяйственного производства.</h2>
+                            {!!$page->tr_main!!}
                             <div class="accordeon-wrapper">
                                 <div class="accordeon-wrap">
                                     <div class="accordeon__box" data-accordeon-trigger="1">
-                                        <p class="accordeon__title">Профессионализм</p>
+                                        <p class="accordeon__title">{{$page->adv_title1}}</p>
                                     </div>
                                     <div class="accordeon__content" data-accordeon-content="1">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nemo, sint vero ullam repellendus molestias id modi aut alias, officia provident et doloremque ab nulla necessitatibus facere aliquid culpa nihil!</p>
+                                        {!!$page->adv_main1!!}
                                     </div>
                                 </div>
                                 <div class="accordeon-wrap">
                                     <div class="accordeon__box" data-accordeon-trigger="1">
-                                        <p class="accordeon__title">Индивидуальный подход</p>
+                                        <p class="accordeon__title">{{$page->adv_title2}}</p>
                                     </div>
                                     <div class="accordeon__content" data-accordeon-content="1">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nemo, sint vero ullam repellendus molestias id modi aut alias, officia provident et doloremque ab nulla necessitatibus facere aliquid culpa nihil!</p>
+                                        {!!$page->adv_main2!!}
                                     </div>
                                 </div>
                                 <div class="accordeon-wrap">
                                     <div class="accordeon__box" data-accordeon-trigger="1">
-                                        <p class="accordeon__title">Сервис высокого уровня</p>
+                                        <p class="accordeon__title">{{$page->adv_title3}}</p>
                                     </div>
                                     <div class="accordeon__content" data-accordeon-content="1">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nemo, sint vero ullam repellendus molestias id modi aut alias, officia provident et doloremque ab nulla necessitatibus facere aliquid culpa nihil!</p>
+                                        {!!$page->adv_main3!!}
                                     </div>
                                 </div>
                                 <div class="accordeon-wrap">
                                     <div class="accordeon__box" data-accordeon-trigger="1">
-                                        <p class="accordeon__title">Набор консалтинговых и финансовых услуг</p>
+                                        <p class="accordeon__title">{{$page->adv_title4}}</p>
                                     </div>
                                     <div class="accordeon__content" data-accordeon-content="1">
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore nemo, sint vero ullam repellendus molestias id modi aut alias, officia provident et doloremque ab nulla necessitatibus facere aliquid culpa nihil!</p>
+                                        {!!$page->adv_main4!!}
                                     </div>
                                 </div>
                             </div>
@@ -94,37 +95,39 @@
                         </div>
                         <div class="about__right">
                             <div class="about__img">
-                                <img src="{{asset("img/about-img.png")}}" alt="">
+                                <img src="{{asset("storage/".$page->image3)}}" alt="">
                             </div>
                         </div>
                     </div>
                     <div class="about__container reverse">
                         <div class="about__right">
                             <div class="about__img">
-                                <img src="{{asset("img/about-img.png")}}" alt="">
+                                <img src="{{asset("storage/".$page->image4)}}" alt="">
                             </div>
                         </div>
                         <div class="about__left">
-                            <h2 class="about__title title">Сервисное обслуживание СТ AGRO</h2>
-                            <p>Сервисное обслуживание высокого уровня немыслимо без должного обеспечения запасными частями. Поэтому СT AGRO еще на этапе создания собственной сети сервисных центров предусмотрела в каждом из них склад запасных частей.</p>
-                            <p>Отдельного упоминания заслуживает появление ТОО СТ ЭСЭМБЛИ — предприятия по промышленной сборке сельхозтехники в городе Петропавловске, где в настоящее время выпускаются энергонасыщенные современные тракторы CLAAS, зерноуборочные комбайны и современные зерновые жатки того же бренда, а также широкозахватные посевные комплексы HORSCH.</p>
+                            <h2 class="about__title title">{{$page->four_title}}</h2>
+                            {!!$page->four_main!!}
                             <a href="{{route("service", ['locale' => app()->getLocale()])}}">На страницу сервиса</a>
                         </div>
                     </div>
                 </div>
             </section>
             <section class="mission container indent">
-                <h2 class="mission__title title">Миссия компании</h2>
-                <p>С момента основания мы постоянно расширяем ассортимент продукции, географию присутствия, повышаем квалификацию сотрудников. Все это с единственной целью – быть надежным партнером и помощником для аграрных хозяйств Казахстана.</p>
-                <span>Надежное партнерство в целях устойчивого развития бизнеса.</span>
-                <p>Мы всегда рядом, когда вам требуется наша помощь, оставаясь верными нашему девизу:</p>
-                <h3>ГАРАНТИЯ ВАШЕГО УСПЕХА СЕГОДНЯ И ЗАВТРА</h3>
-                <h4>Мы руководствуемся тремя основными принципами:</h4>
+                <h2 class="mission__title title">{{$page->mission_title}}</h2>
+                {!!$page->mission_main!!}
                 <div class="mission__wrapper">
                     <div class="mission__card">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M42.5784 5.65313C42.4935 5.28495 42.2662 4.9654 41.9463 4.7644C41.6263 4.56341 41.2398 4.49733 40.8712 4.58063C37.4207 5.36591 33.8058 4.95809 30.6169 3.42375C30.4247 3.33004 30.2138 3.28133 30 3.28133C29.7862 3.28133 29.5753 3.33004 29.3831 3.42375C28.3355 3.92164 27.239 4.30935 26.1112 4.58063C23.813 5.10245 21.427 5.10245 19.1287 4.58063C18.7603 4.49761 18.374 4.56382 18.0543 4.76479C17.7346 4.96577 17.5074 5.28515 17.4225 5.65313C14.9044 17.94 18.8072 30.0469 30 32.8875C41.1928 30.0469 45.0937 17.9391 42.5784 5.65313ZM35.3034 16.2188L29.5734 21.9581C29.3044 22.2202 28.9436 22.3669 28.568 22.3669C28.1923 22.3669 27.8316 22.2202 27.5625 21.9581L24.6975 19.0838C24.5646 18.9522 24.4591 18.7956 24.3871 18.623C24.3151 18.4504 24.278 18.2653 24.278 18.0783C24.278 17.8913 24.3151 17.7061 24.3871 17.5335C24.4591 17.361 24.5646 17.2044 24.6975 17.0728C24.9654 16.8085 25.3266 16.6603 25.703 16.6603C26.0793 16.6603 26.4405 16.8085 26.7084 17.0728L28.5675 18.9319L33.2916 14.2078C33.5599 13.9492 33.919 13.8062 34.2916 13.8096C34.6643 13.8131 35.0207 13.9626 35.2842 14.2261C35.5477 14.4896 35.6973 14.846 35.7007 15.2187C35.7041 15.5913 35.5611 15.9504 35.3025 16.2188H35.3034ZM55.3594 44.1338C55.6508 44.7557 55.6906 45.4662 55.4705 46.1168C55.2504 46.7674 54.7873 47.3078 54.1781 47.625L39.4069 55.3125C37.0831 56.5312 34.4306 56.9753 31.8366 56.58L9.54468 53.1881L4.38843 44.2519L17.8041 36.5016C18.9145 35.8636 20.143 35.4579 21.4149 35.3088C22.6869 35.1597 23.9759 35.2705 25.2037 35.6344L37.9012 41.0597C38.5234 41.335 39.0277 41.8222 39.3241 42.4347C39.6205 43.0471 39.6898 43.7448 39.5197 44.4036C39.3496 45.0624 38.9512 45.6393 38.3953 46.0317C37.8395 46.424 37.1624 46.6063 36.4847 46.5459L27.7275 45.6684C27.3385 45.6371 26.9526 45.7592 26.6524 46.0087C26.3523 46.2581 26.1616 46.6151 26.1212 47.0033C26.0808 47.3915 26.1938 47.78 26.4362 48.086C26.6785 48.3919 27.031 48.5908 27.4181 48.6403L36.1856 49.5281C37.4939 49.6625 38.8093 49.3515 39.9189 48.6454C41.0286 47.9394 41.8675 46.8796 42.3 45.6375L52.1916 42.7078C52.8029 42.5266 53.4589 42.5707 54.0404 42.8322C54.6219 43.0937 55.0903 43.5552 55.3603 44.1328L55.3594 44.1338Z" fill="#6EB513"/>
-                            </svg>
+                        @php
+                            $svgData = json_decode($page->pricn_svg1, true);
+                            $svgPath = $svgData[0]['download_link'] ?? '';
+                            $svgFile = storage_path("app/public/{$svgPath}"); // Укажите путь к SVG файлу в хранилище
+                        @endphp
+                        @php
+                            $svgContent = file_get_contents($svgFile);
+                            header('Content-Type: image/svg+xml');
+                        @endphp
+                       {!! $svgContent !!}
                             <h5>Надежность</h5>
                             <p>Сельскохозяйственная деятельность связана со значительным риском. Мы прекрасно понимаем, насколько ценны для агропредприятий надежная техника и крепкие партнерские связи. Поэтому предлагаем высокопроизводительные машины и оборудование, которые никогда не подведут, безупречный и своевременный сервис, а также обучаем механизаторов и инженерно-технический персонал.</p>
                     </div>

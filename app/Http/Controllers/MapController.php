@@ -10,6 +10,7 @@ class MapController extends Controller
     public function show($id, $locale){
         $untrmap = MapKey::findOrFail($id);
         $map = $untrmap->translate(app()->getLocale());
-        dd($map);
+        $json = $map->toJson();
+        dd($json);
     }
 }

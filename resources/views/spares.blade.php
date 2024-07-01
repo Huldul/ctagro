@@ -65,13 +65,16 @@
         </div>
     </section>
 
+
     <section class="products-inner__video container indent">
         <h2 class="products-inner__title title">Хотите узнать о наc больше? <br><span>Переходите на наш youtube канал.</span></h2>
         <div class="products-inner__video-wrapper">
             @foreach ($videos as $video)
-            <div class="products-inner-video">
-                <iframe width="560" height="315" src="{{$video->url}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe>
-            </div>
+            <div class="video__slide">
+                                    <div data-id="" data-url="https://www.youtube.com/embed/aWjtf9VWYUM?si=LinI_HE9-qmZu_YS" class="video__slide-video">
+                                        <img src="{{ $thumbnail_url }}" alt="">
+                                    </div>
+                                </div>
             @endforeach
         </div>
         @include('components.news', ['news' => $news])

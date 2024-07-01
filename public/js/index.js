@@ -279,25 +279,29 @@ document.addEventListener('DOMContentLoaded', function () {
     const popup = document.querySelector('.popup');
     const openPopup = document.querySelectorAll('.video__slide-video');
     const closePopup = document.querySelector('.close-popup');
+    const popupVideo = document.getElementById('popup-video');
 
-    const showPopup = () => {
+    const showPopup = (url) => {
+        popupVideo.src = url;
         popup.classList.add('active');
         document.documentElement.style.overflow = "hidden";
     };
 
     const hidePopup = () => {
         popup.classList.remove('active');
+        popupVideo.src = ''; // Очистка URL видео
         document.documentElement.style.overflow = "auto";
     };
 
     openPopup.forEach((open) => {
         open.addEventListener('click', () => {
-            showPopup()
-        })
+            const videoUrl = open.getAttribute('data-url');
+            showPopup(videoUrl);
+        });
     });
 
     closePopup.addEventListener('click', () => {
-        hidePopup()
+        hidePopup();
     });
 
     const inputContainers = document.querySelectorAll('.input-container');

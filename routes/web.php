@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ApplicationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,7 +57,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'm
     // spares
     // contacts
 });
-
+Route::post('/sendOrder', [ApplicationController::class, 'send_order'])->name('sendOrder');
 Route::group(['middleware' => 'web'], function () {
     Route::get('/', [PageController::class, 'index'])->name('home.without_locale');
     Route::get('/about',[PageController::class, "about"])->name('about.without_locale');

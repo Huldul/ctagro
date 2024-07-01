@@ -20,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::get('maps/{id}/{locale}', [MapController::class, 'show']);
+Route::get('maps/{id}', [MapController::class, 'show']);
 

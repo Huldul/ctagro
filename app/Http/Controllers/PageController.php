@@ -39,7 +39,7 @@ class PageController extends Controller
         return view('catalog-online');
     }
     public function partners(){
-        $untrPart = Partner::paginate(12);
+        $untrPart = Partner::paginate(16);
         $partners = $this->translateCollection($untrPart ,app()->getLocale());
         return view('partners', [
             'partners'=>$partners,

@@ -182,13 +182,13 @@
                                 <img src="{{asset("svg/technique3.svg")}}">
                                 Орошение
                             </a> --}}
-                        </li>
+                        {{-- </li>
                         <li>
                             <a href="{{ route('catalog-library', ['locale' => app()->getLocale()]) }}">
                                 <img src="{{asset("svg/library.svg")}}">
                                 Библиотека каталогов
                             </a>
-                        </li>
+                        </li> --}}
                     </ul>
                     <ul class="nav__list">
                         <h2>Запчасти и сервис</h2>

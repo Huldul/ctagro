@@ -4,6 +4,7 @@
         <div class="form__content container">
             <h2 class="form__title title">Свяжитесь с нами для обсуждения деталей</h2>
             <form action="/sendOrder" method="POST">
+                @csrf
             <div class="form__group">
                                 <div class="input-container">
                                     <input type="text" name="name" id="" required>

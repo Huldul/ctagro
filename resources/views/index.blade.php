@@ -229,7 +229,7 @@
                             ?>
                             <div class="swiper-slide video__slider-slide">
                                 <div class="video__slide">
-                                    <div data-id="" data-url="https://www.youtube.com/embed/DWF1Sypybj0?si=GS-PXiwyNXhynNEP" class="video__slide-video">
+                                    <div data-id="" data-url="{{$video->url}}" class="video__slide-video">
                                         <img src="{{ $thumbnail_url }}" alt="">
                                     </div>
                                 </div>

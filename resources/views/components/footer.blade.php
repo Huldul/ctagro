@@ -65,7 +65,7 @@
                     <h3>Будьте в курсе</h3>
                     <div class="footer-socials">
                         <li>
-                            <a href="#">
+                            <a href="{{setting('.instagram')}}">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -79,7 +79,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{setting('.tiktok')}}">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -89,7 +89,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{setting('.youtube')}}">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -99,7 +99,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{setting('.facebook')}}">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -109,7 +109,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{setting('.adobe')}}">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -125,10 +125,10 @@
         <div class="footer__bot">
             <div class="footer__container">
                 <span>
-                    Member of Royal Reesink
-                    <img src="./svg/crown.svg" alt="">
+                    {{setting('.member')}}
+                    <img src="{{asset("svg/crown.svg")}}" alt="">
                 </span>
-                <span>©2024 - ctargo</span>
+                <span>{{setting('.copiright')}}</span>
                 <span>Сайт разработан <a href="https://astanacreative.kz/"> Astana Creative</a></span>
                 <a href="{{ route('policy', ['locale' => app()->getLocale()]) }}"><img class="footer-img" src="./svg/icon.svg" alt=""></a>
             </div>

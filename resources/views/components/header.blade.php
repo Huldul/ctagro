@@ -130,7 +130,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="{{setting('site.ct_assembly')}}">
+                            <a href="{{setting('.link_ct_assembly')}}">
                                 <img src="{{asset("svg/company.svg")}}">
                                 Сборочное предприятие CT Assembly
                             </a>
@@ -206,7 +206,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./#">
+                            <a href="{{setting('.link_engine')}}">
                                 <img src="{{asset("svg/engine.svg")}}">
                                 Ремонт двигателей
                             </a>
@@ -226,7 +226,7 @@
                         <h2>Будьте в курсе</h2>
                         <div class="social-wrapp">
                             <li>
-                                <a href="#">
+                                <a href="{{setting('.instagram')}}">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -240,7 +240,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{setting('.tiktok')}}">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -251,7 +251,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{setting('.youtube')}}">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -262,7 +262,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{setting('.facebook')}}">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -273,7 +273,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{setting('.adobe')}}">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path

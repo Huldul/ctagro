@@ -134,7 +134,7 @@
                                 <div class="news__slide">
                                     <div class="news__slide-img">
                                         <img src="{{ asset('storage/' . $med->image1) }}" alt="">
-                                        <span>{{ \Carbon\Carbon::parse($item->created_at)->format('d M. Y') }}</span>
+                                        <span>{{ \Carbon\Carbon::parse($med->created_at)->format('d M. Y') }}</span>
                                     </div>
                                     <p>{{ $med->title }}</p>
                                     <a href="{{ url(app()->getLocale() . '/news-inner/' . $med->slug) }}">Подробнее</a>

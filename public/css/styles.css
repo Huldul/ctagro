@@ -696,6 +696,7 @@
 .video__slide-video {
     position: relative;
     cursor: pointer;
+    overflow: hidden;
 }
 .video__slide-video::after {
     position: absolute;

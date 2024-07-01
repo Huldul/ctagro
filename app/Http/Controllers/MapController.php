@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class MapController extends Controller
 {
-    public function show($id, $locale)
+    public function show($id)
     {
         // Получение не переведенной карты по идентификатору
         $untrmap = MapKey::findOrFail($id);

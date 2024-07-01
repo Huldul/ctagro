@@ -45,7 +45,7 @@ class MapController extends Controller
         // Преобразование массива в JSON
         $json = json_encode($mapArray);
 
-        return response()->json($json, 200, [], JSON_UNESCAPED_UNICODE);
+        return response()->json($json, 200);
     }
 
 

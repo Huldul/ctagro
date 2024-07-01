@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/js/dflip/css/dflip.min.css">
     <link rel="stylesheet" href="/js/dflip/css/themify-icons.min.css">
     <link rel="stylesheet" href="{{asset("css/main.css")}}">
-    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.3">
+    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.4">
 </head>
 
 <body>
@@ -164,7 +164,7 @@
     <script src="{{asset("js/dflip/js/dflip.min.js")}}"></script>
     <script src="{{asset("js/jquery.maskedinput.min.js")}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{asset("js/index.js")}}?v=1.3"></script>
+    <script src="{{asset("js/index.js")}}?v=1.4"></script>
 </body>
 
 </html>

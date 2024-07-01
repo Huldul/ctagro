@@ -501,8 +501,11 @@
     flex-direction: column;
 }
 
-.guarantee__card svg {
+.guarantee__card img {
     margin-bottom: 75px;
+    width: 59px;
+    height: 59px;
+    object-fit: contain;
 }
 
 .guarantee__card p {
@@ -710,9 +713,9 @@
     content: '';
     background: rgba(49, 49, 47, 0.40);
     height: 100%;
-    width: 30%;
+    width: 100%;
     transform: translateX(-100%);
-    transition: .3s;
+    transition: .5s;
 }
 .video__slide-video:hover::before{
     transform: translateX(0);
@@ -793,10 +796,35 @@
     font-size: 16px;
 }
 
+.input-container {
+    position: relative;
+    width: 100%;
+}
+.input-container div {
+    position: absolute;
+    top: 25%;
+    left: 20px;
+    color: #fff;
+    font-size: 16px;
+    pointer-events: none;
+}
+
 .select-wrapp {
     position: relative;
     width: 100%;
     max-width: 981px;
+}
+
+.select-wrapp span {
+    position: absolute;
+    content: '*';
+    width: 16px;
+    height: 16px;
+    top: 25%;
+    left: 26%;
+    color: red;
+    font-size: 20px;
+    margin-top: 0;
 }
 
 .select-wrapp::after {

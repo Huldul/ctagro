@@ -162,7 +162,7 @@
                 </div>
             </section>
             @php
-                $images = json_decode($news->mult_images, true);
+                $images = json_decode($page->foot_images, true);
             @endphp
 
             @if (!empty($images))

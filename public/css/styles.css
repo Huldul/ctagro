@@ -2894,14 +2894,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0;
-    visibility: hidden;
     transition: 0.3s;
-}
-
-.modal.active {
-    opacity: 1;
-    visibility: visible;
 }
 
 .modal__wrapper {
@@ -2920,6 +2913,9 @@
 
 .close-modal {
     background-color: transparent;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .close-modal svg path {

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/js/dflip/css/dflip.min.css">
     <link rel="stylesheet" href="/js/dflip/css/themify-icons.min.css">
     <link rel="stylesheet" href="{{asset("css/main.css")}}">
-    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.8">
+    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.9">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
         @yield('content')
         @include('components/footer')
     </div>
-    <div class="modal">
+    <!-- <div class="modal">
         <div data-id="1" class="modal__wrapper">
             <div class="modal__group">
                 <h2 data-title="Костанайская область, ул. Уалиханова, 187" class="title">Костанайская область, ул. Уалиханова, 187</h2>
@@ -146,7 +146,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="popup">
         <div class="popup__wrapper">
             <button class="close-popup">
@@ -164,7 +164,7 @@
     <script src="{{asset("js/dflip/js/dflip.min.js")}}"></script>
     <script src="{{asset("js/jquery.maskedinput.min.js")}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{asset("js/index.js")}}?v=1.6"></script>
+    <script src="{{asset("js/index.js")}}?v=1.7"></script>
 </body>
 
 </html>

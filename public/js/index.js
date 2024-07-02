@@ -249,31 +249,31 @@ document.addEventListener('DOMContentLoaded', function () {
         tabs[0].classList.add("active");
     }
 
-    const openModal = document.querySelectorAll('.map svg path');
-    const modal = document.querySelector('.modal');
-    const closeModal = document.querySelector('.close-modal');
-    if (modal) {
-        const showModal = () => {
-            modal.classList.add('active');
-            document.documentElement.style.overflow = "hidden";
-        }
+    // const openModal = document.querySelectorAll('.map svg path');
+    // const modal = document.querySelector('.modal');
+    // const closeModal = document.querySelector('.close-modal');
+    // if (modal) {
+    //     const showModal = () => {
+    //         modal.classList.add('active');
+    //         document.documentElement.style.overflow = "hidden";
+    //     }
 
-        openModal.forEach((open) => {
-            const attribute = open.getAttribute('data-id')
-            open.addEventListener('click', () => {
-                showModal()
-            })
-        });
+    //     openModal.forEach((open) => {
+    //         const attribute = open.getAttribute('data-id')
+    //         open.addEventListener('click', () => {
+    //             showModal()
+    //         })
+    //     });
 
-        const hideModal = () => {
-            modal.classList.remove('active');
-            document.documentElement.style.overflow = "auto";
-        };
+    //     const hideModal = () => {
+    //         modal.classList.remove('active');
+    //         document.documentElement.style.overflow = "auto";
+    //     };
 
-        closeModal.addEventListener('click', () => {
-            hideModal()
-        });
-    }
+    //     closeModal.addEventListener('click', () => {
+    //         hideModal()
+    //     });
+    // }
 
 
     const popup = document.querySelector('.popup');
@@ -331,6 +331,50 @@ document.addEventListener('DOMContentLoaded', function () {
     select.addEventListener('change', () => {
         selectElem.style.display = 'none'
     });
+
+    const openModalElements = document.querySelectorAll('.map svg path');
+    const modal = document.querySelector('.modal');
+    const closeModal = document.querySelector('.close-modal');
+
+    if (modal) {
+        const showModal = () => {
+            modal.classList.add('active');
+            document.documentElement.style.overflow = "hidden";
+        };
+
+        const hideModal = () => {
+            modal.classList.remove('active');
+            document.documentElement.style.overflow = "auto";
+        };
+
+        openModalElements.forEach((element) => {
+            const dataId = element.getAttribute('data-id');
+
+            element.addEventListener('click', () => {
+                fetch(`https://sm.limestone.kz/api/maps/${dataId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Заполняем данные в модальном окне
+                        document.querySelector('.modal .title').textContent = data.title;
+                        document.querySelector('.modal .modal__left[data-subtitle]').textContent = data.serviceCenter;
+                        document.querySelector('.modal .modal__left[data-sub-subtitle]').textContent = data.customerService;
+                        document.querySelector('.modal .modal__box[data-name]').textContent = data.serviceName;
+                        document.querySelector('.modal .modal__box a[data-service-tel]').href = `tel:${data.servicePhone}`;
+                        document.querySelector('.modal .modal__box a[data-service-tel]').textContent = data.servicePhone;
+                        document.querySelector('.modal .modal__box a[data-service-email]').href = `mailto:${data.serviceEmail}`;
+                        document.querySelector('.modal .modal__box a[data-service-email]').textContent = data.serviceEmail;
+
+                        // Отображаем модальное окно
+                        showModal();
+                    })
+                    .catch(error => console.error('Ошибка:', error));
+            });
+        });
+
+        closeModal.addEventListener('click', () => {
+            hideModal();
+        });
+    }
 
 });
 

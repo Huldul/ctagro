@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .then(jsonData => JSON.parse(jsonData))
                 .then(data => {
-                    console.log(data)
+                    // console.log(data)
                     // Создаем модальное окно
                     const modal = document.createElement('div');
                     modal.classList.add('modal');

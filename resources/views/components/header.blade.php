@@ -94,6 +94,19 @@
                     <form action="#">
                         <input type="search" required>
                         <button type="submit">найти</button>
+                        <div class="search__result">
+                            <p>результат поиска</p>
+                        </div>
+                        <div class="search__items">
+                            <div class="items-container">
+                            <a href="#">1 уровень</a>
+                            <a href="#">1 уровень</a>
+                            </div>
+                            <div class="search__sub-items">
+                            <a href="#">2 уровень</a>
+                            <a href="#">2 уровень</a>
+                        </div>
+                        </div>
                     </form>
                 </div>
                 <div class="header__logo-2">

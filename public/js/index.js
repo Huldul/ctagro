@@ -75,15 +75,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const openSearch = document.querySelector('.search__btn');
     const search = document.querySelector('.header__search form');
+    const searchItem = document.querySelector('.search__items');
+    const searchInp = document.querySelector('.header__search form input');
+    const searchResult = document.querySelector('.search__result');
 
     openSearch.addEventListener('click', () => {
         search.classList.toggle('active');
-    })
+        if (search.classList.contains('active')) {
+            searchInp.addEventListener('click', showSearchItems);
+            searchInp.addEventListener('input', handleInput);
+        } else {
+            searchInp.removeEventListener('click', showSearchItems);
+            searchInp.removeEventListener('input', handleInput);
+            searchItem.classList.remove('active');
+            searchResult.classList.remove('active');
+        }
+    });
+
     document.addEventListener('click', (event) => {
         if (!search.contains(event.target) && !openSearch.contains(event.target)) {
             search.classList.remove('active');
+            searchInp.removeEventListener('click', showSearchItems);
+            searchInp.removeEventListener('input', handleInput);
+            searchItem.classList.remove('active');
+            searchResult.classList.remove('active');
+            searchInp.value = '';
         }
     });
+
+    function showSearchItems() {
+        searchItem.classList.add('active');
+    }
+
+    function handleInput() {
+        if (searchInp.value.trim() === '') {
+            searchResult.classList.remove('active');
+            searchItem.classList.add('active');
+        } else {
+            searchResult.classList.add('active');
+            searchItem.classList.remove('active');
+        }
+    }
 
 
     const newsSlider = new Swiper('.news__slider', {

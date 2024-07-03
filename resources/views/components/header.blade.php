@@ -165,11 +165,29 @@
                             $svgData = json_decode($type->svg, true);
                             $svgPath = $svgData[0]['download_link'] ?? '';
                         @endphp
-                        <li>
-                            <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">
+                        <li class="sub-item">
+                            <a class="menu-link" href="#">
                                 <img src="{{ asset("storage/{$svgPath}") }}" style="width: 22px; height: 22px;" alt="{{ $type->title }}">
                                 {{ $type->title }}
                             </a>
+                            <ul class="sub-list">
+                                <li>
+                                    <a class="submenu-link" href="/">Тракторы</a>
+                                    <ul class="sub-sub-list">
+                                    <li>
+                                        <a href="#">название продукта</a>
+                                    </li>
+                                </ul>
+                                </li>
+                                <li>
+                                    <a class="submenu-link" href="#">Почвообработка</a>
+                                    <ul class="sub-sub-list">
+                                    <li>
+                                        <a href="#">название продукта</a>
+                                    </li>
+                                </ul>
+                                </li>
+                            </ul>
                         </li>
                     @endforeach
 

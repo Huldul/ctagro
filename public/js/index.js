@@ -7,7 +7,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const otherLogo = document.querySelector('.header__logo-2 svg path');
     const headerTop = document.querySelector('.header__top');
     const navElements = document.querySelectorAll('.change-color');
+    const menuLinks = document.querySelectorAll('.menu-link');
+    const submenuLinks = document.querySelectorAll('.submenu-link');
     let originalHeaderBg;
+    let clickTimeout;
 
     window.addEventListener("scroll", function () {
         if (!header.classList.contains('active')) {
@@ -40,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         } else {
             resetHeader();
+            closeSubmenus(); // Close all submenus when the main menu is closed
         }
     });
 
@@ -47,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         menu.classList.remove('active');
         header.classList.remove('active');
         resetHeader();
+        closeSubmenus(); // Close all submenus when the main menu is closed
     }
 
     function resetHeader() {
@@ -67,22 +72,48 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    function closeSubmenus() {
+        document.querySelectorAll('.sub-list.active, .sub-sub-list.active').forEach(subMenu => {
+            subMenu.classList.remove('active');
+        });
+    }
+
     document.addEventListener('click', function (event) {
         if (!header.contains(event.target) && !menu.contains(event.target) && header.classList.contains('active')) {
             closeMenu();
         }
     });
 
-    const openSearch = document.querySelector('.search__btn');
-    const search = document.querySelector('.header__search form');
+    menuLinks.forEach((link) => {
+        const subMenu = link.nextElementSibling; // Find the next sibling element which is the submenu
+        let isFirstClick = true; // Track the click state
+        link.addEventListener('click', (event) => {
+            if (subMenu) {
+                if (isFirstClick) {
+                    event.preventDefault(); // Prevent the default link action
+                    subMenu.classList.toggle('active');
+                    isFirstClick = false;
+                } else {
+                    isFirstClick = true;
+                }
+            }
+        });
+    });
 
-    openSearch.addEventListener('click', () => {
-        search.classList.toggle('active');
-    })
-    document.addEventListener('click', (event) => {
-        if (!search.contains(event.target) && !openSearch.contains(event.target)) {
-            search.classList.remove('active');
-        }
+    submenuLinks.forEach((link) => {
+        const subSubMenu = link.nextElementSibling; // Find the next sibling element which is the sub-submenu
+        let isFirstClick = true; // Track the click state
+        link.addEventListener('click', (event) => {
+            if (subSubMenu) {
+                if (isFirstClick) {
+                    event.preventDefault(); // Prevent the default link action
+                    subSubMenu.classList.toggle('active');
+                    isFirstClick = false;
+                } else {
+                    isFirstClick = true;
+                }
+            }
+        });
     });
 
 

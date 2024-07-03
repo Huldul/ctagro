@@ -94,20 +94,10 @@
                     <form action="#">
                         <input type="search" required>
                         <button type="submit">найти</button>
-                        <div class="search__result">
-                            <p>результат поиска</p>
-                        </div>
-                        <div class="search__items">
-                            <div class="items-container">
-                            <a href="#">1 уровень</a>
-                            <a href="#">1 уровень</a>
-                            </div>
-                            <div class="search__sub-items">
-                            <a href="#">2 уровень</a>
-                            <a href="#">2 уровень</a>
-                        </div>
-                        </div>
                     </form>
+                    <div class="search__result-not-found">поиск не дал результатов</div>
+                    <div class="search__result">
+                    </div>
                 </div>
                 <div class="header__logo-2">
                     <svg width="98" height="18" viewBox="0 0 98 18" fill="none"

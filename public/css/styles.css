@@ -1781,7 +1781,7 @@
     }
 
     .gallery__wrapper {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .gallery__container {
@@ -2631,7 +2631,9 @@
     .products-inner__card {
         margin-top: 20px;
     }
-
+.products-inner-reverse {
+    flex-direction: column-reverse;
+}
     .products-inner__left {
         max-width: 100%;
         max-height: 100%;

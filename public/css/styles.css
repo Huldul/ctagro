@@ -2179,8 +2179,8 @@
         flex-direction: column;
     }
 
-    .reverse {
-        flex-direction: column-reverse;
+    .offers__container.reverse {
+        flex-direction: column;
     }
 
     .offers__right {

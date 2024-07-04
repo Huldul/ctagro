@@ -1410,7 +1410,9 @@
 .about__left {
     max-width: 597px;
 }
-
+.about__title span {
+    font-weight: 700;
+}
 .about__left p {
     color: #252520;
     font-family: Arial;

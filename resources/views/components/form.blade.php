@@ -27,8 +27,15 @@
                                     <div>Почта<span>*</span></div>
                                 </div>
                             </div>
-                <div class="form__group">
-                    <textarea rows="1" name="text" placeholder="Тема"></textarea>
+                            <div class="form__group">
+                <div class="select-wrapp">
+                                    <select name="message" id="message" required>
+                                        <option value="" disabled selected>Тема</option>
+                                        <option value="lorem">lorem</option>
+                                        <option value="Other">Другое</option>
+                                    </select>
+                                </div>
+                    <textarea rows="1" name="text" placeholder="Сообщение"></textarea>
                     <button type="submit">Отправить</button>
                 </div>
                 <span>Нажимая кнопку “Отправить” вы даёте согласие на обработку  <a href="#">персональных данных</a></span>

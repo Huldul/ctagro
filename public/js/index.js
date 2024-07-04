@@ -296,33 +296,6 @@ document.addEventListener('DOMContentLoaded', function () {
         tabs[0].classList.add("active");
     }
 
-    // const openModal = document.querySelectorAll('.map svg path');
-    // const modal = document.querySelector('.modal');
-    // const closeModal = document.querySelector('.close-modal');
-    // if (modal) {
-    //     const showModal = () => {
-    //         modal.classList.add('active');
-    //         document.documentElement.style.overflow = "hidden";
-    //     }
-
-    //     openModal.forEach((open) => {
-    //         const attribute = open.getAttribute('data-id')
-    //         open.addEventListener('click', () => {
-    //             showModal()
-    //         })
-    //     });
-
-    //     const hideModal = () => {
-    //         modal.classList.remove('active');
-    //         document.documentElement.style.overflow = "auto";
-    //     };
-
-    //     closeModal.addEventListener('click', () => {
-    //         hideModal()
-    //     });
-    // }
-
-
     const popup = document.querySelector('.popup');
     const openPopup = document.querySelectorAll('.video__slide-video');
     const closePopup = document.querySelector('.close-popup');
@@ -559,7 +532,19 @@ document.addEventListener('DOMContentLoaded', function () {
                         modal.remove(); // Удаляем модальное окно при клике на кнопку "Закрыть"
                     });
                     const modalWrap = document.querySelector('.modal__wrapper');
-                    modalWrap.appendChild(closeButton); // Добавляем кнопку в модальное окно
+                    modalWrap.appendChild(closeButton);
+                    modal.addEventListener('click', (event) => {
+                        if (event.target === modal) {
+                            modal.remove();
+                        }
+                    });
+
+                    // Обработчик для закрытия модального окна при нажатии Escape
+                    document.addEventListener('keydown', (event) => {
+                        if (event.key === 'Escape') {
+                            modal.remove();
+                        }
+                    }, { once: true });
                 })
                 .catch(error => {
                     console.error(`Ошибка при получении данных для элемента с data-id="${attribute}":`, error);

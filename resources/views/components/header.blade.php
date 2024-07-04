@@ -196,7 +196,7 @@
                                 </ul>
                             </li>
                         @endforeach
-                    </ul>
+
 
 
 

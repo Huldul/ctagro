@@ -369,10 +369,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const select = document.querySelector('.select-wrapp select');
     const selectElem = document.querySelector('.select-wrapp span');
+    if(select) {
+        select.addEventListener('change', () => {
+            selectElem.style.display = 'none'
+        });
+    }
 
-    select.addEventListener('change', () => {
-        selectElem.style.display = 'none'
-    });
 
 
     const openModalElements = document.querySelectorAll('.map svg path[data-id]');

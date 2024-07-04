@@ -164,7 +164,7 @@
     <script src="{{asset("js/dflip/js/dflip.min.js")}}"></script>
     <script src="{{asset("js/jquery.maskedinput.min.js")}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{asset("js/index.js")}}?v=1.13"></script>
+    <script src="{{asset("js/index.js")}}?v=1.14"></script>
 </body>
 
 </html>

@@ -967,7 +967,12 @@
     color: #fff;
     font-size: 16px;
 }
-
+.form__group textarea {
+    display: none;
+}
+.form__group textarea.active {
+    display: block;
+}
 .input-container {
     position: relative;
     width: 100%;

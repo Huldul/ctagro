@@ -1846,11 +1846,6 @@
     .gallery__wrapper {
         flex-direction: column-reverse;
     }
-
-    .gallery__container {
-        flex-direction: column;
-        height: 100%;
-    }
 }
 
 @media (max-width:540px) {

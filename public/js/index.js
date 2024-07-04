@@ -351,6 +351,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 divElem.style.display = 'none';
             });
 
+            // Событие для изменения значения input (включая автозаполнение)
+            input.addEventListener('input', () => {
+                if (input.value !== '') {
+                    divElem.style.display = 'none';
+                }
+            });
+
             // Событие для клика вне input
             document.addEventListener('click', (event) => {
                 if (!container.contains(event.target) && input.value === '') {
@@ -362,10 +369,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const select = document.querySelector('.select-wrapp select');
     const selectElem = document.querySelector('.select-wrapp span');
+    if(select) {
+        select.addEventListener('change', () => {
+            selectElem.style.display = 'none'
+        });
+        document.getElementById('message').addEventListener('change', function() {
+            var textarea = document.querySelector('textarea[name="text"]');
+            if (this.value === 'Other') {
+                textarea.classList.add('active');
+            } else {
+                textarea.classList.remove('active');
+            }
+        });
+    }
 
-    select.addEventListener('change', () => {
-        selectElem.style.display = 'none'
-    });
 
 
     const openModalElements = document.querySelectorAll('.map svg path[data-id]');
@@ -537,14 +554,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
         });
     });
-    document.getElementById('message').addEventListener('change', function() {
-        var textarea = document.querySelector('textarea[name="text"]');
-        if (this.value === 'Other') {
-            textarea.classList.add('active');
-        } else {
-            textarea.classList.remove('active');
-        }
-    });
+
 });
 
 

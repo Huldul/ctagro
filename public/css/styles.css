@@ -1715,7 +1715,7 @@
 
 .gallery__container-img {
     position: relative;
-    padding: 33%;
+    padding: 45%;
     width: 100%;
 }
 
@@ -1787,7 +1787,9 @@
     .reverse {
         flex-direction: column-reverse;
     }
-
+    .gallery__container-img {
+        padding: 33%;
+    }
     .mission p {
         font-size: 16px;
     }

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/js/dflip/css/dflip.min.css">
     <link rel="stylesheet" href="/js/dflip/css/themify-icons.min.css">
     <link rel="stylesheet" href="{{asset("css/main.css")}}">
-    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.16">
+    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.17">
 </head>
 
 <body>

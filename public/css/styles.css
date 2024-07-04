@@ -2044,7 +2044,7 @@
     gap: 30px;
     justify-content: space-between;
 }
-.reverse {
+.offers__container .reverse {
     flex-direction: row-reverse;
 }
 .offers__left {

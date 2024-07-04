@@ -77,7 +77,12 @@
 .header__logo:hover svg path:nth-child(14) {
     fill: #878787;
 }
-
+.header__logo-2 svg path{
+    transition: .3s;
+}
+.header__logo-2:hover svg path {
+    fill: #d01210;
+}
 .header__nav-group {
     display: flex;
     align-items: center;

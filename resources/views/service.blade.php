@@ -96,7 +96,7 @@
                             }
                             ?>
                     <div class="video__slide">
-                                    <div data-id="" data-url="https://www.youtube.com/embed/aWjtf9VWYUM?si=LinI_HE9-qmZu_YS" class="video__slide-video">
+                                    <div data-id="" data-url="{{$video->url}}" class="video__slide-video">
                                         <img src="{{$thumbnail_url}}" alt="">
                                     </div>
                                 </div>

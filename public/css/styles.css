@@ -351,7 +351,61 @@
     display: flex;
     flex-direction: column;
 }
+.header-menu-icon {
+    z-index: 150;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    margin-left: auto;
+}
 
+.header-menu-icon::after,
+.header-menu-icon::before,
+.header-menu-icon span {
+    position: absolute;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    transition: all 0.5s ease 0s;
+    background-color: #fff;
+}
+
+.header-menu-icon::after,
+.header-menu-icon::before {
+    content: "";
+}
+
+.header-menu-icon::after {
+    top: 0;
+}
+
+.header-menu-icon::before {
+    bottom: 50%;
+}
+
+.header-menu-icon span {
+    bottom: 6%;
+    transform: scale(1) translate(0, -50%);
+}
+
+.header-menu-icon._active span {
+    transform: translateY(-150%);
+    opacity: 0;
+}
+
+.header-menu-icon._active::after {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+    background-color: #050505;
+}
+
+.header-menu-icon._active::before {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+    background-color: #050505;
+}
 @media (max-width:992px) {
     .header__nav.active {
         grid-template-columns: repeat(3, 1fr);

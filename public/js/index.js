@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const openMenu = document.querySelector('.menu-open');
+    const menuIcon = document.querySelector('.header-menu-icon');
     const menu = document.querySelector('.header__nav');
     const header = document.querySelector('.header');
     const logoSvg = document.querySelector('.header__logo svg');
@@ -29,12 +30,12 @@ document.addEventListener('DOMContentLoaded', function () {
     openMenu.addEventListener('click', () => {
         menu.classList.toggle('active');
         header.classList.toggle('active');
+        menuIcon.classList.toggle('_active');
         if (header.classList.contains('active')) {
             originalHeaderBg = header.style.background;
             logoSvg.style.display = 'none';
             logoImg.style.display = 'block';
             otherLogo.style.fill = '#FF0100';
-            openMenu.textContent = 'Закрыть';
             header.style.backgroundColor = '#fff';
             header.style.height = 'auto';
             headerTop.classList.add('active');
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function closeMenu() {
         menu.classList.remove('active');
         header.classList.remove('active');
+        menuIcon.classList.remove('_active');
         resetHeader();
         closeSubmenus(); // Close all submenus when the main menu is closed
     }
@@ -58,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
         logoSvg.style.display = 'block';
         logoImg.style.display = 'none';
         otherLogo.style.fill = '#fff';
-        openMenu.textContent = 'Меню';
         header.style.backgroundColor = originalHeaderBg;
         if (window.scrollY > 100) {
             header.style.background = "#31312F";

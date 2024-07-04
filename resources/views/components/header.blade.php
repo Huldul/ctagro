@@ -56,7 +56,11 @@
                 <img src="{{asset("img/logo.svg")}}" alt="">
             </a>
             <div class="header__nav-group">
-                <button class="menu-open change-color">Меню</button>
+                <button class="menu-open change-color">
+                <div class="header-menu-icon">
+			        <span></span>
+		        </div>
+                </button>
                 <div class="header__lang change-color">
                     <span>@switch(app()->getLocale())
                         @case('ru')

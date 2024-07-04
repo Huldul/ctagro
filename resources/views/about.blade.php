@@ -171,8 +171,11 @@
                     <div class="gallery__wrapper">
                         @foreach($images as $index => $image)
                             @if ($index % 3 == 0)
-                                <div class="gallery__left">
-                                    <div class="gallery__left-img">
+                                @php
+                                    $class = ($index / 3) % 2 == 0 ? 'gallery__left' : 'gallery__right';
+                                @endphp
+                                <div class="{{ $class }}">
+                                    <div class="{{ $class }}-img">
                                         <img src="{{ asset('storage/' . $image) }}" alt="Gallery Image {{ $index + 1 }}">
                                     </div>
                                     @if (isset($images[$index + 1]) || isset($images[$index + 2]))
@@ -195,6 +198,7 @@
                     </div>
                 </section>
             @endif
+
 
             @include('components.form')
         </main>

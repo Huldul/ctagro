@@ -373,6 +373,14 @@ document.addEventListener('DOMContentLoaded', function () {
         select.addEventListener('change', () => {
             selectElem.style.display = 'none'
         });
+        select.addEventListener('change', function() {
+            var textarea = document.querySelector('textarea[name="text"]');
+            if (this.value === 'Other') {
+                textarea.classList.add('active');
+            } else {
+                textarea.classList.remove('active');
+            }
+        });
     }
 
 
@@ -546,14 +554,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
         });
     });
-    document.getElementById('message').addEventListener('change', function() {
-        var textarea = document.querySelector('textarea[name="text"]');
-        if (this.value === 'Other') {
-            textarea.classList.add('active');
-        } else {
-            textarea.classList.remove('active');
-        }
-    });
+
 });
 
 

@@ -351,6 +351,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 divElem.style.display = 'none';
             });
 
+            // Событие для изменения значения input (включая автозаполнение)
+            input.addEventListener('input', () => {
+                if (input.value !== '') {
+                    divElem.style.display = 'none';
+                }
+            });
+
             // Событие для клика вне input
             document.addEventListener('click', (event) => {
                 if (!container.contains(event.target) && input.value === '') {

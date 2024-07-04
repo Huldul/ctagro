@@ -21,7 +21,7 @@ class PageController extends Controller
         $meds = $this->translateCollection($untrMeds ,app()->getLocale());
         $untrpage = CustomPage::findOrFail(1);
         $page = $untrpage->translate(app()->getLocale());
-        $videos = Video::All();
+        $videos = Video::Where("type", "gs")->get();
         return view('index', [
             'meds'=>$meds,
             'videos'=>$videos,
@@ -186,7 +186,7 @@ class PageController extends Controller
         $untrpage = CustomPage::findOrFail(2);
         $page = $untrpage->translate(app()->getLocale());
 
-        $videos = Video::All();
+        $videos = Video::Where("type", "service")->get();
 
         $untrNews = News::paginate(3);
         $news = $this->translateCollection($untrNews ,app()->getLocale());
@@ -200,7 +200,7 @@ class PageController extends Controller
         $untrpage = CustomPage::findOrFail(3);
         $page = $untrpage->translate(app()->getLocale());
 
-        $videos = Video::All();
+        $videos = Video::Where("type", "spares")->get();
 
         $untrNews = News::paginate(3);
         $news = $this->translateCollection($untrNews ,app()->getLocale());

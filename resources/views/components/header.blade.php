@@ -185,7 +185,7 @@
                                             <ul class="sub-sub-list">
                                                 @foreach ($subtype->products as $product)
                                                     <li>
-                                                        <a href="{{ route('product-inner', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">
+                                                        <a href="{{ route('product', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">
                                                             {{ $product->title }}
                                                         </a>
                                                     </li>

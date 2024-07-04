@@ -26,7 +26,7 @@ class TypeServiceProvider extends ServiceProvider
     {
         // Share the 'types' variable with all views
         view()->composer('*', function ($view) {
-            $view->with('types', Type::all());
+            $view->with('types', Type::with('subtypes.products')->get());
         });
     }
 }

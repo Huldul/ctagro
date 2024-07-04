@@ -1707,14 +1707,15 @@
 }
 
 .gallery__container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 20px;
 }
 
 .gallery__container-img {
     position: relative;
-    padding: 22%;
+    padding: 33%;
     width: 100%;
 }
 
@@ -1815,6 +1816,7 @@
 
     .gallery__left {
         max-width: 100%;
+        flex-direction: column-reverse;
     }
 
     .gallery__left .gallery__container img {

@@ -133,7 +133,10 @@
     /* 20.8px */
     transition: 0.3s;
 }
-
+.nav__list li a img {
+    width: 22px;
+    height: 22px;
+}
 .nav__list li a:hover {
     color: #6EB513;
 }

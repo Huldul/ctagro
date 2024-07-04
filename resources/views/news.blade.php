@@ -33,7 +33,7 @@
                 <div class="news__card reviews__card">
                     <div class="news__img reviews__img">
                         <img src="{{ asset('storage/' . $item->image1) }}" alt="{{ $item->title }}">
-                        <span>{{ \Carbon\Carbon::parse($item->created_at)->format('d M. Y') }}</span>
+                        <span>{{ \Carbon\Carbon::parse($item->created_at)->translatedFormat('d M. Y') }}</span>
                     </div>
                     <h2>{{ $item->title }}</h2>
                     <a href="{{ url(app()->getLocale() . '/news-inner/' . $item->slug) }}">Подробнее</a>

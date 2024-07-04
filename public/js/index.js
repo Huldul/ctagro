@@ -118,7 +118,18 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+    const openSearch = document.querySelector('.search__btn');
+    const search = document.querySelector('.header__search form');
 
+    openSearch.addEventListener('click', () => {
+        search.classList.toggle('active');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!search.contains(event.target) && !openSearch.contains(event.target)) {
+            search.classList.remove('active');
+        }
+    });
 
     const newsSlider = new Swiper('.news__slider', {
 

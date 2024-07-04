@@ -84,37 +84,39 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    menuLinks.forEach((link) => {
-        const subMenu = link.nextElementSibling; // Find the next sibling element which is the submenu
-        let isFirstClick = true; // Track the click state
-        link.addEventListener('click', (event) => {
-            if (subMenu) {
-                if (isFirstClick) {
-                    event.preventDefault(); // Prevent the default link action
-                    subMenu.classList.toggle('active');
-                    isFirstClick = false;
-                } else {
-                    isFirstClick = true;
+    if(screen.width < 993) {
+        menuLinks.forEach((link) => {
+            const subMenu = link.nextElementSibling; // Find the next sibling element which is the submenu
+            let isFirstClick = true; // Track the click state
+            link.addEventListener('click', (event) => {
+                if (subMenu) {
+                    if (isFirstClick) {
+                        event.preventDefault(); // Prevent the default link action
+                        subMenu.classList.toggle('active');
+                        isFirstClick = false;
+                    } else {
+                        isFirstClick = true;
+                    }
                 }
-            }
+            });
         });
-    });
 
-    submenuLinks.forEach((link) => {
-        const subSubMenu = link.nextElementSibling; // Find the next sibling element which is the sub-submenu
-        let isFirstClick = true; // Track the click state
-        link.addEventListener('click', (event) => {
-            if (subSubMenu) {
-                if (isFirstClick) {
-                    event.preventDefault(); // Prevent the default link action
-                    subSubMenu.classList.toggle('active');
-                    isFirstClick = false;
-                } else {
-                    isFirstClick = true;
+        submenuLinks.forEach((link) => {
+            const subSubMenu = link.nextElementSibling; // Find the next sibling element which is the sub-submenu
+            let isFirstClick = true; // Track the click state
+            link.addEventListener('click', (event) => {
+                if (subSubMenu) {
+                    if (isFirstClick) {
+                        event.preventDefault(); // Prevent the default link action
+                        subSubMenu.classList.toggle('active');
+                        isFirstClick = false;
+                    } else {
+                        isFirstClick = true;
+                    }
                 }
-            }
+            });
         });
-    });
+    }
 
 
     const newsSlider = new Swiper('.news__slider', {

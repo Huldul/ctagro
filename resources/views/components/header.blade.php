@@ -169,10 +169,18 @@
                             <a class="menu-link" href="#">
                                 <img src="{{ asset("storage/{$svgPath}") }}" style="width: 22px; height: 22px;" alt="{{ $type->title }}">
                                 {{ $type->title }}
+                                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
+</svg>
                             </a>
                             <ul class="sub-list">
                                 <li>
-                                    <a class="submenu-link" href="/">Тракторы</a>
+                                    <a class="submenu-link" href="/">
+                                        Тракторы
+                                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
+</svg>
+                                    </a>
                                     <ul class="sub-sub-list">
                                     <li>
                                         <a href="#">название продукта</a>
@@ -180,7 +188,12 @@
                                 </ul>
                                 </li>
                                 <li>
-                                    <a class="submenu-link" href="#">Почвообработка</a>
+                                    <a class="submenu-link" href="#">
+                                        Почвообработка
+                                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
+</svg>
+                                    </a>
                                     <ul class="sub-sub-list">
                                     <li>
                                         <a href="#">название продукта</a>
@@ -216,7 +229,7 @@
                         <li>
                             <a href="{{ route('service', ['locale' => app()->getLocale()]) }}">
 
-                                <img src="{{asset("svg/service.svg")}}">
+                                <img src="{{asset("svg/service.png")}}">
                                 Сервис
                             </a>
                         </li>
@@ -228,7 +241,7 @@
                         </li>
                         <li>
                             <a href="{{setting('.link_engine')}}">
-                                <img src="{{asset("svg/engine.svg")}}">
+                                <img src="{{asset("svg/engine.jpg")}}">
                                 Ремонт двигателей
                             </a>
                         </li>

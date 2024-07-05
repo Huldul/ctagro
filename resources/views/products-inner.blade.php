@@ -19,7 +19,7 @@
                         </svg>
                     </li>
                     <li>Каталог</li>
-                    @dd($subtype)
+                    @dd($product)
 
                     @foreach ($breadcrumbs as $index => $breadcrumb)
                         @if ($breadcrumb['type'])

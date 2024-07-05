@@ -22,7 +22,7 @@
                     @if(isset($product->subtype))
                         @php
                             $subtype = $product->subtype;
-                            $parentSubtype = $subtype->subtype;
+                            $parentSubtype = $subtype->parentSubtype;
                             $type = $subtype->type;
                         @endphp
                         @if($type)
@@ -62,6 +62,7 @@
                     <li>{{ $product->title }}</li>
                 </ul>
             </div>
+
 
 
 

@@ -22,18 +22,22 @@
                     @php
                         $breadcrumbs = [];
                         $currentSubtype = $product->subtype;
+
                         while ($currentSubtype) {
                             $breadcrumbs[] = [
                                 'title' => $currentSubtype->title,
                                 'slug' => $currentSubtype->slug,
-                                'type' => $currentSubtype->type
+                                'parent' => $currentSubtype->subtype,
+                                'type' => $currentSubtype->type,
                             ];
                             $currentSubtype = $currentSubtype->subtype;
                         }
+
                         $breadcrumbs = array_reverse($breadcrumbs);
                     @endphp
+
                     @foreach ($breadcrumbs as $index => $breadcrumb)
-                        @if ($index === 0 && $breadcrumb['type'])
+                        @if ($breadcrumb['type'])
                             <li>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
@@ -60,6 +64,7 @@
                     <li>{{ $product->title }}</li>
                 </ul>
             </div>
+
 
 
 

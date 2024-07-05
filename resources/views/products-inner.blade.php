@@ -20,8 +20,8 @@
                     </li>
                     <li>Каталог</li>
                     @php
-                        $currentSubtype = $product->subtype;
                         $breadcrumbs = [];
+                        $currentSubtype = $product->subtype;
                     @endphp
                     @while($currentSubtype)
                         @php
@@ -50,7 +50,7 @@
                             </svg>
                         </li>
                         <li>
-                            <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => end($breadcrumbs)['type']->slug]) }}">{{ end($breadcrumbs)['type']->title }}</a>
+                            <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $breadcrumbs[0]['type']->slug]) }}">{{ $breadcrumbs[0]['type']->title }}</a>
                         </li>
                     @endif
                     <li>
@@ -61,6 +61,7 @@
                     <li>{{ $product->title }}</li>
                 </ul>
             </div>
+
 
 
             <section class="products-inner container">

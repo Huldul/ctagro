@@ -3149,7 +3149,9 @@
     background-color: #6EB513;
     color: #fff;
 }
-
+.service__left-text {
+    margin-bottom: 30px;
+}
 .service__right {
     max-width: 650px;
     max-height: 450px;

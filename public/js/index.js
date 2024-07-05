@@ -562,6 +562,18 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    const navContainers = document.querySelectorAll('.navigation__list-mob');
+
+    navContainers.forEach((container) => {
+        const navTitle = container.querySelector('.navigation__list-mob h3');
+        const navList = container.querySelector('.navigation__list');
+        const titleSvg = container.querySelector('.navigation__list-mob h3 svg');
+
+        navTitle.addEventListener('click', () => {
+            navList.classList.toggle('active');
+            titleSvg.classList.toggle('active');
+        });
+    });
 });
 
 

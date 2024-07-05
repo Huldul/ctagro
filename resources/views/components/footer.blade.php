@@ -3,7 +3,11 @@
         <div class="footer__top">
             <nav class="footer__navigation navigation">
             <div class="navigation__list-mob">
-                    <h3>О компании</h3>
+                    <h3>О компании
+                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
+</svg>
+                    </h3>
                     <ul class="navigation__list">
                     <li>
                         <a href="{{ route('about', ['locale' => app()->getLocale()]) }}">Миссия компании</a>

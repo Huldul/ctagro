@@ -1403,6 +1403,21 @@
     }
     .navigation__list-mob  {
         display: block;
+        border-bottom: 1px solid #fff;
+        max-width: 180px;
+        padding-bottom: 10px;
+    }
+    .navigation__list-mob h3 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    .navigation__list-mob h3 svg {
+        transform: rotate(90deg);
+    }
+    .navigation__list-mob h3 svg.active {
+        transform: rotate(270deg);
     }
     .navigation__list-mob .navigation__list {
         display: block;

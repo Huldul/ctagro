@@ -65,6 +65,7 @@
                             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}">
                         </div>
                         <span>{{ $product->title }}</span>
+                        @dd($product)
                     </a>
                 @endforeach
             @endif

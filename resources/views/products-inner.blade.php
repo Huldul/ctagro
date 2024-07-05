@@ -25,6 +25,16 @@
                             $parentSubtype = $subtype->subtype;
                             $type = $subtype->type;
                         @endphp
+                        @if($type)
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
+                                </svg>
+                            </li>
+                            <li>
+                                <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">{{ $type->title }}</a>
+                            </li>
+                        @endif
                         @if($parentSubtype)
                             <li>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,15 +43,6 @@
                             </li>
                             <li>
                                 <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $parentSubtype->slug]) }}">{{ $parentSubtype->title }}</a>
-                            </li>
-                        @else
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
-                                </svg>
-                            </li>
-                            <li>
-                                <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">{{ $type->title }}</a>
                             </li>
                         @endif
                         <li>
@@ -61,6 +62,7 @@
                     <li>{{ $product->title }}</li>
                 </ul>
             </div>
+
 
 
 

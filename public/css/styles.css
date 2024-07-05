@@ -1399,7 +1399,7 @@
 
 @media (max-width:992px) {
     .navigation {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         row-gap: 50px;
     }
 
@@ -1410,8 +1410,9 @@
     .navigation__list-mob {
         display: block;
         border-bottom: 1px solid #fff;
-        max-width: 180px;
+        max-width: 100%;
         padding-bottom: 10px;
+        height: fit-content;
     }
 
     .navigation__list-mob h3 {

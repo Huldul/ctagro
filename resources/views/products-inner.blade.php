@@ -19,25 +19,8 @@
                         </svg>
                     </li>
                     <li>Каталог</li>
-                    @php
-                        function buildBreadcrumbs($subtype) {
-                            $breadcrumbs = [];
-
-                            while ($subtype) {
-                                $breadcrumbs[] = [
-                                    'title' => $subtype->title,
-                                    'slug' => $subtype->slug,
-                                    'type' => $subtype->type,
-                                ];
-                                $subtype = $subtype->subtype;
-                            }
-
-                            return array_reverse($breadcrumbs);
-                        }
-
-                        $breadcrumbs = buildBreadcrumbs($product->subtype);
-                    @endphp
                     @dd($subtype)
+
                     @foreach ($breadcrumbs as $index => $breadcrumb)
                         @if ($breadcrumb['type'])
                             <li>

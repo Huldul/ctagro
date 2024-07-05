@@ -19,12 +19,14 @@
                         </svg>
                     </li>
                     <li>Каталог</li>
+
                     @if(isset($product->subtype))
                         @php
                             $subtype = $product->subtype;
-                            $parentSubtype = $subtype->parentSubtype;
                             $type = $subtype->type;
+                            $parentSubtype = $subtype->parentSubtype;
                         @endphp
+
                         @if($type)
                             <li>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,16 +37,23 @@
                                 <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">{{ $type->title }}</a>
                             </li>
                         @endif
+
                         @if($parentSubtype)
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
-                                </svg>
-                            </li>
-                            <li>
-                                <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $parentSubtype->slug]) }}">{{ $parentSubtype->title }}</a>
-                            </li>
+                            @while($parentSubtype)
+                                <li>
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
+                                    </svg>
+                                </li>
+                                <li>
+                                    <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $parentSubtype->slug]) }}">{{ $parentSubtype->title }}</a>
+                                </li>
+                                @php
+                                    $parentSubtype = $parentSubtype->parentSubtype;
+                                @endphp
+                            @endwhile
                         @endif
+
                         <li>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
@@ -54,6 +63,7 @@
                             <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $subtype->slug]) }}">{{ $subtype->title }}</a>
                         </li>
                     @endif
+
                     <li>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
@@ -62,6 +72,7 @@
                     <li>{{ $product->title }}</li>
                 </ul>
             </div>
+
 
 
 

@@ -358,7 +358,7 @@
 }
 .header-menu-icon {
     z-index: 150;
-    display: block;
+    display: none;
     position: relative;
     width: 30px;
     height: 18px;
@@ -412,6 +412,18 @@
     background-color: #050505;
 }
 @media (max-width:992px) {
+    .menu-open {
+        order: 3;
+    }
+    .header__logo-2 {
+        order: 4;
+    }
+    .header-menu-icon {
+        display: block;
+    }
+    .menu-open>span {
+        display: none;
+    }
     .header__nav.active {
         grid-template-columns: repeat(3, 1fr);
         row-gap: 30px;

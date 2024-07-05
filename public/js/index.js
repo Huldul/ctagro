@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     const openMenu = document.querySelector('.menu-open');
+    const openMenuSpan = document.querySelector('.menu-open span');
     const menuIcon = document.querySelector('.header-menu-icon');
     const menu = document.querySelector('.header__nav');
     const header = document.querySelector('.header');
@@ -10,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const navElements = document.querySelectorAll('.change-color');
     const menuLinks = document.querySelectorAll('.menu-link');
     const submenuLinks = document.querySelectorAll('.submenu-link');
+    const searchSvgPath = document.querySelectorAll('.search__btn svg path');
     let originalHeaderBg;
     let clickTimeout;
 
@@ -33,12 +35,16 @@ document.addEventListener('DOMContentLoaded', function () {
         menuIcon.classList.toggle('_active');
         if (header.classList.contains('active')) {
             originalHeaderBg = header.style.background;
+            openMenuSpan.textContent = 'закрыть';
             logoSvg.style.display = 'none';
             logoImg.style.display = 'block';
             otherLogo.style.fill = '#FF0100';
             header.style.backgroundColor = '#fff';
             header.style.height = 'auto';
             headerTop.classList.add('active');
+            searchSvgPath.forEach((path) => {
+                path.style.stroke = "#000"
+            });
             navElements.forEach((elem) => {
                 elem.style.color = '#000';
             });
@@ -57,9 +63,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function resetHeader() {
+        openMenuSpan.textContent = 'меню'
         logoSvg.style.display = 'block';
         logoImg.style.display = 'none';
         otherLogo.style.fill = '#fff';
+        searchSvgPath.forEach((path) => {
+            path.style.stroke = "#fff"
+        });
         header.style.backgroundColor = originalHeaderBg;
         if (window.scrollY > 100) {
             header.style.background = "#31312F";

@@ -18,49 +18,24 @@
                             <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
                         </svg>
                     </li>
-                    <li>Каталог</li>
+                    <li><a href="{{ route('catalog') }}">Каталог</a></li>
 
-                    @if(isset($product->subtype))
-                        @php
-                            $subtype = $product->subtype;
-                            $parentSubtype = $subtype->parentSubtype;
-                            $type = $subtype->type;
-                            $breadcrumbs = [];
-
-                            if ($type) {
-                                $breadcrumbs[] = ['title' => $type->title, 'slug' => $type->slug];
-                            }
-
-                            if ($parentSubtype) {
-                                $currentSubtype = $parentSubtype;
-                                while ($currentSubtype) {
-                                    $breadcrumbs[] = ['title' => $currentSubtype->title, 'slug' => $currentSubtype->slug];
-                                    $currentSubtype = $currentSubtype->parentSubtype;
-                                }
-                            }
-
-                            $breadcrumbs = array_reverse($breadcrumbs);
-                        @endphp
-
-                        @foreach($breadcrumbs as $breadcrumb)
-                            <li>
-                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
-                                </svg>
-                            </li>
-                            <li>
-                                <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $breadcrumb['slug']]) }}">{{ $breadcrumb['title'] }}</a>
-                            </li>
-                        @endforeach
-
+                    @if ($product->subtype->type)
                         <li>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
                             </svg>
                         </li>
+                        <li><a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $product->subtype->type->slug]) }}">{{ $product->subtype->type->title }}</a></li>
+                    @endif
+
+                    @if ($product->subtype)
                         <li>
-                            <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $subtype->slug]) }}">{{ $subtype->title }}</a>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
+                            </svg>
                         </li>
+                        <li><a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $product->subtype->slug]) }}">{{ $product->subtype->title }}</a></li>
                     @endif
 
                     <li>
@@ -71,14 +46,6 @@
                     <li>{{ $product->title }}</li>
                 </ul>
             </div>
-
-
-
-
-
-
-
-
 
 
             <section class="products-inner container">

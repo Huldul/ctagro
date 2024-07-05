@@ -57,7 +57,7 @@
             </a>
             <div class="header__nav-group">
                 <button class="menu-open change-color">
-                <span>меню</span>
+                <span>Меню</span>
                 <div class="header-menu-icon">
 			        <span></span>
 		        </div>

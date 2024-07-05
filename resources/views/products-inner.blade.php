@@ -22,18 +22,27 @@
                     @php
                         $breadcrumbs = [];
                         $currentSubtype = $product->subtype;
-                    @endphp
-                    @while($currentSubtype)
-                        @php
+                        while ($currentSubtype) {
                             $breadcrumbs[] = [
                                 'title' => $currentSubtype->title,
                                 'slug' => $currentSubtype->slug,
                                 'type' => $currentSubtype->type
                             ];
                             $currentSubtype = $currentSubtype->subtype;
-                        @endphp
-                    @endwhile
-                    @foreach(array_reverse($breadcrumbs) as $breadcrumb)
+                        }
+                        $breadcrumbs = array_reverse($breadcrumbs);
+                    @endphp
+                    @foreach ($breadcrumbs as $index => $breadcrumb)
+                        @if ($index === 0 && $breadcrumb['type'])
+                            <li>
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
+                                </svg>
+                            </li>
+                            <li>
+                                <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $breadcrumb['type']->slug]) }}">{{ $breadcrumb['type']->title }}</a>
+                            </li>
+                        @endif
                         <li>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
@@ -43,16 +52,6 @@
                             <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $breadcrumb['slug']]) }}">{{ $breadcrumb['title'] }}</a>
                         </li>
                     @endforeach
-                    @if(!empty($breadcrumbs))
-                        <li>
-                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
-                            </svg>
-                        </li>
-                        <li>
-                            <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $breadcrumbs[0]['type']->slug]) }}">{{ $breadcrumbs[0]['type']->title }}</a>
-                        </li>
-                    @endif
                     <li>
                         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
@@ -61,6 +60,7 @@
                     <li>{{ $product->title }}</li>
                 </ul>
             </div>
+
 
 
 

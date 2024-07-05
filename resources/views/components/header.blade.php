@@ -172,41 +172,62 @@
                         <h2>Техника</h2>
 
                         @foreach ($types as $type)
-                            @php
-                                $svgData = json_decode($type->svg, true);
-                                $svgPath = $svgData[0]['download_link'] ?? '';
-                            @endphp
-                            <li class="sub-item">
-                                <a class="menu-link" href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">
-                                    <img src="{{ asset("storage/{$svgPath}") }}" style="width: 22px; height: 22px;" alt="{{ $type->title }}">
-                                    {{ $type->title }}
-                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
-                                    </svg>
-                                </a>
-                                <ul class="sub-list">
-                                    @foreach ($type->subtypes as $subtype)
-                                        <li>
-                                            <a class="submenu-link" href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $subtype->slug]) }}">
-                                                {{ $subtype->title }}
-                                                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
-                                                </svg>
-                                            </a>
-                                            <ul class="sub-sub-list">
-                                                @foreach ($subtype->products as $product)
-                                                    <li>
-                                                        <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">
-                                                            {{ $product->title }}
-                                                        </a>
-                                                    </li>
-                                                @endforeach
-                                            </ul>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </li>
-                        @endforeach
+                        @php
+                            $svgData = json_decode($type->svg, true);
+                            $svgPath = $svgData[0]['download_link'] ?? '';
+                        @endphp
+                        <li class="sub-item">
+                            <a class="menu-link" href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">
+                                <img src="{{ asset("storage/{$svgPath}") }}" style="width: 22px; height: 22px;" alt="{{ $type->title }}">
+                                {{ $type->title }}
+                                <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
+                                </svg>
+                            </a>
+                            <ul class="sub-list">
+                                @foreach ($type->subtypes as $subtype)
+                                    <li>
+                                        <a class="submenu-link" href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $subtype->slug]) }}">
+                                            {{ $subtype->title }}
+                                            <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
+                                            </svg>
+                                        </a>
+                                        <ul class="sub-sub-list">
+                                            @foreach ($subtype->subtypes as $nestedSubtype)
+                                                <li>
+                                                    <a class="submenu-link" href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $nestedSubtype->slug]) }}">
+                                                        {{ $nestedSubtype->title }}
+                                                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
+                                                        </svg>
+                                                    </a>
+                                                    <ul class="sub-sub-list">
+                                                        @foreach ($nestedSubtype->products as $product)
+                                                            <li>
+                                                                <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">
+                                                                    {{ $product->title }}
+                                                                </a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                        <ul class="sub-sub-list">
+                                            @foreach ($subtype->products as $product)
+                                                <li>
+                                                    <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">
+                                                        {{ $product->title }}
+                                                    </a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </li>
+                    @endforeach
 
 
 

@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -11,7 +10,9 @@ class Subtype extends Model
 {
     use HasFactory;
     use Translatable;
+
     protected $translatable = ['title', 'subtitle', 'main', 'seo_title', 'seo_subtitle', 'seo_keywords'];
+
     public static function boot(){
         parent::boot();
 
@@ -25,12 +26,24 @@ class Subtype extends Model
             $model->slug = Subtype::where('slug', '!=', $model->slug)->where('slug', $slug)->exists() ? $slug.'-'.uniqid() : $slug;
         });
     }
+
     public function products()
     {
         return $this->hasMany(Product::class);
     }
+
     public function type()
     {
         return $this->belongsTo(Type::class);
+    }
+
+    public function parentSubtype()
+    {
+        return $this->belongsTo(Subtype::class, 'subtype_id');
+    }
+
+    public function subtypes()
+    {
+        return $this->hasMany(Subtype::class, 'subtype_id');
     }
 }

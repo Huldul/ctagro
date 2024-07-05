@@ -49,24 +49,24 @@
     </div>
     <section class="products container">
         <div class="products__wrapper">
-            @if($subtype->subtypes->isNotEmpty())
-            @foreach ($subtype->subtypes as $subsubtype)
-            <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $subsubtype->slug]) }}" class="catalog-inner__card">
-                <div class="catalog-inner__img">
-                    <img src="{{ asset('storage/' . $subsubtype->image) }}" alt="{{ $subsubtype->title }}">
-                </div>
-                <span>{{ $subsubtype->title }}</span>
-            </a>
-            @endforeach
+            @if($subtype->subtypes && $subtype->subtypes->count() > 0)
+                @foreach ($subtype->subtypes as $subsubtype)
+                    <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $subsubtype->slug]) }}" class="catalog-inner__card">
+                        <div class="catalog-inner__img">
+                            <img src="{{ asset('storage/' . $subsubtype->image) }}" alt="{{ $subsubtype->title }}">
+                        </div>
+                        <span>{{ $subsubtype->title }}</span>
+                    </a>
+                @endforeach
             @else
-            @foreach ($products as $product)
-            <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}" class="catalog-inner__card">
-                <div class="catalog-inner__img">
-                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}">
-                </div>
-                <span>{{ $product->title }}</span>
-            </a>
-            @endforeach
+                @foreach ($products as $product)
+                    <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}" class="catalog-inner__card">
+                        <div class="catalog-inner__img">
+                            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}">
+                        </div>
+                        <span>{{ $product->title }}</span>
+                    </a>
+                @endforeach
             @endif
         </div>
         <h3 class="title">{{ $subtype->subtitle }}</h3>

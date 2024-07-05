@@ -4,9 +4,9 @@
             <nav class="footer__navigation navigation">
             <div class="navigation__list-mob">
                     <h3>О компании
-                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
-</svg>
+                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
+                        </svg>
                     </h3>
                     <ul class="navigation__list">
                     <li>
@@ -56,6 +56,29 @@
                         <a href="{{ route('reviews', ['locale' => app()->getLocale()]) }}">Отзывы</a>
                     </li>
                 </ul>
+                <div class="navigation__list-mob">
+                    <h3>Техника
+                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
+                        </svg>
+                    </h3>
+                    <ul class="navigation__list">
+                    @foreach ($types as $type)
+                    <li>
+                        <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">{{ $type->title }}</a>
+                    </li>
+                    @endforeach
+                    {{-- <li>
+                        <a href="./catalog-inner.html">Техника для овощеводства</a>
+                    </li>
+                    <li>
+                        <a href="./catalog-inner.html">Орошение</a>
+                    </li> --}}
+                    <li>
+                        <a href="{{ route('catalog-library', ['locale' => app()->getLocale()]) }}">Библиотека каталогов</a>
+                    </li>
+                    </ul>
+                </div>
                 <ul class="navigation__list">
                     <h3>Техника</h3>
                     @foreach ($types as $type)
@@ -73,6 +96,24 @@
                         <a href="{{ route('catalog-library', ['locale' => app()->getLocale()]) }}">Библиотека каталогов</a>
                     </li>
                 </ul>
+                <div class="navigation__list-mob">
+                    <h3>Запчасти и сервис
+                         <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
+                        </svg>
+                    </h3>
+                    <ul class="navigation__list">
+                    <li>
+                        <a href="{{ route('service', ['locale' => app()->getLocale()]) }}">Сервис</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('spares', ['locale' => app()->getLocale()]) }}">Запасные части</a>
+                    </li>
+                    <li>
+                        <a href="#">Ремонт двигателей</a>
+                    </li>
+                    </ul>
+                </div>
                 <ul class="navigation__list">
                     <h3>Запчасти и сервис</h3>
                     <li>

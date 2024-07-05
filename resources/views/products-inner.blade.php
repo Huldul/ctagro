@@ -20,20 +20,22 @@
                     </li>
                     <li>Каталог</li>
                     @php
-                        $breadcrumbs = [];
-                        $currentSubtype = $product->subtype;
+                        function buildBreadcrumbs($subtype) {
+                            $breadcrumbs = [];
 
-                        while ($currentSubtype) {
-                            $breadcrumbs[] = [
-                                'title' => $currentSubtype->title,
-                                'slug' => $currentSubtype->slug,
-                                'parent' => $currentSubtype->subtype,
-                                'type' => $currentSubtype->type,
-                            ];
-                            $currentSubtype = $currentSubtype->subtype;
+                            while ($subtype) {
+                                $breadcrumbs[] = [
+                                    'title' => $subtype->title,
+                                    'slug' => $subtype->slug,
+                                    'type' => $subtype->type,
+                                ];
+                                $subtype = $subtype->subtype;
+                            }
+
+                            return array_reverse($breadcrumbs);
                         }
 
-                        $breadcrumbs = array_reverse($breadcrumbs);
+                        $breadcrumbs = buildBreadcrumbs($product->subtype);
                     @endphp
 
                     @foreach ($breadcrumbs as $index => $breadcrumb)
@@ -64,6 +66,7 @@
                     <li>{{ $product->title }}</li>
                 </ul>
             </div>
+
 
 
 

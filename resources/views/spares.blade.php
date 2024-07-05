@@ -59,9 +59,11 @@
                 <img src="{{ asset("storage/".$page->image2) }}" alt="">
             </div>
             <div class="service__left">
-                <h2 class="title">{{ $page->subtitle2 }}</h2>
+            <div class="service__left-text">
+            <h2 class="title">{{ $page->subtitle2 }}</h2>
                 {!! $page->main2 !!}
                 <p class="hidden-text">{{ $page->desc2 }}</p>
+            </div>
                 <button class="more-btn">Подробнее</button>
             </div>
         </div>

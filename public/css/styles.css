@@ -3120,6 +3120,9 @@
     list-style: disc;
     margin-left: 20px;
 }
+.service__left-text {
+    margin-bottom: 30px;
+}
 .service__left .hidden-text {
     margin-bottom: 30px;
 }

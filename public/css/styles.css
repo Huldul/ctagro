@@ -1390,13 +1390,30 @@
     display: block;
     margin-left: auto;
 }
-
+.navigation__list-mob {
+    display: none;
+}
 @media (max-width:992px) {
     .navigation {
         grid-template-columns: repeat(3, 1fr);
         row-gap: 50px;
     }
-
+    .navigation__list {
+        display: none;
+    }
+    .navigation__list-mob  {
+        display: block;
+    }
+    .navigation__list-mob .navigation__list {
+        display: block;
+        height: 0;
+        overflow: hidden;
+        transition: .3s;
+    }
+    .navigation__list-mob .navigation__list.active {
+        height: auto;
+        overflow: auto;
+    }
     .navigation__list:not(:first-child) {
         margin-left: 0;
     }

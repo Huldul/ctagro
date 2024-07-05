@@ -2,6 +2,32 @@
     <div class="footer__wrapper container">
         <div class="footer__top">
             <nav class="footer__navigation navigation">
+            <div class="navigation__list-mob">
+                    <h3>О компании</h3>
+                    <ul class="navigation__list">
+                    <li>
+                        <a href="{{ route('about', ['locale' => app()->getLocale()]) }}">Миссия компании</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('partners', ['locale' => app()->getLocale()]) }}">Наши партнеры</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('offers', ['locale' => app()->getLocale()]) }}">Спецпредложения</a>
+                    </li>
+                    <li>
+                        <a href="{{setting('site.ct_assembly')}}">Сборочное предприятие CTAssembly</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('news', ['locale' => app()->getLocale()]) }}">Новости</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('media', ['locale' => app()->getLocale()]) }}">Пресса о нас</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('reviews', ['locale' => app()->getLocale()]) }}">Отзывы</a>
+                    </li>
+                    </ul>
+                </div>
                 <ul class="navigation__list">
                     <h3>О компании</h3>
                     <li>

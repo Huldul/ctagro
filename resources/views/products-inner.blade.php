@@ -37,7 +37,7 @@
 
                         $breadcrumbs = buildBreadcrumbs($product->subtype);
                     @endphp
-
+                    @dd($subtype)
                     @foreach ($breadcrumbs as $index => $breadcrumb)
                         @if ($breadcrumb['type'])
                             <li>

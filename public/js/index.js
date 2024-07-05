@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
         menuIcon.classList.toggle('_active');
         if (header.classList.contains('active')) {
             originalHeaderBg = header.style.background;
-            openMenuSpan.textContent = 'закрыть';
+            openMenuSpan.textContent = 'Закрыть';
             logoSvg.style.display = 'none';
             logoImg.style.display = 'block';
             otherLogo.style.fill = '#FF0100';
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function resetHeader() {
-        openMenuSpan.textContent = 'меню'
+        openMenuSpan.textContent = 'Меню'
         logoSvg.style.display = 'block';
         logoImg.style.display = 'none';
         otherLogo.style.fill = '#fff';

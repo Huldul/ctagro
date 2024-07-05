@@ -29,7 +29,7 @@ class ProductController extends Controller
     }
     public function show($locale, $slug){
         // Получаем текущий продукт по его slug
-        $untrProduct = Product::where('slug', $slug)->firstOrFail();
+        $untrProduct = Product::with('subtype.parentSubtype.type')->where('slug', $slug)->firstOrFail();
 
         // Получаем все продукты из той же категории, исключая текущий продукт
         $untrProducts = Product::where('subtype_id', $untrProduct->subtype_id)
@@ -53,6 +53,7 @@ class ProductController extends Controller
             'videos' => $videos,
         ]);
     }
+
 
 
 

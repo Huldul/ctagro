@@ -23,36 +23,35 @@
                     @if(isset($product->subtype))
                         @php
                             $subtype = $product->subtype;
-                            $type = $subtype->type;
                             $parentSubtype = $subtype->parentSubtype;
+                            $type = $subtype->type;
+                            $breadcrumbs = [];
+
+                            if ($type) {
+                                $breadcrumbs[] = ['title' => $type->title, 'slug' => $type->slug];
+                            }
+
+                            if ($parentSubtype) {
+                                $currentSubtype = $parentSubtype;
+                                while ($currentSubtype) {
+                                    $breadcrumbs[] = ['title' => $currentSubtype->title, 'slug' => $currentSubtype->slug];
+                                    $currentSubtype = $currentSubtype->parentSubtype;
+                                }
+                            }
+
+                            $breadcrumbs = array_reverse($breadcrumbs);
                         @endphp
 
-                        @if($type)
+                        @foreach($breadcrumbs as $breadcrumb)
                             <li>
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
                                 </svg>
                             </li>
                             <li>
-                                <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">{{ $type->title }}</a>
+                                <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $breadcrumb['slug']]) }}">{{ $breadcrumb['title'] }}</a>
                             </li>
-                        @endif
-
-                        @if($parentSubtype)
-                            @while($parentSubtype)
-                                <li>
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
-                                    </svg>
-                                </li>
-                                <li>
-                                    <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $parentSubtype->slug]) }}">{{ $parentSubtype->title }}</a>
-                                </li>
-                                @php
-                                    $parentSubtype = $parentSubtype->parentSubtype;
-                                @endphp
-                            @endwhile
-                        @endif
+                        @endforeach
 
                         <li>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">

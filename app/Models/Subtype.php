@@ -47,3 +47,4 @@ class Subtype extends Model
         return $this->hasMany(Subtype::class, 'subtype_id');
     }
 }
+

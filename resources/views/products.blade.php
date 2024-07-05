@@ -5,7 +5,7 @@
             <section class="first__block">
                 <img src="{{asset("img/first-block-img.png")}}" alt="">
                 <div class="first__block-wrapper container">
-                    <h1>{{ $subtype->itle }}</h1>
+                    <h1>{{ $subtype->title }}</h1>
                 </div>
             </section>
             <div class="breadcrumbs container">
@@ -36,20 +36,29 @@
             </div>
             <section class="products container">
                 <div class="products__wrapper">
-                   @foreach ($products as $product)
-                     <div class="products__card">
-                         <div class="products__img">
-                             <img src="{{ asset('storage/' . $product->image) }}" alt="">
-                         </div>
-                         <h2>{{$product->title}}</h2>
-                         <span>{{$product->hp}}</span>
-                         <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">Подробнее</a>
-                     </div>
-                   @endforeach
+                   @if($subtype->subtypes->isNotEmpty())
+                       @foreach ($subtype->subtypes as $subsubtype)
+                            <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $subsubtype->slug]) }}" class="catalog-inner__card">
+                                <div class="catalog-inner__img">
+                                    <img src="{{ asset('storage/' . $subsubtype->image) }}" alt="{{ $subsubtype->title }}">
+                                </div>
+                                <span>{{ $subsubtype->title }}</span>
+                            </a>
+                        @endforeach
+                   @else
+                       @foreach ($products as $product)
+                            <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}" class="catalog-inner__card">
+                                <div class="catalog-inner__img">
+                                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}">
+                                </div>
+                                <span>{{ $product->title }}</span>
+                            </a>
+                       @endforeach
+                   @endif
                 </div>
                 <h3 class="title">{{$subtype->subtitle}}</h3>
                 {!!$subtype->main!!}
             </section>
             @include('components.form')
         </main>
-        @endsection
+@endsection

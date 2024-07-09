@@ -248,18 +248,21 @@ document.addEventListener('DOMContentLoaded', function () {
         const moreBtn = container.querySelector('.more-btn');
         const moreText = container.querySelector('.hidden-text');
         const btn = container.querySelector('.products-inner__btn');
+        const rightBlock = container.querySelector('.service__right');
 
         if (moreBtn && moreText) {
             moreBtn.addEventListener('click', () => {
                 if (!moreText.classList.contains('active')) {
                     moreText.classList.add('active');
                     moreBtn.textContent = 'Скрыть';
+                    rightBlock.style.height = 'auto';
                     if (btn) {  // Проверка на наличие btn
                         btn.classList.add('active');
                     }
                 } else {
                     moreText.classList.remove('active');
                     moreBtn.textContent = 'Подробнее';
+                    rightBlock.style.height = '550px';
                     if (btn) {  // Проверка на наличие btn
                         btn.classList.remove('active');
                     }
@@ -575,17 +578,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-
-    const blockContainers = document.querySelectorAll('.about__container');
-    blockContainers.forEach((container) => {
-        const rightBlock = container.querySelector('.service__right');
-        const hiddenText = container.querySelector('.hidden-text');
-            if (!hiddenText.classList.contains('active')) {
-                rightBlock.style.height = 'auto';
-            } else {
-                rightBlock.style.height = '550px';
-            }
-        });
 });
 
 

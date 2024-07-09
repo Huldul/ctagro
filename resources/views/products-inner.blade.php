@@ -222,7 +222,7 @@
                             <img src="{{asset("storage/".$item->image)}}" alt="">
                             <div class="products-inner__content">
                                 <p>{{$item->title}}</p>
-                                <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $item->slug]) }}">Подробнее</a>
+                                <a href="{{$item->link}}">Подробнее</a>
                             </div>
                         </div>
                     @endforeach

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AboutPage;
+use App\Models\AdvNews;
 use App\Models\Brand;
 use App\Models\CustomPage;
 use App\Models\LibraryPdf;
@@ -200,7 +201,7 @@ class PageController extends Controller
 
         $videos = Video::Where("type", "service")->get();
 
-        $untrNews = News::paginate(3);
+        $untrNews = AdvNews::where('type', 'service');
         $news = $this->translateCollection($untrNews ,app()->getLocale());
         return view('service', [
             'page'=>$page,
@@ -214,7 +215,7 @@ class PageController extends Controller
 
         $videos = Video::Where("type", "spares")->get();
 
-        $untrNews = News::paginate(3);
+        $untrNews = AdvNews::where('type', 'spares');
         $news = $this->translateCollection($untrNews ,app()->getLocale());
 
         return view('spares', [

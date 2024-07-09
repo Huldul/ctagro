@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AdvNews;
 use App\Models\Product;
 use App\Models\Video;
 use Illuminate\Http\Request;
@@ -32,10 +33,7 @@ class ProductController extends Controller
         $untrProduct = Product::with('subtype.parentSubtype.type')->where('slug', $slug)->firstOrFail();
 
         // Получаем все продукты из той же категории, исключая текущий продукт
-        $untrProducts = Product::where('subtype_id', $untrProduct->subtype_id)
-                               ->where('id', '!=', $untrProduct->id)
-                               ->orderBy('created_at', 'desc')
-                               ->paginate(3);
+        $untrProducts = AdvNews::where('type', 'products');
 
         // Переводим коллекцию продуктов
         $products = $this->translateCollection($untrProducts, app()->getLocale());

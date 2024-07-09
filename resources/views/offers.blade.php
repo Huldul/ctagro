@@ -44,7 +44,8 @@
                 </div>
             </section>
             <div class="pagination container">
-                {{ $offers->links() }}
+                {{ $offers->links('vendor.pagination.custom') }}
             </div>
+
         </main>
         @endsection

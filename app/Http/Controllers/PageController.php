@@ -74,7 +74,7 @@ class PageController extends Controller
         ]);
     }
     public function offers(){
-        $untrOff = Offer::paginate(4);
+        $untrOff = Offer::paginate(4)->withPath(route('views.vendor.pagination.custom'));
         $offers = $this->translateCollection($untrOff ,app()->getLocale());
         return view('offers', [
             'offers'=>$offers,

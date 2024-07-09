@@ -7,7 +7,7 @@
             <h1>Онлайн каталог</h1>
         </div>
     </section>
-    <div class="_df_book" id="dflip-container" src="/catalog_ctagro.pdf"></div>
+    <div class="flipbook" id="flipbook"></div>
 </main>
 
 @endsection

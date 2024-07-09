@@ -255,14 +255,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!moreText.classList.contains('active')) {
                     moreText.classList.add('active');
                     moreBtn.textContent = 'Скрыть';
-                    rightBlock.style.height = 'auto';
+                    rightBlock.style.height = '550px';
                     if (btn) {  // Проверка на наличие btn
                         btn.classList.add('active');
                     }
                 } else {
                     moreText.classList.remove('active');
                     moreBtn.textContent = 'Подробнее';
-                    rightBlock.style.height = '550px';
+                    rightBlock.style.height = 'auto';
                     if (btn) {  // Проверка на наличие btn
                         btn.classList.remove('active');
                     }

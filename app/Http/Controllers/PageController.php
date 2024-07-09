@@ -201,7 +201,7 @@ class PageController extends Controller
 
         $videos = Video::Where("type", "service")->get();
 
-        $untrNews = AdvNews::where('type', 'service');
+        $untrNews = AdvNews::where('type', 'service')->paginate(99);
         $news = $this->translateCollection($untrNews ,app()->getLocale());
         return view('service', [
             'page'=>$page,
@@ -215,7 +215,7 @@ class PageController extends Controller
 
         $videos = Video::Where("type", "spares")->get();
 
-        $untrNews = AdvNews::where('type', 'spares');
+        $untrNews = AdvNews::where('type', 'spares')->paginate(99);
         $news = $this->translateCollection($untrNews ,app()->getLocale());
 
         return view('spares', [

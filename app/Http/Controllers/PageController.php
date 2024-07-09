@@ -51,6 +51,12 @@ class PageController extends Controller
             "inner_type"=>$inner_type,
         ]);
     }
+    public function catalog_brand(){
+        $inner_types = LibraryPdf::where('type', 'brand')->paginate(16);
+        return view('catalog-brand', [
+            'inner_types'=>$inner_types
+        ]);
+    }
     public function partners(){
         $untrPart = Partner::paginate(16);
         $partners = $this->translateCollection($untrPart ,app()->getLocale());
@@ -170,13 +176,6 @@ class PageController extends Controller
         $inner_types = $this->translateCollection($untrTypes ,app()->getLocale());
         return view('catalog', [
             'inner_types'=>$inner_types
-        ]);
-    }
-    public function catalog_brand(){
-        $untrBrand= Brand::paginate(12);
-        $inner_brands = $this->translateCollection($untrBrand ,app()->getLocale());
-        return view('catalog-brand', [
-            'inner_brands'=>$inner_brands
         ]);
     }
     public function catalog_brand_inner($locale, $slug) {

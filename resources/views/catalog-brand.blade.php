@@ -24,7 +24,7 @@
     </div>
     <section class="catalog-brand container">
         <div class="catalog-library__btn">
-            <a href="{{ route('catalog-library', ['locale' => app()->getLocale()]) }}">Общие каталоги</a>
+            <a href="{{ route('library_online', ['locale' => app()->getLocale()]) }}">Общие каталоги</a>
             <a class="active" href="#">Каталоги по брендам</a>
         </div>
         <div class="catalog-brand__wrapper">

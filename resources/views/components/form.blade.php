@@ -31,8 +31,12 @@
                 <div class="select-wrapp">
                                     <select name="message" id="message" required>
                                         <option value="" disabled selected>Тема</option>
-                                        <option value="lorem">lorem</option>
-                                        <option value="Other">Другое</option>
+                                        <option value="lorem">сельхозтехника</option>
+                                        <option value="lorem">овощеводство</option>
+                                        <option value="lorem">орошение</option>
+                                        <option value="lorem">сервис</option>
+                                        <option value="lorem">запасные части</option>
+                                        <option value="Other">другое</option>
                                     </select>
                                 </div>
                     <textarea rows="1" name="text" placeholder="Сообщение"></textarea>

@@ -213,7 +213,7 @@
                 </span>
                 <span>{{setting('.copiright')}}</span>
                 <span>Сайт разработан <a href="https://astanacreative.kz/"> Astana Creative</a></span>
-                <a href="{{ route('policy', ['locale' => app()->getLocale()]) }}"><img class="footer-img" src="./svg/icon.svg" alt=""></a>
+                <a href="{{ route('policy', ['locale' => app()->getLocale()]) }}"><img class="footer-img" src="{{asset("svg/icon.svg")}}" alt=""></a>
             </div>
         </div>
     </div>

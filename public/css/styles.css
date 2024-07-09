@@ -2836,11 +2836,14 @@
     }
 }
 
+
 @media (max-width:540px) {
     .products__wrapper {
         grid-template-columns: repeat(1, 1fr);
     }
-
+    .products-inner__video-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
     .products-inner__wrapp table thead th div span {
         font-size: 14px;
     }

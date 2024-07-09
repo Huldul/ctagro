@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <!-- <link rel="stylesheet" href="/js/dflip/css/dflip.min.css">
     <link rel="stylesheet" href="/js/dflip/css/themify-icons.min.css"> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.css">
+    <link rel="stylesheet" href="{{asset("css/jquery.fancybox.css")}}">
     <link rel="stylesheet" href="{{asset("css/main.css")}}">
-    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.36">
+    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.37">
 </head>
 
 <body>
@@ -163,15 +163,28 @@
     <script src="{{asset("js/turn.min.js")}}"></script>
 
 <!-- Подключение PDF.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script>
-    <!-- <script src="{{asset("js/dflip/js/libs/jquery.min.js")}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="{{asset("js/dflip/js/dflip.min.js")}}"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script> -->
+    <script src="{{asset("js/dflip/js/libs/pdf.min.js")}}"></script>
+    <script src="{{asset("js/dflip/js/libs/pdf.worker.min.js")}}"></script>
+    <script src="{{asset("js/dflip/js/dflip.min.js")}}"></script>
+    <script>
 
+			var dFlipLocation = 'https://sm.limestone.kz/js/dflip/';
+        	$(document).ready(function() {
+        	        $('#report_1').html('');
+        	        let pdf = $('#report_1').data('file');
+        	        let options = {
+        	            height: 600,
+        	            webgl: false
+        	        };
+        	        let flipBook = $('#report_1').flipBook(pdf, options);
+        	});
+
+    </script>
     <script src="{{asset("js/jquery.maskedinput.min.js")}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{asset("js/index.js")}}?v=1.24"></script>
+    <script src="{{asset("js/index.js")}}?v=1.25"></script>
 </body>
 
 </html>

@@ -78,9 +78,15 @@ class ProductController extends Controller
         }
 
         // Если передана не пагинация, а обычная коллекция, то просто возвращаем её транслированный вариант.
-        return $paginator->map(function ($item) use ($lang) {
-            return $item->translate($lang);
-        });
+        if ($paginator instanceof \Illuminate\Support\Collection) {
+            return $paginator->map(function ($item) use ($lang) {
+                return $item->translate($lang);
+            });
+        }
+
+        // Если передан не объект пагинации и не коллекция, вызываем исключение или возвращаем как есть
+        throw new \InvalidArgumentException('Expected LengthAwarePaginator, Paginator, or Collection');
     }
+
 
 }

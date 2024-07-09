@@ -84,9 +84,10 @@ class ProductController extends Controller
             });
         }
 
-        // Если передан не объект пагинации и не коллекция, вызываем исключение или возвращаем как есть
+        // Если передан не объект пагинации и не коллекция, вызываем исключение.
         throw new \InvalidArgumentException('Expected LengthAwarePaginator, Paginator, or Collection');
     }
+
 
 
 }

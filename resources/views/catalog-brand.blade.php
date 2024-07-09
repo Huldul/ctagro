@@ -28,12 +28,12 @@
             <a class="active" href="#">Каталоги по брендам</a>
         </div>
         <div class="catalog-brand__wrapper">
-            @foreach ($inner_brands as $inner_brand)
+            @foreach ($inner_types as $inner_type)
                 <a href="{{ route('catalog-online', ['locale' => app()->getLocale(), 'slug' => $inner_type->slug]) }}" class="catalog-brand__card">
                     <div class="catalog-brand__card-img">
-                        <img src="{{ asset('storage/' . $inner_brand->image) }}" alt="{{ $inner_brand->title }}">
+                        <img src="{{ asset('storage/' . $inner_type->image) }}" alt="{{ $inner_type->title }}">
                     </div>
-                    <span>{{ $inner_brand->title }}</span>
+                    <span>{{ $inner_type->title }}</span>
                 </a>
             @endforeach
         </div>

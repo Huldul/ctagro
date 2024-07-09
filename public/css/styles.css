@@ -2648,7 +2648,7 @@
     grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
     row-gap: 40px;
-    margin-top: 40px;
+    margin-top: 80px;
 }
 
 .products-inner-video video,
@@ -2659,7 +2659,7 @@
 
 .products-inner__card {
     position: relative;
-    margin-top: 80px;
+   height: 100%;
 }
 
 .products-inner__card::after {

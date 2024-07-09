@@ -36,12 +36,15 @@ class PageController extends Controller
             'page'=>$page,
         ]);
     }
-    public function library_online(){
-        $inner_types = LibraryPdf::Where('type', 'all')->get();
+    public function library_online()
+    {
+        $inner_types = LibraryPdf::where('type', 'all')->paginate(16);
+
         return view('catalog-library', [
-            "inner_types"=>$inner_types,
+            "inner_types" => $inner_types,
         ]);
     }
+
     public function catalog_online($locale,$slug){
         $inner_type = LibraryPdf::Where('slug', $slug)->first();
         return view('catalog-online', [

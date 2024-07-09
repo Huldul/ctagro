@@ -155,7 +155,7 @@ class PageController extends Controller
     public function catalog_library(){
         $untrTypes = Type::paginate(12);
         $inner_types = $this->translateCollection($untrTypes ,app()->getLocale());
-        return view('catalog-library', [
+        return view('catalog', [
             'inner_types'=>$inner_types
         ]);
     }

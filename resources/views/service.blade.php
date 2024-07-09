@@ -32,7 +32,7 @@
                     <div class="service__left">
                         <h2 class="title">{{ $page->subtitle1 }}</h2>
                         {!! $page->main1 !!}
-                        <p class="hidden-text">{!! $page->desc1 !!}</p>
+                        <div class="hidden-text">{!! $page->desc1 !!}</div>
                         <button class="more-btn">Подробнее</button>
                     </div>
                     <div class="service__right">
@@ -62,7 +62,7 @@
                     <div class="service__left">
                         <h2 class="title">{{ $page->subtitle2 }}</h2>
                         {!! $page->main2 !!}
-                        <p class="hidden-text">{!! $page->desc2 !!}</p>
+                        <div class="hidden-text">{!! $page->desc2 !!}</div>
                         <button class="more-btn">Подробнее</button>
                     </div>
                 </div>

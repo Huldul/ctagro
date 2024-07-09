@@ -31,11 +31,11 @@
                 <div class="select-wrapp">
                                     <select name="message" id="message" required>
                                         <option value="" disabled selected>Тема</option>
-                                        <option value="lorem">сельхозтехника</option>
-                                        <option value="lorem">овощеводство</option>
-                                        <option value="lorem">орошение</option>
-                                        <option value="lorem">сервис</option>
-                                        <option value="lorem">запасные части</option>
+                                        <option value="selhoztehnika">сельхозтехника</option>
+                                        <option value="ovoshevodstvo">овощеводство</option>
+                                        <option value="oroshenie">орошение</option>
+                                        <option value="servis">сервис</option>
+                                        <option value="zapasnyse chasti">запасные части</option>
                                         <option value="Other">другое</option>
                                     </select>
                                 </div>

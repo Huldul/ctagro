@@ -574,6 +574,59 @@ document.addEventListener('DOMContentLoaded', function () {
             titleSvg.classList.toggle('active');
         });
     });
+
+
+    const blockContainers = document.querySelectorAll('.about__container');
+    blockContainers.forEach((container) => {
+        const rightBlock = container.querySelector('.service__right');
+        const hiddenText = container.querySelector('.hidden-text');
+        if(!rightBlock || !hiddenText) {
+            return; }
+            if (!hiddenText.classList.contains('active')) {
+                rightBlock.style.height = 'auto';
+            } else {
+                rightBlock.style.height = '100%';
+            }
+        });
+
+
+
+
+     const url = '/resources/views/catalog_ctagro.pdf'; // Укажите путь к вашему PDF файлу
+
+    pdfjsLib.getDocument(url).promise.then(function (pdf) {
+        const flipbook = document.getElementById('flipbook');
+
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+            pdf.getPage(pageNum).then(function (page) {
+                const viewport = page.getViewport({ scale: 1.5 });
+                const canvas = document.createElement('canvas');
+                const context = canvas.getContext('2d');
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+                page.render(renderContext).promise.then(function () {
+                    const pageDiv = document.createElement('div');
+                    pageDiv.className = 'page';
+                    pageDiv.appendChild(canvas);
+                    flipbook.appendChild(pageDiv);
+
+                    if (pageNum === pdf.numPages) {
+                        // Инициализация Turn.js после добавления всех страниц
+                        $(flipbook).turn({
+                            width: viewport.width * 2,
+                            height: viewport.height,
+                            autoCenter: true
+                        });
+                    }
+                });
+            });
+        }
+    });
 });
 
 

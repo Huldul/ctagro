@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Миссия компании</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="/js/dflip/css/dflip.min.css">
-    <link rel="stylesheet" href="/js/dflip/css/themify-icons.min.css">
+    <!-- <link rel="stylesheet" href="/js/dflip/css/dflip.min.css">
+    <link rel="stylesheet" href="/js/dflip/css/themify-icons.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.css">
     <link rel="stylesheet" href="{{asset("css/main.css")}}">
     <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.36">
 </head>
@@ -158,13 +159,19 @@
             <iframe id="popup-video" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
     </div>
-    <!-- <script src="{{asset("js/jquery-3.6.0.min.js")}}"></script> -->
-    <script src="{{asset("js/dflip/js/libs/jquery.min.js")}}"></script>
+    <script src="{{asset("js/jquery-3.6.0.min.js")}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+
+<!-- Подключение PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script>
+    <!-- <script src="{{asset("js/dflip/js/libs/jquery.min.js")}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="{{asset("js/dflip/js/dflip.min.js")}}"></script>
+    <script src="{{asset("js/dflip/js/dflip.min.js")}}"></script> -->
+
     <script src="{{asset("js/jquery.maskedinput.min.js")}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{asset("js/index.js")}}?v=1.23"></script>
+    <script src="{{asset("js/index.js")}}?v=1.24"></script>
 </body>
 
 </html>

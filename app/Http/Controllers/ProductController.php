@@ -33,7 +33,7 @@ class ProductController extends Controller
         $untrProduct = Product::with('subtype.parentSubtype.type')->where('slug', $slug)->firstOrFail();
 
         // Получаем все продукты из той же категории, исключая текущий продукт
-        $untrProducts = AdvNews::where('type', 'products');
+        $untrProducts = AdvNews::where('type', 'products')->paginate(99);
 
         // Переводим коллекцию продуктов
         $products = $this->translateCollection($untrProducts, app()->getLocale());
@@ -78,14 +78,9 @@ class ProductController extends Controller
         }
 
         // Если передана не пагинация, а обычная коллекция, то просто возвращаем её транслированный вариант.
-        if ($paginator instanceof \Illuminate\Support\Collection) {
-            return $paginator->map(function ($item) use ($lang) {
-                return $item->translate($lang);
-            });
-        }
-
+        return $paginator->map(function ($item) use ($lang) {
+            return $item->translate($lang);
+        });
     }
-
-
 
 }

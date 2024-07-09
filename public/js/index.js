@@ -196,11 +196,9 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             998: {
                 slidesPerView: 2,
-                centeredSlides: false,
             },
             1200: {
                 slidesPerView: 3,
-                centeredSlides: true,
             },
             1650: {
                 slidesPerView: 4,

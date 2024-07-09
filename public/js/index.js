@@ -181,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
         spaceBetween: 30,
         speed: 1000,
         centeredSlides: true,
-        initialSlide: 2,
+        initialSlide: 1,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',

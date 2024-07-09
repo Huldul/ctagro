@@ -177,11 +177,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const videoSlider = new Swiper('.video__slider', {
-
+        loop: true,
         spaceBetween: 30,
         speed: 1000,
-        centeredSlides: true,
-        initialSlide: 1,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -191,16 +189,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 slidesPerView: 1,
             },
             540: {
-                slidesPerView: 2,
+                slidesPerView: 1,
             },
             767: {
                 slidesPerView: 2,
             },
             998: {
-                slidesPerView: 3,
+                slidesPerView: 2,
+                centeredSlides: false,
+                initialSlide: 0,
             },
-            1300: {
+            1200: {
                 slidesPerView: 3,
+                centeredSlides: true,
+                initialSlide: 1,
             },
             1650: {
                 slidesPerView: 4,

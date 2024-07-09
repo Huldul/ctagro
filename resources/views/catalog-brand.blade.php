@@ -39,7 +39,7 @@
         </div>
     </section>
     <div class="pagination container">
-        {{ $inner_brands->links() }}
+        {{ $inner_types->links() }}
     </div>
 </main>
 @endsection

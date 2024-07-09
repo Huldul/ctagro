@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function () {
             1200: {
                 slidesPerView: 3,
                 centeredSlides: true,
-                initialSlide: 1,
+                initialSlide: 2,
             },
             1650: {
                 slidesPerView: 4,

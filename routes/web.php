@@ -33,6 +33,8 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'm
     Route::get('/spares',[PageController::class, "spares"])->name('spares');
     Route::get('/contacts',[PageController::class, "contacts"])->name('contacts');
 
+    Route::get('/catalog-library',[PageController::class, "library_online"])->name('library_online');
+
     Route::get('/partners-inner/{slug}',[PageController::class, "partners_inner"])->name('partners-inner')->where('locale', '[a-zA-Z]{2}');
     Route::get('/offers-inner/{slug}',[PageController::class, "offers_inner"])->name('offers-inner')->where('locale', '[a-zA-Z]{2}');
     Route::get('/news-inner/{slug}',[PageController::class, "news_inner"])->name('news-inner')->where('locale', '[a-zA-Z]{2}');

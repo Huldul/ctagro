@@ -35,6 +35,9 @@ class PageController extends Controller
             'page'=>$page,
         ]);
     }
+    public function library_online(){
+        return view('catalog-library');
+    }
     public function catalog_online(){
         return view('catalog-online');
     }

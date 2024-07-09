@@ -245,7 +245,7 @@
                             </a> --}}
 
                         <li>
-                            <a href="{{ route('catalog-library', ['locale' => app()->getLocale()]) }}">
+                            <a href="{{ route('library_online', ['locale' => app()->getLocale()]) }}">
                                 <img src="{{asset("svg/library.svg")}}">
                                 Библиотека каталогов
                             </a>

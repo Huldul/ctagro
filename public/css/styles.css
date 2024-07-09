@@ -1994,6 +1994,7 @@
     margin-top: 16px;
     margin-bottom: 27px;
 }
+
 .news__card h2 {
     color: #383838;
     font-family: Arial;
@@ -2005,6 +2006,7 @@
     margin-top: 16px;
     margin-bottom: 27px;
 }
+
 .reviews__card a {
     border: 1.5px solid #6EB513;
     background: #FFF;
@@ -2652,9 +2654,11 @@
 .products-inner__title span {
     font-weight: 700;
 }
+
 .products-inner__video {
     position: relative;
 }
+
 .products-inner__video-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2671,7 +2675,7 @@
 
 .products-inner__card {
     position: relative;
-   height: 100%;
+    padding-top: 127%;
 }
 
 .products-inner__card::after {
@@ -2695,9 +2699,10 @@
 }
 
 .products-inner__content {
-    position: relative;
+    position: absolute;
     z-index: 10;
-    padding: 25px 25px 320px;
+    padding: 25px 25px;
+    top: 0;
 }
 
 .products-inner__content p {
@@ -3132,12 +3137,15 @@
     list-style: disc;
     margin-left: 20px;
 }
+
 .service__left-text {
     margin-bottom: 30px;
 }
+
 .service__left .hidden-text {
     margin-bottom: 30px;
 }
+
 .service__left button {
     border: 1.5px solid #6EB513;
     background: #FFF;
@@ -3161,9 +3169,11 @@
     background-color: #6EB513;
     color: #fff;
 }
+
 .service__left-text {
     margin-bottom: 30px;
 }
+
 .service__right {
     max-width: 650px;
 }

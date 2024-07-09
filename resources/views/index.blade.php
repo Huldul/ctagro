@@ -36,13 +36,13 @@
                             <img src="./img/equipment-img.png" alt="">
                             <span>Сельхозтехника</span>
                         </div>
-                    </a>
-                    <a href="./catalog-library.html" class="equipment__card">
+                    </a> --}}
+                    <a href="{{ route('library_online', ['locale' => app()->getLocale()]) }}" class="equipment__card">
                         <div class="equipment__card-img">
-                            <img src="./img/equipment-img.png" alt="">
+                            <img src="{{asset("img/equipment-img.png")}}" alt="">
                             <span>Библиотека каталогов</span>
                         </div>
-                    </a> --}}
+                    </a>
                 </div>
             </section>
             <section class="guarantee container indent">

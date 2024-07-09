@@ -160,7 +160,7 @@
         </div>
     </div>
     <script src="{{asset("js/jquery-3.6.0.min.js")}}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/4.1.0/turn.min.js"></script>
+    <script src="{{asset("js/turn.min.js")}}"></script>
 
 <!-- Подключение PDF.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>

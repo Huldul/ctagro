@@ -5,7 +5,7 @@
     <section class="first__block">
         <img src="{{ asset('img/first-block-img.png') }}" alt="">
         <div class="first__block-wrapper container">
-            <h1>Каталог</h1>
+            <h1>Библиотека каталогов</h1>
         </div>
     </section>
     <div class="breadcrumbs container">

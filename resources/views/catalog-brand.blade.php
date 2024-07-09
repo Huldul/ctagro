@@ -5,7 +5,7 @@
     <section class="first__block">
         <img src="{{ asset('img/first-block-img.png') }}" alt="">
         <div class="first__block-wrapper container">
-            <h1>Каталог</h1>
+            <h1>Библиотека каталогов</h1>
         </div>
     </section>
     <div class="breadcrumbs container">
@@ -27,12 +27,11 @@
             <a href="{{ route('library_online', ['locale' => app()->getLocale()]) }}">Общие каталоги</a>
             <a class="active" href="#">Каталоги по брендам</a>
         </div>
-        <div class="catalog-brand__wrapper">
+
+        <div class="catalog-library__wrapper">
             @foreach ($inner_types as $inner_type)
-                <a href="{{ route('catalog-online', ['locale' => app()->getLocale(), 'slug' => $inner_type->slug]) }}" class="catalog-brand__card">
-                    <div class="catalog-brand__card-img">
-                        <img src="{{ asset('storage/' . $inner_type->image) }}" alt="{{ $inner_type->title }}">
-                    </div>
+                <a href="{{ route('catalog-online', ['locale' => app()->getLocale(), 'slug' => $inner_type->slug]) }}" class="catalog-library__card" data-src="#report_1">
+                    <img src="{{ asset('storage/' . $inner_type->image) }}" alt="{{ $inner_type->title }}">
                     <span>{{ $inner_type->title }}</span>
                 </a>
             @endforeach

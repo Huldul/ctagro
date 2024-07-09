@@ -31,9 +31,9 @@
         <div class="service__container about__container">
             <div class="service__left">
                 <div class="service__left-text">
-                <h2 class="title">{{ $page->subtitle1 }}</h2>
+                <h2 class="title">{!! $page->subtitle1 !!}</h2>
                 {!! $page->main1 !!}
-                <div class="hidden-text">{{ $page->desc1 }}</div>
+                <div class="hidden-text">{!! $page->desc1 !!}</div>
                 </div>
                 <button class="more-btn">Подробнее</button>
             </div>
@@ -60,9 +60,9 @@
             </div>
             <div class="service__left">
             <div class="service__left-text">
-            <h2 class="title">{{ $page->subtitle2 }}</h2>
+            <h2 class="title">{!! $page->subtitle2 !!}</h2>
                 {!! $page->main2 !!}
-                <div class="hidden-text">{{ $page->desc2 }}</div>
+                <div class="hidden-text">{!! $page->desc2 !!}</div>
             </div>
                 <button class="more-btn">Подробнее</button>
             </div>

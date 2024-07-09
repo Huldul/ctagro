@@ -42,7 +42,7 @@
                 </div>
             </section>
             <div class="pagination container">
-                {{ $reviews->links() }}
+                {{ $reviews->links('vendor.pagination.custom') }}
             </div>
         </main>
         @endsection

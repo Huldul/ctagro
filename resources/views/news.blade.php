@@ -42,7 +42,7 @@
         </div>
     </section>
     <div class="pagination container">
-        {{ $news->links() }}
+        {{ $news->links('vendor.pagination.custom') }}
     </div>
 </main>
 @endsection

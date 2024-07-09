@@ -28,17 +28,19 @@
             <a class="active" href="#">Общие каталоги</a>
             <a href="{{ route('catalog-brand', ['locale' => app()->getLocale()]) }}">Каталоги по брендам</a>
         </div>
-        <div class="catalog-library__wrapper">
+        <div class="catalog-brand__wrapper">
             @foreach ($inner_types as $inner_type)
-                <a href="{{ route('catalog-online', ['locale' => app()->getLocale(), 'slug' => $inner_type->slug]) }}" class="catalog-library__card" data-src="#report_1">
-                    <img src="{{ asset('storage/' . $inner_type->image) }}" alt="{{ $inner_type->title }}">
+                <a href="{{ route('catalog-online', ['locale' => app()->getLocale(), 'slug' => $inner_type->slug]) }}" class="catalog-brand__card">
+                    <div class="catalog-brand__card-img">
+                        <img src="{{ asset('storage/' . $inner_type->image) }}" alt="{{ $inner_type->title }}">
+                    </div>
                     <span>{{ $inner_type->title }}</span>
                 </a>
             @endforeach
         </div>
     </section>
     <div class="pagination container">
-        {{ $inner_types->links() }}
+        {{ $inner_types->links('vendor.pagination.custom') }}
     </div>
 </main>
 @endsection

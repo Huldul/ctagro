@@ -47,7 +47,7 @@
         </div>
     </section>
     <div class="pagination container">
-        {{ $inner_types->links() }}
+        {{ $products->links('vendor.pagination.custom') }}
     </div>
 </main>
 @endsection

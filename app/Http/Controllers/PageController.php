@@ -107,7 +107,7 @@ class PageController extends Controller
     }
 
     public function news(){
-        $untrNews = News::paginate(12);
+        $untrNews = News::paginate(16);
         $news = $this->translateCollection($untrNews ,app()->getLocale());
         return view('news',[
             'news'=>$news,

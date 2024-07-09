@@ -53,7 +53,7 @@
                 <div class="products-inner__wrapper">
                     <div class="products-inner__container about__container">
                         <div class="products-inner__left">
-                            <img src="{{asset("storage/".$product->image)}}" alt="">
+                            <img src="{{ asset('storage/' . $product->image) }}" alt="">
                         </div>
                         <div class="products-inner__right">
                             <div class="products-inner__tabs tabs">
@@ -61,44 +61,54 @@
                                 <a href="#characteristics">Технические характеристики</a>
                             </div>
                             <h2></h2>
-                        {!!$product->dscription1!!}
-                            <p class="hidden-text">{{$product->dscription2}}</p>
+                            {!! $product->dscription1 !!}
+                            <p class="hidden-text">{{ $product->dscription2 }}</p>
 
-                            <button class="more-btn products-inner__btn">
-                                Подробнее
-                            </button>
-                        </div>
-                    </div>
-                    <div id="desc" class="products-inner__wrapp active">
-                        <div class="products-inner__container about__container">
-                            <div class="products-inner__right">
-                                <h2>{{$product->desc_title1}}</h2>
-                                <p></p>
-                                <p></p>
-                                <p class="hidden-text">{{$product->desc_main1}}</p>
+                            @if(!empty($product->dscription2))
                                 <button class="more-btn products-inner__btn">
                                     Подробнее
                                 </button>
+                            @endif
+                        </div>
+                    </div>
+
+                    <div id="desc" class="products-inner__wrapp active">
+                        <div class="products-inner__container about__container">
+                            <div class="products-inner__right">
+                                <h2>{{ $product->desc_title1 }}</h2>
+                                <p></p>
+                                <p></p>
+                                <p class="hidden-text">{{ $product->desc_main1 }}</p>
+
+                                @if(!empty($product->desc_main1))
+                                    <button class="more-btn products-inner__btn">
+                                        Подробнее
+                                    </button>
+                                @endif
                             </div>
                             <div class="products-inner__left">
-                                <img src="{{asset("storage/".$product->desc_image1)}}" alt="">
+                                <img src="{{ asset('storage/' . $product->desc_image1) }}" alt="">
                             </div>
                         </div>
                         <div class="products-inner__container about__container products-inner-reverse">
                             <div class="products-inner__left">
-                                <img src="{{asset("storage/".$product->desc_image2)}}" alt="">
+                                <img src="{{ asset('storage/' . $product->desc_image2) }}" alt="">
                             </div>
                             <div class="products-inner__right">
-                                <h2>{{$product->desc_title2}}</h2>
+                                <h2>{{ $product->desc_title2 }}</h2>
                                 <p></p>
                                 <p></p>
-                                <p class="hidden-text">{{$product->desc_main2}}</p>
-                                <button class="more-btn products-inner__btn">
-                                    Подробнее
-                                </button>
+                                <p class="hidden-text">{{ $product->desc_main2 }}</p>
+
+                                @if(!empty($product->desc_main2))
+                                    <button class="more-btn products-inner__btn">
+                                        Подробнее
+                                    </button>
+                                @endif
                             </div>
                         </div>
                     </div>
+
                     <div id="characteristics" class="products-inner__wrapp">
                         <div class="products-inner__table">
                             {!!$product->techs!!}

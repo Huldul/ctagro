@@ -47,5 +47,6 @@
                 {{ $offers->links('vendor.pagination.custom') }}
             </div>
 
+
         </main>
         @endsection

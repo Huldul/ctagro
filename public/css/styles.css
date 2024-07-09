@@ -2642,7 +2642,9 @@
 .products-inner__title span {
     font-weight: 700;
 }
-
+.products-inner__video {
+    position: relative;
+}
 .products-inner__video-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

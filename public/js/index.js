@@ -580,12 +580,10 @@ document.addEventListener('DOMContentLoaded', function () {
     blockContainers.forEach((container) => {
         const rightBlock = container.querySelector('.service__right');
         const hiddenText = container.querySelector('.hidden-text');
-        if(!rightBlock || !hiddenText) {
-            return; }
             if (!hiddenText.classList.contains('active')) {
                 rightBlock.style.height = 'auto';
             } else {
-                rightBlock.style.height = '100%';
+                rightBlock.style.height = '550px';
             }
         });
 });

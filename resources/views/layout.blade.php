@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/js/dflip/css/themify-icons.min.css">
     <link rel="stylesheet" href="{{asset("css/jquery.fancybox.css")}}">
     <link rel="stylesheet" href="{{asset("css/main.css")}}">
-    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.38">
+    <link rel="stylesheet" href="{{asset("css/styles.css")}}?v=1.39">
 </head>
 
 <body>
@@ -184,7 +184,7 @@
     </script>
     <script src="{{asset("js/jquery.maskedinput.min.js")}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{asset("js/index.js")}}?v=1.25"></script>
+    <script src="{{asset("js/index.js")}}?v=1.26"></script>
 </body>
 
 </html>

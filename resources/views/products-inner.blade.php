@@ -76,9 +76,9 @@
                         <div class="products-inner__container about__container">
                             <div class="products-inner__right">
                                 <h2>{{ $product->desc_title1 }}</h2>
-                                <p>{{ $product->desc_main1 }}</p>
+                                <p>{!! $product->desc_main1 !!}</p>
                                 <p></p>
-                                <p class="hidden-text">{!! $product->desc_hidden_main1 !!}</p>
+                                <p class="hidden-text">{{ $product->desc_hidden_main1 }}</p>
 
                                 @if($product->desc_hidden_main1 != "")
                                     <button class="more-btn products-inner__btn">
@@ -96,9 +96,9 @@
                             </div>
                             <div class="products-inner__right">
                                 <h2>{{ $product->desc_title2 }}</h2>
-                                <p>{{ $product->desc_main2 }}</p>
+                                <p>{!! $product->desc_main2 !!}</p>
                                 <p></p>
-                                <p class="hidden-text">{!! $product->desc_hidden_main2 !!}</p>
+                                <p class="hidden-text">{{ $product->desc_hidden_main2 }}</p>
 
                                 @if($product->desc_hidden_main2 != "")
                                     <button class="more-btn products-inner__btn">

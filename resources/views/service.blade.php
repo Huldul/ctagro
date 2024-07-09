@@ -71,9 +71,10 @@
             <section class="products-inner__video container indent">
                 <h2 class="products-inner__title title">Хотите узнать о наc больше? <br><span>Переходите на наш youtube
                         канал.</span></h2>
-                <div class="products-inner__video-wrapper">
-                    @foreach ($videos as $video)
-                    <?php
+                        <div class="swiper video__slider">
+                    <div class="swiper-wrapper">
+                        @foreach ($videos as $video)
+                            <?php
                             $thumbnail_url = './img/about-img.png'; // URL изображения по умолчанию
 
                             // Проверка для YouTube с форматом /embed/
@@ -95,14 +96,54 @@
                                 }
                             }
                             ?>
-                    <div class="video__slide">
+                            <div class="swiper-slide video__slider-slide">
+                                <div class="video__slide">
                                     <div data-id="" data-url="{{$video->url}}" class="video__slide-video">
-                                        <img src="{{$thumbnail_url}}" alt="">
+                                        <img src="{{ $thumbnail_url }}" alt="">
                                     </div>
                                 </div>
+                            </div>
                         @endforeach
 
 
+                        {{-- <div class="swiper-slide video__slider-slide">
+                            <div class="video__slide">
+                                <div class="video__slide-video">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/aWjtf9VWYUM?si=LinI_HE9-qmZu_YS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide video__slider-slide">
+                            <div class="video__slide">
+                                <div class="video__slide-video">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/mjMVWQEGrOQ?si=isrJ1bLmfUBYmSoY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide video__slider-slide">
+                            <div class="video__slide">
+                                <div class="video__slide-video">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/aWjtf9VWYUM?si=LinI_HE9-qmZu_YS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div> --}}
+                    </div>
+                    <div class="nav-btn">
+                        <div class="swiper-button-prev">
+                            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="56" y="56" width="56" height="56" rx="28" transform="rotate(-180 56 56)" fill="#dadada" />
+                                <path d="M31 34.24L24 27.52L31 20.8" stroke="#636362" stroke-width="3"/>
+                                </svg>
+
+                        </div>
+                        <div class="swiper-button-next">
+                            <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="56" height="56" rx="28" fill="#dadada" />
+                                <path d="M25 21.76L32 28.48L25 35.2" stroke="#636362" stroke-width="3"/>
+                                </svg>
+
+                        </div>
+                    </div>
                 </div>
                 @include('components.news', ['news' => $news])
             </section>

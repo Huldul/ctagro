@@ -29,7 +29,7 @@
         </div>
         <div class="catalog-brand__wrapper">
             @foreach ($inner_brands as $inner_brand)
-                <a href="{{ route('catalog-brand-inner', ['locale' => app()->getLocale(), 'slug' => $inner_brand->slug]) }}" class="catalog-brand__card">
+                <a href="{{ route('catalog-online', ['locale' => app()->getLocale(), 'slug' => $inner_type->slug]) }}" class="catalog-brand__card">
                     <div class="catalog-brand__card-img">
                         <img src="{{ asset('storage/' . $inner_brand->image) }}" alt="{{ $inner_brand->title }}">
                     </div>

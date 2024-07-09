@@ -26,7 +26,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'm
     Route::get('/reviews',[PageController::class, "reviews"])->name('reviews');
     Route::get('/catalog',[PageController::class, "catalog"])->name('catalog');
     Route::get('/catalog',[PageController::class, "catalog_library"])->name('catalog-library');
-        Route::get('/catalog-online',[PageController::class, "catalog_online"])->name('catalog-online');
+    Route::get('/catalog-online',[PageController::class, "catalog_online"])->name('catalog-online');
     Route::get('/catalog-brand',[PageController::class, "catalog_brand"])->name('catalog-brand');
 
     Route::get('/service',[PageController::class, "service"])->name('service');

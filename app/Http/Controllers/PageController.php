@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AboutPage;
 use App\Models\Brand;
 use App\Models\CustomPage;
+use App\Models\LibraryPdf;
 use App\Models\Med;
 use App\Models\News;
 use App\Models\Offer;
@@ -36,10 +37,16 @@ class PageController extends Controller
         ]);
     }
     public function library_online(){
-        return view('catalog-library');
+        $inner_types = LibraryPdf::Where('type', 'all')->all();
+        return view('catalog-library', [
+            "inner_types"=>$inner_types,
+        ]);
     }
-    public function catalog_online(){
-        return view('catalog-online');
+    public function catalog_online($locale,$slug){
+        $inner_type = LibraryPdf::Where('slug', $slug)->first();
+        return view('catalog-online', [
+            "inner_type"=>$inner_type,
+        ]);
     }
     public function partners(){
         $untrPart = Partner::paginate(16);

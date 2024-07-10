@@ -96,20 +96,20 @@
                     <button class="search__btn change-color">
                         <span>Поиск</span>
                         <div class="search__btn-icon">
-                            <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" stroke="#fff"></path>
-                                <path d="M17.5 17.5L13.875 13.875" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" stroke="#fff"></path>
-                            </svg>
+                        <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M9.16667 15.8333C12.8486 15.8333 15.8333 12.8486 15.8333 9.16667C15.8333 5.48477 12.8486 2.5 9.16667 2.5C5.48477 2.5 2.5 5.48477 2.5 9.16667C2.5 12.8486 5.48477 15.8333 9.16667 15.8333Z" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" stroke="#fff"></path>
+								<path d="M17.5 17.5L13.875 13.875" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round" stroke="#fff"></path>
+							</svg>
                         </div>
                     </button>
-                    <div class="search-form" id="search-form">
-                        @livewire('search-products')
-                    </div>
+                    <form action="#">
+                        {{-- <input type="search" required> --}}
+                        <x-input.text />
+                        <button type="submit">найти</button>
+                    </form>
+                    <div class="search__result-not-found">поиск не дал результатов</div>
+                    <div class="search__result"></div>
                 </div>
-
-
-
-
                 <div class="header__logo-2">
                     <a href="https://www.claas.com/ru-kz">
                     <svg width="98" height="18" viewBox="0 0 98 18" fill="none"

@@ -3279,6 +3279,7 @@
 @media (max-width:992px) {
     .service__left {
         max-width: 100%;
+        height: auto;
     }
 
     .service__right {

@@ -11,7 +11,7 @@ class Product extends Model
 {
     use HasFactory;
     use Translatable;
-    protected $translatable = ['title', 'dscription1', 'dscription2', 'desc_title1', 'desc_title2', 'desc_main1', 'desc_main2', 'seo_title', 'seo_subtitle', 'seo_keywords', 'desc_hidden_main1', 'desc_hidden_main2'];
+    protected $translatable = ['title', 'dscription1', 'dscription2', 'desc_title1', 'desc_title2', 'desc_title3', 'desc_title4', 'desc_main1', 'desc_main2', 'desc_main3', 'desc_main4', 'seo_title', 'seo_subtitle', 'seo_keywords', 'desc_hidden_main1', 'desc_hidden_main2', 'desc_hidden_main3', 'desc_hidden_main4'];
 
     public static function boot(){
         parent::boot();

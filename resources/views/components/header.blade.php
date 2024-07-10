@@ -106,6 +106,7 @@
                 </div>
 
 
+
                 <div class="header__logo-2">
                     <a href="https://www.claas.com/ru-kz">
                     <svg width="98" height="18" viewBox="0 0 98 18" fill="none"

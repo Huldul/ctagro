@@ -50,12 +50,12 @@
                 <div class="select-wrapp">
                                     <select name="message" id="message" required>
                                         <option value="" disabled selected>Тема</option>
-                                        <option value="selhoztehnika">сельхозтехника</option>
-                                        <option value="ovoshevodstvo">овощеводство</option>
-                                        <option value="oroshenie">орошение</option>
-                                        <option value="servis">сервис</option>
-                                        <option value="zapasnyse chasti">запасные части</option>
-                                        <option value="Other">другое</option>
+                                        <option value="сельхозтехника">сельхозтехника</option>
+                                        <option value="овощеводство">овощеводство</option>
+                                        <option value="орошение">орошение</option>
+                                        <option value="сервис">сервис</option>
+                                        <option value="запасные части">запасные части</option>
+                                        <option value="другое">другое</option>
                                     </select>
                                 </div>
                     <textarea rows="1" name="text" placeholder="Сообщение"></textarea>

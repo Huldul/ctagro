@@ -2605,7 +2605,13 @@
 .products-inner__right {
     max-width: 610px;
 }
-
+.products-inner__right h3 {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 125%;
+}
 .products-inner__right p {
     color: #636362;
     font-family: Arial;
@@ -2619,7 +2625,28 @@
 .products-inner__right p:not(:nth-child(2)) {
     margin-top: 14px;
 }
-
+.products-inner__right ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #636362;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+}
+.products-inner__right ul li {
+    list-style: disc;
+    margin-left: 40px;
+}
+.products-inner__right ul li:nth-of-type(1) {
+    margin-top: 20px;
+}
+.products-inner__right ul li::marker {
+    background-color: #000;
+    color: #000;
+}
 .products-inner__btn {
     color: #252520;
     font-family: Arial;

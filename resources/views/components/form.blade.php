@@ -20,34 +20,23 @@
                                         <option value="Astana">Астана</option>
                                         <option value="Astana">Алматы</option>
                                         <option value="Astana">Шымкент</option>
-                                        <option value="Astana">Кокшетау</option>
-                                        <option value="Astana">Есиль</option>
-                                        <option value="Astana">Акколь</option>
                                         <option value="Astana">Акмолинская область</option>
                                         <option value="Astana">Алматинская область</option>
                                         <option value="Astana">Туркестанская область</option>
-                                        <option value="Astana">Уральск</option>
-                                        <option value="Astana">ЗКО</option>
+                                        <option value="Astana">Западно-Казахстанская область</option>
                                         <option value="Astana">Атырауская область</option>
                                         <option value="Astana">Мангыстауская область</option>
-                                        <option value="Astana">Актобе</option>
                                         <option value="Astana">Актюбинская область</option>
-                                        <option value="Astana">Костанай</option>
                                         <option value="Astana">Костанайская область</option>
-                                        <option value="Astana">Петропавловск</option>
-                                        <option value="Astana">СКО</option>
-                                        <option value="Astana">Павлодар</option>
+                                        <option value="Astana">Северо-Казахстанская область</option>
                                         <option value="Astana">Павлодарская область</option>
                                         <option value="Astana">Карагандинская область</option>
                                         <option value="Astana">Абайская область</option>
-                                        <option value="Astana">Усть-Каменогорск</option>
-                                        <option value="Astana">ВКО</option>
-                                        <option value="Astana">Сарканд</option>
-                                        <option value="Astana">Талдыкорган</option>
+                                        <option value="Astana">Восточно-Казахстанская область</option>
                                         <option value="Astana">Жетысуйскаая область</option>
                                         <option value="Astana">Жамбылская область</option>
-                                        <option value="Astana">Кызылорда</option>
                                         <option value="Astana">Кызылординская область</option>
+                                        <option value="Astana">Улытауская область</option>
                                     </select>
                                     <span>*</span>
                                 </div>

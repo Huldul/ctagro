@@ -252,7 +252,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const btn = container.querySelector('.products-inner__btn');
         const leftBlock = container.querySelector('.service__left');
 
-        if (moreBtn && moreText) {
             moreBtn.addEventListener('click', () => {
                 if (!moreText.classList.contains('active')) {
                     moreText.classList.add('active');
@@ -270,7 +269,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 }
             });
-        }
     });
 
     // Получаем ссылки на все табы

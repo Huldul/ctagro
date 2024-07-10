@@ -68,7 +68,7 @@
                             Рус
                             @break
                         @case('kz')
-                            Каз
+                            Қаз
                             @break
                          @case('en')
                             Eng
@@ -84,10 +84,10 @@
                         @endphp
                         @if ($currentRouteName)
                             <a class="change-color rus" href="{{ route($currentRouteName, array_merge($parameters, ['locale' => 'ru'])) }}">Рус</a>
-                            <a class="change-color kz" href="{{ route($currentRouteName, array_merge($parameters, ['locale' => 'kz'])) }}">Каз</a>
+                            <a class="change-color kz" href="{{ route($currentRouteName, array_merge($parameters, ['locale' => 'kz'])) }}">Қаз</a>
                         @else
                             <a class="change-color rus" href="#">Рус</a>
-                            <a class="change-color kz" href="#">Каз</a>
+                            <a class="change-color kz" href="#">Қаз</a>
                         @endif
                     </div>
 
@@ -202,7 +202,7 @@
                                                             <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
                                                         </svg>
                                                     </a>
-                                                    <ul class="sub-sub-list">
+                                                    {{-- <ul class="sub-sub-list">
                                                         @foreach ($nestedSubtype->products as $product)
                                                             <li>
                                                                 <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">
@@ -210,11 +210,11 @@
                                                                 </a>
                                                             </li>
                                                         @endforeach
-                                                    </ul>
+                                                    </ul> --}}
                                                 </li>
                                             @endforeach
                                         </ul>
-                                        <ul class="sub-sub-list">
+                                        {{-- <ul class="sub-sub-list">
                                             @foreach ($subtype->products as $product)
                                                 <li>
                                                     <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">
@@ -222,7 +222,7 @@
                                                     </a>
                                                 </li>
                                             @endforeach
-                                        </ul>
+                                        </ul> --}}
                                     </li>
                                 @endforeach
                             </ul>

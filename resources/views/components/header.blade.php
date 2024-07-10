@@ -103,8 +103,7 @@
                         </div>
                     </button>
                     <form action="#">
-                        {{-- <input type="search" required> --}}
-                        <x-input.text />
+                        <input type="search" required>
                         <button type="submit">найти</button>
                     </form>
                     <div class="search__result-not-found">поиск не дал результатов</div>

@@ -1569,6 +1569,8 @@
 
 .about__left {
     max-width: 597px;
+    display: flex;
+    flex-direction: column;
 }
 
 .about__title span {
@@ -1624,7 +1626,7 @@
     line-height: 135%;
     /* 24.3px */
     padding: 14px 21px;
-    margin-top: 30px;
+    margin-top: auto;
     transition: 0.3s;
     display: flex;
     justify-content: center;

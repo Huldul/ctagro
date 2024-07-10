@@ -4,6 +4,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ApplicationController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\SearchProducts;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('/search-products', SearchProducts::class);
 Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => 'locale'], function() {
     Route::get('/',[PageController::class, "index"])->name('home');
     Route::get('/about',[PageController::class, "about"])->name('about');

@@ -1,5 +1,5 @@
 @if ($paginator->hasPages())
-    <ul class="pagination">
+    <ul >
         {{-- Previous Page Link --}}
         @if ($paginator->onFirstPage())
             {{-- <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.previous')">
@@ -22,7 +22,7 @@
             @if (is_array($element))
                 @foreach ($element as $page => $url)
                     @if ($page == $paginator->currentPage())
-                        <li class="active" aria-current="page"><span>{{ $page }}</span></li>
+                        <li aria-current="page"><a class="active">{{ $page }}</a></li>
                     @else
                         <li><a href="{{ $url }}">{{ $page }}</a></li>
                     @endif
@@ -33,12 +33,18 @@
         {{-- Next Page Link --}}
     </ul>
     @if ($paginator->hasMorePages())
-            <li>
+            {{-- <li>
                 <a href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">Вперед</a>
-            </li>
+            </li> --}}
+
+                <a href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">Вперед</a>
+
         @else
-            <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
+            {{-- <li class="disabled" aria-disabled="true" aria-label="@lang('pagination.next')">
                 <span aria-hidden="true">Вперед</span>
-            </li>
+            </li> --}}
+
+                <span aria-hidden="true">Вперед</span>
+
         @endif
 @endif

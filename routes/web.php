@@ -4,7 +4,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ApplicationController;
 use Illuminate\Support\Facades\Route;
-use App\Livewire\SearchProducts;
+use App\Http\Livewire\SearchProducts;
 
 
 

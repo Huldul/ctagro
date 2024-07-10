@@ -39,16 +39,12 @@
                             <button class="more-btn" type="button">Подробнее</button>
                         </div>
                         <div class="about__right service__right">
-                            <div class="about__img">
                                 <img src="{{asset("storage/".$page->image1)}}" alt="">
-                            </div>
                         </div>
                     </div>
                     <div class="about__container reverse">
                         <div class="about__right service__right">
-                            <div class="about__img">
                                 <img src="{{asset("storage/".$page->image2)}}" alt="">
-                            </div>
                         </div>
                         <div class="about__left service__left">
                         <div class="service__left-text">

@@ -17,26 +17,27 @@
                                 <div class="select-wrapp">
                                     <select name="region" id="" required>
                                         <option value="" disabled selected>Регионы</option>
-                                        <option value="Astana">Астана</option>
-                                        <option value="Astana">Алматы</option>
-                                        <option value="Astana">Шымкент</option>
-                                        <option value="Astana">Акмолинская область</option>
-                                        <option value="Astana">Алматинская область</option>
-                                        <option value="Astana">Туркестанская область</option>
-                                        <option value="Astana">Западно-Казахстанская область</option>
-                                        <option value="Astana">Атырауская область</option>
-                                        <option value="Astana">Мангыстауская область</option>
-                                        <option value="Astana">Актюбинская область</option>
-                                        <option value="Astana">Костанайская область</option>
-                                        <option value="Astana">Северо-Казахстанская область</option>
-                                        <option value="Astana">Павлодарская область</option>
-                                        <option value="Astana">Карагандинская область</option>
-                                        <option value="Astana">Абайская область</option>
-                                        <option value="Astana">Восточно-Казахстанская область</option>
-                                        <option value="Astana">Жетысуйскаая область</option>
-                                        <option value="Astana">Жамбылская область</option>
-                                        <option value="Astana">Кызылординская область</option>
-                                        <option value="Astana">Улытауская область</option>
+                                        <option value="Астана">Астана</option>
+                                        <option value="Алматы">Алматы</option>
+                                        <option value="Шымкент">Шымкент</option>
+                                        <option value="Акмолинская область">Акмолинская область</option>
+                                        <option value="Алматинская область">Алматинская область</option>
+                                        <option value="Туркестанская область">Туркестанская область</option>
+                                        <option value="Западно-Казахстанская область">Западно-Казахстанская область</option>
+                                        <option value="Атырауская область">Атырауская область</option>
+                                        <option value="Мангыстауская область">Мангыстауская область</option>
+                                        <option value="Актюбинская область">Актюбинская область</option>
+                                        <option value="Костанайская область">Костанайская область</option>
+                                        <option value="Северо-Казахстанская область">Северо-Казахстанская область</option>
+                                        <option value="Павлодарская область">Павлодарская область</option>
+                                        <option value="Карагандинская область">Карагандинская область</option>
+                                        <option value="Абайская область">Абайская область</option>
+                                        <option value="Восточно-Казахстанская область">Восточно-Казахстанская область</option>
+                                        <option value="Жетысуйская область">Жетысуйская область</option>
+                                        <option value="Жамбылская область">Жамбылская область</option>
+                                        <option value="Кызылординская область">Кызылординская область</option>
+                                        <option value="Улытауская область">Улытауская область</option>
+
                                     </select>
                                     <span>*</span>
                                 </div>

@@ -32,8 +32,8 @@
                     <div class="about__container">
                         <div class="about__left">
                             <h2 class="about__title title">{!!$page->head_subtitle!!}</h2>
-                            {!!$page->head_main!!}
-                            <p class="hidden-text"> {{$page->head_desc}}</p>
+                            {{$page->head_main}}
+                            <p class="hidden-text"> {!!$page->head_desc!!}</з>
                             <button class="more-btn" type="button">Подробнее</button>
                         </div>
                         <div class="about__right">

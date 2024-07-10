@@ -29,6 +29,10 @@
                         <span>{{$inner_type->title}}</span>
                     </a>
                     @endforeach
+                    <a href="{{ route('library_online', ['locale' => app()->getLocale()]) }}" class="catalog__card">
+                        <img src="{{asset("img/equipment-img.png")}}" alt="">
+                        <span>Библиотека каталогов</span>
+                    </a>
                 </div>
             </section>
            @include('components.form')

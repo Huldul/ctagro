@@ -186,6 +186,45 @@
     <script src="{{asset("js/jquery.maskedinput.min.js")}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{asset("js/index.js")}}?v=1.36"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('form').on('submit', function(event) {
+            event.preventDefault();
+
+            var query = $('input[type="search"]').val();
+
+            $.ajax({
+                url: "{{ route('product.search') }}",
+                type: 'GET',
+                data: { query: query },
+                success: function(data) {
+                    var resultContainer = $('.search__result');
+                    resultContainer.empty();
+
+                    if (data.length === 0) {
+                        $('.search__result-not-found').show();
+                        resultContainer.removeClass('active');
+                    } else {
+                        $('.search__result-not-found').hide();
+                        data.forEach(function(product) {
+                            var productHtml = `
+                                <div class="product">
+                                    <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => '']) }}/${product.slug}">
+                                        <h2>${product.title}</h2>
+                                    </a>
+                                </div>
+                            `;
+                            resultContainer.append(productHtml);
+                        });
+                        resultContainer.addClass('active');
+                    }
+                }
+            });
+        });
+    });
+    </script>
+
     @livewireScripts
 </body>
 

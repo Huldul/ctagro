@@ -106,8 +106,9 @@
                         <input type="search" required>
                         <button type="submit">найти</button>
                     </form>
-                    <div class="search__result-not-found">поиск не дал результатов</div>
+                    <div class="search__result-not-found" style="display: none;">поиск не дал результатов</div>
                     <div class="search__result"></div>
+
                 </div>
                 <div class="header__logo-2">
                     <a href="https://www.claas.com/ru-kz">

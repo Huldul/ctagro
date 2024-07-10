@@ -67,9 +67,7 @@
         @endif
     </section>
 
-    <section class="gallery container indent">
-        <h2 class="gallery__title title">Галерея</h2>
-        <div class="gallery__wrapper">
+
             @php
                 $images = json_decode($med->mult_images, true);
             @endphp
@@ -106,8 +104,7 @@
                 </div>
             </section>
         @endif
-        </div>
-    </section>
+
     @include('components.form')
 </main>
 @endsection

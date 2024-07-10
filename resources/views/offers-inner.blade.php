@@ -74,10 +74,7 @@
                     @php
                         $images = json_decode($offer->mult_images, true);
                     @endphp
-                   @if (!empty($images))
-                   <section class="gallery container indent">
-                       <h2 class="gallery__title title">Галерея</h2>
-                       <div class="gallery__wrapper">
+
                            @foreach($images as $index => $image)
                                @if ($index % 3 == 0)
                                    @php
@@ -104,8 +101,7 @@
                                    </div>
                                @endif
                            @endforeach
-                       </div>
-                   </section>
+
                @endif
                 </div>
             </section>

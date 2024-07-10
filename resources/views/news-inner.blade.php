@@ -60,8 +60,8 @@
     @php
     $images = json_decode($news->mult_images, true);
     @endphp
-    @dd($images)
-    @if ($news->mult_images != "")
+
+    @if (!empty($images))
     <section class="gallery container indent">
         <h2 class="gallery__title title">Галерея</h2>
         <div class="gallery__wrapper">

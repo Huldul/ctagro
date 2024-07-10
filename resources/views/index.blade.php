@@ -9,7 +9,7 @@
                         <div class="main-block__content">
                             <h1>{!!$page->title!!}</h1>
                             {!!$page->desc1!!}
-                            <a href="{{setting('.gs_link')}}">Подробнее</a>
+                            <a href="{{setting('.gs_link')}}">@trans('more_details')</a>
                         </div>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                     <a href="{{ route('library_online', ['locale' => app()->getLocale()]) }}" class="equipment__card">
                         <div class="equipment__card-img">
                             <img src="{{asset("img/equipment-img.png")}}" alt="">
-                            <span>Библиотека каталогов</span>
+                            <span>@trans('catalog_library')</span>
                         </div>
                     </a>
                 </div>
@@ -50,7 +50,7 @@
                     <div class="guarantee__left">
                         <h2 class="guarantee__title title">{{$page->subtitle2}}</h2>
                        {!!$page->desc2!!}
-                        <a href="#">Подробнее</a>
+                        <a href="#">@trans('more_details')</a>
                     </div>
                     <div class="guarantee__right">
                         <img src="{{asset("storage/".$page->image1)}}" alt="">
@@ -124,7 +124,7 @@
             <section class="news-slider container indent">
                 <div class="news-slider__wrapper">
                     {!!$page->main1!!}
-                    <a href="{{ route('news', ['locale' => app()->getLocale()]) }}">Все новости</a>
+                    <a href="{{ route('news', ['locale' => app()->getLocale()]) }}">@trans('all_news')</a>
                 </div>
                 <div class="swiper news__slider">
                     <div class="swiper-wrapper">
@@ -137,7 +137,7 @@
                                         <span>{{ \Carbon\Carbon::parse($med->created_at)->translatedFormat('d F Y') }}</span>
                                     </div>
                                     <p>{{ $med->title }}</p>
-                                    <a href="{{ url(app()->getLocale() . '/news-inner/' . $med->slug) }}">Подробнее</a>
+                                    <a href="{{ url(app()->getLocale() . '/news-inner/' . $med->slug) }}">@trans('more_details')</a>
                                 </div>
                             </div>
                         @endforeach
@@ -148,7 +148,7 @@
                                     <span>11 сент. 2023</span>
                                 </div>
                                 <p>Компания Väderstad приобрела междурядные культиваторы</p>
-                                <a href="./news-inner.html">Подробнее</a>
+                                <a href="./news-inner.html">@trans('more_details')</a>
                             </div>
                         </div>
                         <div class="swiper-slide news__slider-slide">
@@ -158,7 +158,7 @@
                                     <span>11 сент. 2023</span>
                                 </div>
                                 <p>Фонд John Deere объявил о выделении 19 млн. долл. на гранты, направленные на ликвидацию голода в мире</p>
-                                <a href="./news-inner.html">Подробнее</a>
+                                <a href="./news-inner.html">@trans('more_details')</a>
                             </div>
                         </div>
                         <div class="swiper-slide news__slider-slide">
@@ -168,7 +168,7 @@
                                     <span>11 сент. 2023</span>
                                 </div>
                                 <p>Приглашаем вас посетить наш стенд на выставке AGRITECHNICA 2023 в Ганновере, Германия</p>
-                                <a href="./news-inner.html">Подробнее</a>
+                                <a href="./news-inner.html">@trans('more_details')</a>
                             </div>
                         </div>
                         <div class="swiper-slide news__slider-slide">
@@ -178,7 +178,7 @@
                                     <span>11 сент. 2023</span>
                                 </div>
                                 <p>Приглашаем вас посетить наш стенд на выставке AGRITECHNICA 2023 в Ганновере, Германия</p>
-                                <a href="./news-inner.html">Подробнее</a>
+                                <a href="./news-inner.html">@trans('more_details')</a>
                             </div>
                         </div> --}}
                     </div>

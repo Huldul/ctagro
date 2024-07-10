@@ -67,47 +67,49 @@
             @endif
         </section>
 
-        <section class="gallery container indent">
-            <h2 class="gallery__title title">Галерея</h2>
-            <div class="gallery__wrapper">
-                @php
-                    $images = json_decode($offer->mult_images, true);
-                @endphp
-               @if (!empty($images))
-               <section class="gallery container indent">
-                   <h2 class="gallery__title title">Галерея</h2>
-                   <div class="gallery__wrapper">
-                       @foreach($images as $index => $image)
-                           @if ($index % 3 == 0)
-                               @php
-                                   $class = ($index / 3) % 2 == 0 ? 'gallery__left' : 'gallery__right';
-                               @endphp
-                               <div class="{{ $class }}">
-                                   <div class="{{ $class }}-img">
-                                       <img src="{{ asset('storage/' . $image) }}" alt="Gallery Image {{ $index + 1 }}">
-                                   </div>
-                                   @if (isset($images[$index + 1]) || isset($images[$index + 2]))
-                                       <div class="gallery__container">
-                                           @if (isset($images[$index + 1]))
-                                               <div class="gallery__container-img">
-                                                   <img src="{{ asset('storage/' . $images[$index + 1]) }}" alt="Gallery Image {{ $index + 2 }}">
-                                               </div>
-                                           @endif
-                                           @if (isset($images[$index + 2]))
-                                               <div class="gallery__container-img">
-                                                   <img src="{{ asset('storage/' . $images[$index + 2]) }}" alt="Gallery Image {{ $index + 3 }}">
-                                               </div>
-                                           @endif
+        @if ($offer->mult_images != "")
+            <section class="gallery container indent">
+                <h2 class="gallery__title title">Галерея</h2>
+                <div class="gallery__wrapper">
+                    @php
+                        $images = json_decode($offer->mult_images, true);
+                    @endphp
+                   @if (!empty($images))
+                   <section class="gallery container indent">
+                       <h2 class="gallery__title title">Галерея</h2>
+                       <div class="gallery__wrapper">
+                           @foreach($images as $index => $image)
+                               @if ($index % 3 == 0)
+                                   @php
+                                       $class = ($index / 3) % 2 == 0 ? 'gallery__left' : 'gallery__right';
+                                   @endphp
+                                   <div class="{{ $class }}">
+                                       <div class="{{ $class }}-img">
+                                           <img src="{{ asset('storage/' . $image) }}" alt="Gallery Image {{ $index + 1 }}">
                                        </div>
-                                   @endif
-                               </div>
-                           @endif
-                       @endforeach
-                   </div>
-               </section>
-           @endif
-            </div>
-        </section>
+                                       @if (isset($images[$index + 1]) || isset($images[$index + 2]))
+                                           <div class="gallery__container">
+                                               @if (isset($images[$index + 1]))
+                                                   <div class="gallery__container-img">
+                                                       <img src="{{ asset('storage/' . $images[$index + 1]) }}" alt="Gallery Image {{ $index + 2 }}">
+                                                   </div>
+                                               @endif
+                                               @if (isset($images[$index + 2]))
+                                                   <div class="gallery__container-img">
+                                                       <img src="{{ asset('storage/' . $images[$index + 2]) }}" alt="Gallery Image {{ $index + 3 }}">
+                                                   </div>
+                                               @endif
+                                           </div>
+                                       @endif
+                                   </div>
+                               @endif
+                           @endforeach
+                       </div>
+                   </section>
+               @endif
+                </div>
+            </section>
+        @endif
         @include('components.form')
 
         </main>

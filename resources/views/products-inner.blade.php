@@ -3,7 +3,7 @@
 @section('content')
         <main>
             <section class="first__block">
-                <img src="{{asset("img/first-block-img.png")}}" alt="">
+                <img src="{{asset("storage/".$product->head_image)}}" alt="">
                 <div class="first__block-wrapper container">
                     <h1>{{ $product->title }}</h1>
                 </div>
@@ -101,6 +101,40 @@
                                 <p class="hidden-text">{{ $product->desc_hidden_main2 }}</p>
 
                                 @if($product->desc_hidden_main2 != "")
+                                    <button class="more-btn products-inner__btn">
+                                        Подробнее
+                                    </button>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="products-inner__container about__container">
+                            <div class="products-inner__right">
+                                <h2>{{ $product->desc_title3 }}</h2>
+                                <p>{!! $product->desc_main3 !!}</p>
+                                <p></p>
+                                <p class="hidden-text">{{ $product->desc_hidden_main3 }}</p>
+
+                                @if($product->desc_hidden_main3 != "")
+                                    <button class="more-btn products-inner__btn">
+                                        Подробнее
+                                    </button>
+                                @endif
+                            </div>
+                            <div class="products-inner__left">
+                                <img src="{{ asset('storage/' . $product->desc_image3) }}" alt="">
+                            </div>
+                        </div>
+                        <div class="products-inner__container about__container products-inner-reverse">
+                            <div class="products-inner__left">
+                                <img src="{{ asset('storage/' . $product->desc_image4) }}" alt="">
+                            </div>
+                            <div class="products-inner__right">
+                                <h2>{{ $product->desc_title4 }}</h2>
+                                <p>{!! $product->desc_main4 !!}</p>
+                                <p></p>
+                                <p class="hidden-text">{{ $product->desc_hidden_main4 }}</p>
+
+                                @if($product->desc_hidden_main4 != "")
                                     <button class="more-btn products-inner__btn">
                                         Подробнее
                                     </button>

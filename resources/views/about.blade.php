@@ -33,7 +33,7 @@
                         <div class="about__left">
                             <h2 class="about__title title">{!!$page->head_subtitle!!}</h2>
                             {!!$page->head_main!!}
-                            <div class="hidden-text"> {!!$page->head_desc!!}</div>
+                            <p class="hidden-text"> {{$page->head_desc}}</p>
                             <button class="more-btn" type="button">Подробнее</button>
                         </div>
                         <div class="about__right">
@@ -50,7 +50,7 @@
                         </div>
                         <div class="about__left">
                             {!!$page->sec_main!!}
-                            <div class="hidden-text"> {!!$page->sec_desc!!}</div>
+                            <p class="hidden-text"> {{$page->sec_desc}}</p>
                             <button class="more-btn" type="button">Подробнее</button>
                         </div>
                     </div>

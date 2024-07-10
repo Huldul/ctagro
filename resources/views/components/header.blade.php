@@ -288,7 +288,8 @@
                         </li>
                     </ul>
                     <ul class="nav__socials">
-                        <h2>Будьте в курсе</h2>
+                        <h2>@trans('stay_informed')
+                        </h2>
                         <div class="social-wrapp">
                             <li>
                                 <a href="{{setting('.instagram')}}">

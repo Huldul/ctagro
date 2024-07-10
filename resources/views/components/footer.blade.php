@@ -61,7 +61,7 @@
 
                 </ul>
                 <div class="navigation__list-mob">
-                    <h3>Техника
+                    <h3>@trans('technology')
                          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
                         </svg>
@@ -84,7 +84,7 @@
                     </ul>
                 </div>
                 <ul class="navigation__list">
-                    <h3>Техника</h3>
+                    <h3>@trans('technology')</h3>
                     @foreach ($types as $type)
                     <li>
                         <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">{{ $type->title }}</a>
@@ -101,55 +101,60 @@
                     </li>
                 </ul>
                 <div class="navigation__list-mob">
-                    <h3>Запчасти и сервис
+                    <h3>@trans('parts_and_service')
                          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
                         </svg>
                     </h3>
                     <ul class="navigation__list">
-                    <li>
-                        <a href="{{ route('service', ['locale' => app()->getLocale()]) }}">Сервис</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('spares', ['locale' => app()->getLocale()]) }}">Запасные части</a>
-                    </li>
-                    <li>
-                        <a href="#">Ремонт двигателей</a>
-                    </li>
+                        <li>
+                            <a href="{{ route('service', ['locale' => app()->getLocale()]) }}">@trans('service')</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('spares', ['locale' => app()->getLocale()]) }}">@trans('spare_parts')</a>
+                        </li>
+                        <li>
+                            <a href="{{setting('.link_engine')}}">@trans('engine_repair')</a>
+                        </li>
+
                     </ul>
                 </div>
                 <ul class="navigation__list">
-                    <h3>Запчасти и сервис</h3>
-                    <li>
-                        <a href="{{ route('service', ['locale' => app()->getLocale()]) }}">Сервис</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('spares', ['locale' => app()->getLocale()]) }}">Запасные части</a>
-                    </li>
-                    <li>
-                        <a href="#">Ремонт двигателей</a>
-                    </li>
+                    <h3>@trans('parts_and_service')</h3>
+                    <ul class="navigation__list">
+                        <li>
+                            <a href="{{ route('service', ['locale' => app()->getLocale()]) }}">@trans('service')</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('spares', ['locale' => app()->getLocale()]) }}">@trans('spare_parts')</a>
+                        </li>
+                        <li>
+                            <a href="{{setting('.link_engine')}}">@trans('engine_repair')</a>
+                        </li>
+                    </ul>
+
                 </ul>
                 <div class="navigation__list-mob">
-                    <h3>Контакты
+                    <h3>@trans('contacts')
+
                          <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
                         </svg>
                     </h3>
                     <ul class="navigation__list">
                     <li>
-                        <a href="{{ route('contacts', ['locale' => app()->getLocale()]) }}">Карта присутствия</a>
+                        <a href="{{ route('contacts', ['locale' => app()->getLocale()]) }}">@trans('presence_map')</a>
                     </li>
                     </ul>
                 </div>
                 <ul class="navigation__list">
-                    <h3>Контакты</h3>
+                    <h3>@trans('contacts')</h3>
                     <li>
-                        <a href="{{ route('contacts', ['locale' => app()->getLocale()]) }}">Карта присутствия</a>
+                        <a href="{{ route('contacts', ['locale' => app()->getLocale()]) }}">@trans('presence_map')</a>
                     </li>
                 </ul>
                 <ul class="navigation__socials">
-                    <h3>Будьте в курсе</h3>
+                    <h3>@trans('stay_informed')</h3>
                     <div class="footer-socials">
                         <li>
                             <a href="{{setting('.instagram')}}">
@@ -216,7 +221,7 @@
                     <img src="{{asset("svg/crown.svg")}}" alt="">
                 </span>
                 <span>{{setting('.copiright')}}</span>
-                <span>Сайт разработан <a href="https://astanacreative.kz/"> Astana Creative</a></span>
+                <span>@trans('site_developed') <a href="https://astanacreative.kz/"> Astana Creative</a></span>
                 <a href="{{ route('policy', ['locale' => app()->getLocale()]) }}"><img class="footer-img" src="{{asset("svg/icon.svg")}}" alt=""></a>
             </div>
         </div>

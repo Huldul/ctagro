@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         // Устанавливаем русскую локализацию для Carbon
-        Carbon::setLocale('ru');
+        Carbon::setLocale(app()->getLocale());
         Blade::directive('trans', function ($expression) {
             return "<?php echo trans_array($expression, app()->getLocale()); ?>";
         });

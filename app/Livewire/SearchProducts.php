@@ -4,7 +4,6 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\Product;
-
 class SearchProducts extends Component
 {
     public $searchTerm;

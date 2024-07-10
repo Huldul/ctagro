@@ -102,7 +102,9 @@
                             </svg>
                         </div>
                     </button>
-                    @livewire('search-products')
+                    <div class="search-form" id="search-form">
+                        @livewire('search-products')
+                    </div>
                 </div>
 
 

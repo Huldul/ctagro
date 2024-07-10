@@ -1,5 +1,5 @@
 <div class="header__search search">
-    <button class="search__btn change-color" wire:click.prevent="$toggle('showSearch')">
+    <button class="search__btn change-color">
         <span>Поиск</span>
         <div class="search__btn-icon">
             <svg width="25" height="25" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -8,17 +8,20 @@
             </svg>
         </div>
     </button>
-    <form wire:submit.prevent="updatedSearchTerm">
-        <input type="search" wire:model.debounce.300ms="searchTerm" required>
-        <button type="submit">найти</button>
-    </form>
-    @if ($results)
-        <div class="search__result">
-            @foreach ($results as $result)
-                <div>{{ $result->title }}</div>
-            @endforeach
-        </div>
-    @else
-        <div class="search__result-not-found">поиск не дал результатов</div>
-    @endif
+    <div class="search__block" style="display: none;">
+        <form wire:submit.prevent="search">
+            <input type="search" wire:model="searchTerm" required>
+            <button type="submit">найти</button>
+        </form>
+        @if ($results)
+            <div class="search__result">
+                @foreach ($results as $result)
+                    <div>{{ $result->title }}</div>
+                @endforeach
+            </div>
+        @else
+            <div class="search__result-not-found">поиск не дал результатов</div>
+        @endif
+    </div>
 </div>
+

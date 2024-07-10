@@ -248,23 +248,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     moreContainers.forEach((container) => {
         const moreBtn = container.querySelector('.more-btn');
-        const moreText = container.querySelector('.hidden-text');
+        const moreText = container.querySelector('.service__left-text');
         const btn = container.querySelector('.products-inner__btn');
-        const rightBlock = container.querySelector('.service__right');
+        const leftBlock = container.querySelector('.service__left');
 
         if (moreBtn && moreText) {
             moreBtn.addEventListener('click', () => {
                 if (!moreText.classList.contains('active')) {
                     moreText.classList.add('active');
+                    leftBlock.classList.add('active');
                     moreBtn.textContent = 'Скрыть';
-                    rightBlock.style.height = '550px';
                     if (btn) {  // Проверка на наличие btn
                         btn.classList.add('active');
                     }
                 } else {
                     moreText.classList.remove('active');
+                    leftBlock.classList.remove('active');
                     moreBtn.textContent = 'Подробнее';
-                    rightBlock.style.height = 'auto';
                     if (btn) {  // Проверка на наличие btn
                         btn.classList.remove('active');
                     }

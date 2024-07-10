@@ -1771,9 +1771,14 @@
     margin-bottom: 14px;
 }
 
-.mission .mission__card p {
+.mission .mission__card  {
     margin: 0;
     color: #636362;
+    font-family: Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .gallery__wrapper {
@@ -1846,7 +1851,7 @@
 }
 
 .about__form {
-    margin-bottom: 150px;
+    margin-bottom: 120px;
 }
 
 @media (max-width:1650px) {
@@ -2620,11 +2625,9 @@
     font-weight: 400;
     line-height: 125%;
     /* 22.5px */
-}
-
-.products-inner__right p:not(:nth-child(2)) {
     margin-top: 14px;
 }
+
 .products-inner__right ul {
     display: flex;
     flex-direction: column;
@@ -2860,6 +2863,12 @@
 
     .products-inner__wrapp table tbody tr td {
         font-size: 16px;
+    }
+    .products-inner__container h2 {
+        font-size: 24px;
+    }
+    .products-inner__container h3 {
+        font-size: 18px;
     }
 }
 
@@ -3127,12 +3136,20 @@
 
 
 /* service */
+.service {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
 .service__left {
     max-width: 600px;
+    height: 500px;
     display: flex;
     flex-direction: column;
 }
-
+.service__left.active {
+    height: auto;
+}
 .service__left h2 span {
     font-weight: 700;
 }
@@ -3196,10 +3213,16 @@
 
 .service__left-text {
     margin-bottom: 30px;
+    height: 400px;
+    overflow: hidden;
 }
-
+.service__left-text.active {
+    height: auto;
+    overflow: auto;
+}
 .service__right {
     max-width: 650px;
+    height: 500px;
 }
 
 .service__right img {
@@ -3281,6 +3304,9 @@
 
     .service__info {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .service {
+        gap: 60px;
     }
 }
 

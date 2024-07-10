@@ -33,7 +33,7 @@
                 <div class="service__left-text">
                 <h2 class="title">{!! $page->subtitle1 !!}</h2>
                 {!! $page->main1 !!}
-                <div class="hidden-text">{!! $page->desc1 !!}</div>
+                <!-- <div class="hidden-text">{!! $page->desc1 !!}</div> -->
                 </div>
                 <button class="more-btn">Подробнее</button>
             </div>
@@ -41,7 +41,7 @@
                 <img src="{{ asset("storage/".$page->image1) }}" alt="">
             </div>
         </div>
-        <div class="service__info">
+        <!-- <div class="service__info">
             @foreach ($page->advantages as $advantage)
             @php
             $svgData = json_decode($advantage->svg, true);
@@ -53,8 +53,8 @@
                 <img src="{{ asset("storage/{$svgPath}") }}" width="59" height="59" viewBox="0 0 59 59" fill="none">
             </div>
             @endforeach
-        </div>
-        <div class="service__container about__container">
+        </div> -->
+        <div class="service__container about__container reverse">
             <div class="service__right">
                 <img src="{{ asset("storage/".$page->image2) }}" alt="">
             </div>
@@ -62,7 +62,7 @@
             <div class="service__left-text">
             <h2 class="title">{!! $page->subtitle2 !!}</h2>
                 {!! $page->main2 !!}
-                <div class="hidden-text">{!! $page->desc2 !!}</div>
+                <!-- <div class="hidden-text">{!! $page->desc2 !!}</div> -->
             </div>
                 <button class="more-btn">Подробнее</button>
             </div>

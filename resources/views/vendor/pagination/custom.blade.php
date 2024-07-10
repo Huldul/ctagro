@@ -31,7 +31,8 @@
         @endforeach
 
         {{-- Next Page Link --}}
-        @if ($paginator->hasMorePages())
+    </ul>
+    @if ($paginator->hasMorePages())
             <li>
                 <a href="{{ $paginator->nextPageUrl() }}" rel="next" aria-label="@lang('pagination.next')">Вперед</a>
             </li>
@@ -40,5 +41,4 @@
                 <span aria-hidden="true">Вперед</span>
             </li>
         @endif
-    </ul>
 @endif

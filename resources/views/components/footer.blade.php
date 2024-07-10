@@ -93,7 +93,7 @@
                         <a href="./catalog-inner.html">Орошение</a>
                     </li> --}}
                     <li>
-                        <a href="{{ route('catalog-library', ['locale' => app()->getLocale()]) }}">Библиотека каталогов</a>
+                        <a href="{{ route('library_online', ['locale' => app()->getLocale()]) }}">Библиотека каталогов</a>
                     </li>
                 </ul>
                 <div class="navigation__list-mob">

@@ -125,52 +125,53 @@
             <div class="header__menu">
                 <nav class="header__nav nav">
                     <ul class="nav__list">
-                        <h2>О компании</h2>
+                        <h2>@trans('about')</h2>
                         <li>
                             <a href="{{ route('about', ['locale' => app()->getLocale()]) }}">
                                 <img src="{{asset("svg/mission.svg")}}">
-                                Миссия компании
+                                @trans('mission')
+
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('partners', ['locale' => app()->getLocale()]) }}">
                                 <img src="{{asset("svg/partners.svg")}}">
-                                Наши партнеры
+                                @trans('partners')
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('offers', ['locale' => app()->getLocale()]) }}">
                                 <img src="{{asset("svg/offers.svg")}}">
-                                Спецпредложения
+                                @trans('special_offers')
                             </a>
                         </li>
                         <li>
                             <a href="{{setting('.link_ct_assembly')}}">
                                 <img src="{{asset("svg/company.svg")}}">
-                                Сборочное предприятие CT Assembly
+                                @trans('ct_assembly')
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('news', ['locale' => app()->getLocale()]) }}">
                                 <img src="{{asset("svg/news.svg")}}">
-                                Новости
+                                @trans('news')
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('media', ['locale' => app()->getLocale()]) }}">
                                 <img src="{{asset("svg/media.svg")}}">
-                                Пресса о нас
+                                @trans('press_about_us')
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('reviews', ['locale' => app()->getLocale()]) }}">
                                 <img src="{{asset("svg/reviews.svg")}}">
-                                Отзывы
+                                @trans('reviews')
                             </a>
                         </li>
                     </ul>
                     <ul class="nav__list">
-                        <h2>Техника</h2>
+                        <h2>@trans('technology')</h2>
 
                         @foreach ($types as $type)
                         @php
@@ -248,39 +249,41 @@
                         <li>
                             <a href="{{ route('library_online', ['locale' => app()->getLocale()]) }}">
                                 <img src="{{asset("svg/library.svg")}}">
-                                Библиотека каталогов
+                                @trans('catalog_library')
                             </a>
                         </li>
                     </ul>
                     <ul class="nav__list">
-                        <h2>Запчасти и сервис</h2>
+                        <h2>@trans('parts_and_service')</h2>
                         <li>
                             <a href="{{ route('service', ['locale' => app()->getLocale()]) }}">
 
                                 <img src="{{asset("svg/service.png")}}">
-                                Сервис
+                                @trans('service')
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('spares', ['locale' => app()->getLocale()]) }}">
                                 <img src="{{asset("svg/spares.svg")}}">
-                                Запасные части
+                                @trans('spare_parts')
+
                             </a>
                         </li>
                         <li>
                             <a href="{{setting('.link_engine')}}">
                                 <img src="{{asset("svg/engine.jpg")}}">
-                                Ремонт двигателей
+                                @trans('engine_repair')
+
                             </a>
                         </li>
                     </ul>
                     <ul class="nav__list">
-                        <h2>Контакты</h2>
+                        <h2>@trans('contacts')</h2>
                         <li>
                             <a href="{{ route('contacts', ['locale' => app()->getLocale()]) }}">
                                 <img src="{{asset("svg/map.svg")}}" alt="">
 
-                                Карта присутствия
+                                @trans('presence_map')
                             </a>
                         </li>
                     </ul>

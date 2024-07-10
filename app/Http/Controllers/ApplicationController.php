@@ -17,6 +17,7 @@ class ApplicationController extends Controller
             "email"=>$request->email,
             "text"=>$request->text,
             "region"=>$request->region,
+            "message"=>$request->message,
 
 
         ];
@@ -29,6 +30,7 @@ class ApplicationController extends Controller
         $order->email = $request->email;
         $order->text = $request->text;
         $order->region = $request->region;
+        $order->message = $request->message;
         $order->save();
 
             // Возвращаем PDF пользователю

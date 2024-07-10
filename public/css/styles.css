@@ -3143,7 +3143,7 @@
 }
 .service__left {
     max-width: 600px;
-    height: 500px;
+    height: 560px;
     display: flex;
     flex-direction: column;
 }
@@ -3222,7 +3222,7 @@
 }
 .service__right {
     max-width: 650px;
-    height: 500px;
+    height: 560px;
 }
 
 .service__right img {

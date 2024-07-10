@@ -3179,14 +3179,6 @@
     margin-left: 20px;
 }
 
-.service__left-text {
-    margin-bottom: 30px;
-}
-
-.service__left .hidden-text {
-    margin-bottom: 30px;
-}
-
 .service__left button {
     border: 1.5px solid #6EB513;
     background: #FFF;
@@ -3213,7 +3205,7 @@
 
 .service__left-text {
     margin-bottom: 30px;
-    height: 400px;
+    height: 390px;
     overflow: hidden;
 }
 .service__left-text.active {

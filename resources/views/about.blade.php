@@ -30,27 +30,27 @@
             <section class="about container">
                 <div class="about__wrapper">
                     <div class="about__container">
-                        <div class="about__left">
+                        <div class="about__left service__left">
+                        <div class="service__left-text">
                             <h2 class="about__title title">{!!$page->head_subtitle!!}</h2>
-                            {{$page->head_main}}
-                            <p class="hidden-text"> {!!$page->head_desc!!}</з>
+                            {!!$page->head_main!!}
+                            <!-- <p class="hidden-text"> {!!$page->head_desc!!}</p> -->
+                        </div>
                             <button class="more-btn" type="button">Подробнее</button>
                         </div>
-                        <div class="about__right">
-                            <div class="about__img">
+                        <div class="about__right service__right">
                                 <img src="{{asset("storage/".$page->image1)}}" alt="">
-                            </div>
                         </div>
                     </div>
                     <div class="about__container reverse">
-                        <div class="about__right">
-                            <div class="about__img">
+                        <div class="about__right service__right">
                                 <img src="{{asset("storage/".$page->image2)}}" alt="">
-                            </div>
                         </div>
-                        <div class="about__left">
+                        <div class="about__left service__left">
+                        <div class="service__left-text">
                             {!!$page->sec_main!!}
-                            <p class="hidden-text"> {{$page->sec_desc}}</p>
+                            <!-- <p class="hidden-text"> {!!$page->sec_desc!!}</p> -->
+                        </div>
                             <button class="more-btn" type="button">Подробнее</button>
                         </div>
                     </div>

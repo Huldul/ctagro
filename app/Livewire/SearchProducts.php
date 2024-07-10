@@ -12,10 +12,14 @@ class SearchProducts extends Component
 
     public function updatedSearchTerm()
     {
-        $this->results = Product::where('title', 'like', '%' . $this->searchTerm . '%')
-            ->orWhere('description1', 'like', '%' . $this->searchTerm . '%')
-            ->orWhere('description2', 'like', '%' . $this->searchTerm . '%')
-            ->get();
+        if ($this->searchTerm) {
+            $this->results = Product::where('title', 'like', '%' . $this->searchTerm . '%')
+                ->orWhere('description1', 'like', '%' . $this->searchTerm . '%')
+                ->orWhere('description2', 'like', '%' . $this->searchTerm . '%')
+                ->get();
+        } else {
+            $this->results = [];
+        }
     }
 
     public function render()

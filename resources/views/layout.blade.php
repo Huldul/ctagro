@@ -210,7 +210,7 @@
                         data.forEach(function(product) {
                             var productHtml = `
                                 <div class="product">
-                                    <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => '$product->slug']) }}}">
+                                    <a href="/${locale}/product/${product.slug}">
                                         <h2>${product.title}</h2>
                                     </a>
                                 </div>

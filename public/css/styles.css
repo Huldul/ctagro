@@ -495,13 +495,15 @@
         display: none;
     }
 
-    .sub-list.active {
+    .sub-item .sub-list.active {
         display: flex;
         flex-direction: column;
-        margin-left: 23px;
-        gap: 10px;
-        padding: 10px;
+        position: relative;
+        right: 0;
+        top: 0;
+        padding-left: 0;
     }
+
 
     .sub-list li a {
         color: #000;
@@ -511,9 +513,13 @@
         display: none;
     }
 
-    .sub-sub-list.active {
+    .sub-item .sub-list .sub-sub-list.active {
         display: flex;
         flex-direction: column;
+        position: relative;
+        right: 0;
+        top: 0;
+        padding-left: 0;
     }
 }
 

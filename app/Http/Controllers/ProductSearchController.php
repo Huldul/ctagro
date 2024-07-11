@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Type;
 use App\Models\Subtype;
+use Illuminate\Support\Facades\Log;
 
 class ProductSearchController extends Controller
 {
@@ -18,9 +19,6 @@ class ProductSearchController extends Controller
 
             // Поиск по продуктам
             $products = Product::where('title', 'LIKE', "%{$query}%")
-                ->orWhereHas('type', function($q) use ($query) {
-                    $q->where('title', 'LIKE', "%{$query}%");
-                })
                 ->orWhereHas('subtype', function($q) use ($query) {
                     $q->where('title', 'LIKE', "%{$query}%");
                 })

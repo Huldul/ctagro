@@ -14,6 +14,8 @@ class ProductSearchController extends Controller
         $query = $request->input('query');
 
         try {
+            Log::info('Search query received: ' . $query);
+
             // Поиск по продуктам
             $products = Product::where('title', 'LIKE', "%{$query}%")
                 ->orWhereHas('type', function($q) use ($query) {
@@ -24,10 +26,13 @@ class ProductSearchController extends Controller
                 })
                 ->get();
 
+            Log::info('Products found: ' . $products->count());
+
             return response()->json($products);
         } catch (\Exception $e) {
             // Логирование ошибки
             Log::error('Error in search method: ' . $e->getMessage());
+            Log::error('Trace: ' . $e->getTraceAsString());
             return response()->json(['error' => 'Server Error'], 500);
         }
     }

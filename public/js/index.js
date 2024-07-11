@@ -128,8 +128,14 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     }
+
+
     const openSearch = document.querySelector('.search__btn');
     const search = document.querySelector('.header__search form');
+    const searchInput = document.querySelector('.header__search form input');
+    const searchNotFound = document.querySelector('.search__result-not-found');
+    const searchResult = document.querySelector('.search__result');
+
 
     openSearch.addEventListener('click', () => {
         search.classList.toggle('active');
@@ -138,6 +144,9 @@ document.addEventListener('DOMContentLoaded', function () {
     document.addEventListener('click', (event) => {
         if (!search.contains(event.target) && !openSearch.contains(event.target)) {
             search.classList.remove('active');
+            searchResult.classList.remove('active');
+            searchNotFound.style.display = 'none';
+            searchInput.value = '';
         }
     });
 

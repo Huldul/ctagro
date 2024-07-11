@@ -260,6 +260,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const moreText = container.querySelector('.service__left-text');
         const btn = container.querySelector('.products-inner__btn');
         const leftBlock = container.querySelector('.service__left');
+        const showBtn = container.querySelector('.show-btn');
+        const hiddenText = container.querySelector('.hidden-text');
 
         if (moreBtn && moreText) {
             moreBtn.addEventListener('click', () => {
@@ -278,6 +280,18 @@ document.addEventListener('DOMContentLoaded', function () {
                         btn.classList.remove('active');
                     }
                 }
+            });
+        };
+        if(showBtn && hiddenText) {
+            showBtn.addEventListener('click', () => {
+                if(!hiddenText.classList.contains('active')) {
+                    hiddenText.classList.add('active');
+                    showBtn.textContent = 'Скрыть';
+                } else {
+                    hiddenText.classList.remove('active');
+                    showBtn.textContent = 'Подробнее';
+                }
+
             });
         }
     });

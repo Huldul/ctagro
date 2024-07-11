@@ -65,7 +65,7 @@
                             <p class="hidden-text">{{ $product->dscription2 }}</p>
 
                             @if($product->dscription2 != "")
-                                <button class="more-btn products-inner__btn">
+                                <button class="show-btn products-inner__btn">
                                     Подробнее
                                 </button>
                             @endif
@@ -81,7 +81,7 @@
                                 <p class="hidden-text">{{ $product->desc_hidden_main1 }}</p>
 
                                 @if($product->desc_hidden_main1 != "")
-                                    <button class="more-btn products-inner__btn">
+                                    <button class="show-btn products-inner__btn">
                                         Подробнее
                                     </button>
                                 @endif
@@ -101,7 +101,7 @@
                                 <p class="hidden-text">{{ $product->desc_hidden_main2 }}</p>
 
                                 @if($product->desc_hidden_main2 != "")
-                                    <button class="more-btn products-inner__btn">
+                                    <button class="show-btn products-inner__btn">
                                         Подробнее
                                     </button>
                                 @endif
@@ -115,7 +115,7 @@
                                 <p class="hidden-text">{{ $product->desc_hidden_main3 }}</p>
 
                                 @if($product->desc_hidden_main3 != "")
-                                    <button class="more-btn products-inner__btn">
+                                    <button class="show-btn products-inner__btn">
                                         Подробнее
                                     </button>
                                 @endif
@@ -135,7 +135,7 @@
                                 <p class="hidden-text">{{ $product->desc_hidden_main4 }}</p>
 
                                 @if($product->desc_hidden_main4 != "")
-                                    <button class="more-btn products-inner__btn">
+                                    <button class="show-btn products-inner__btn">
                                         Подробнее
                                     </button>
                                 @endif

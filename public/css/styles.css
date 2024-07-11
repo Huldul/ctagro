@@ -147,7 +147,7 @@
     height: 22px;
 }
 
-.nav__list li a:hover {
+.nav__list>li>a:hover {
     color: #6EB513;
 }
 
@@ -350,7 +350,7 @@
 }
 .sub-list li {
     position: relative;
-    background-color: #cbcaca;
+    background-color: #f1f1f1;
     padding: 10px 5px 0;
 }
 .sub-list li:nth-last-of-type() {
@@ -381,7 +381,7 @@
     display: none;
 }
 .sub-sub-list li {
-    background-color: #a8a7a7;
+    background-color: #f1f1f1;
 }
 .sub-list li:hover .sub-sub-list {
     display: flex;

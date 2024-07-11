@@ -230,7 +230,7 @@
                             <div class="swiper-slide video__slider-slide">
                                 <div class="video__slide">
                                     <div data-id="" data-url="{{$video->url}}" class="video__slide-video">
-                                        <img src="{{ $thumbnail_url }}" alt="">
+                                        <img src="{{ asset("storage/".$video->image) }}" alt="">
                                     </div>
                                 </div>
                             </div>

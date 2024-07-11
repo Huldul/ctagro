@@ -309,19 +309,21 @@
     display: none;
     width: 300px;
     padding: 10px;
-    bottom: -85px;
+    bottom: -65px;
     left: -128px;
     position: absolute;
-    background-color: #fff;
 }
 
 .search__result.active {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     height: 100%;
 }
-.search__result .product a {
+.search__result .product {
+    background-color: #fff;
+    padding: 5px;
+}
+.search__result .product h2 {
     color: #000;
     font-family: Arial;
     font-size: 16px;

@@ -346,7 +346,13 @@
 .sub-list {
     display: none;
 }
-
+.sub-list li {
+    position: relative;
+    background-color: #fff;
+}
+.sub-list li:nth-child(1) {
+    padding-top: 10px;
+}
 .sub-item:hover .sub-list {
     display: flex;
     flex-direction: column;

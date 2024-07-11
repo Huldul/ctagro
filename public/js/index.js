@@ -603,6 +603,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    
+    const listItems = document.querySelectorAll('.sub-list > li'); 
+    listItems.forEach(function(item) { 
+        const subSubList = item.querySelector('.sub-sub-list'); 
+        if (subSubList && subSubList.children.length === 0) { 
+            const svg = item.querySelector('svg'); 
+            if (svg) { 
+                svg.remove(); 
+            } 
+        } 
+    });
 });
 
 

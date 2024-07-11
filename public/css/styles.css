@@ -351,7 +351,7 @@
 .sub-list li {
     position: relative;
     background-color: #f1f1f1;
-    padding: 10px 5px 0;
+    padding: 5px;
 }
 .sub-list li:nth-last-of-type() {
     padding-top: 10px;
@@ -379,6 +379,9 @@
 
 .sub-sub-list {
     display: none;
+}
+.sub-list li:hover {
+    background-color: #dadada;
 }
 .sub-sub-list li {
     background-color: #f1f1f1;

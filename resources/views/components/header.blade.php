@@ -201,9 +201,9 @@
                                                 <li>
                                                     <a class="submenu-link" href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $nestedSubtype->slug]) }}">
                                                         {{ $nestedSubtype->title }}
-                                                        <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <!-- <svg width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <path d="M11 8.5L6 13.5L6 3.5L11 8.5Z" fill="#6EB513"/>
-                                                        </svg>
+                                                        </svg> -->
                                                     </a>
                                                     {{-- <ul class="sub-sub-list">
                                                         @foreach ($nestedSubtype->products as $product)

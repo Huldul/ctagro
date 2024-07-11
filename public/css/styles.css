@@ -2666,7 +2666,7 @@
     gap: 10px;
     color: #636362;
     font-family: Arial;
-    font-size: 16px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 125%;
@@ -2681,6 +2681,7 @@
 .products-inner__right ul li::marker {
     background-color: #000;
     color: #000;
+    font-size: 18px;
 }
 .products-inner__btn {
     color: #252520;

@@ -16,10 +16,10 @@ class ProductSearchController extends Controller
         // Поиск по продуктам
         $products = Product::where('title', 'LIKE', "%{$query}%")
             ->orWhereHas('type', function($q) use ($query) {
-                $q->where('name', 'LIKE', "%{$query}%");
+                $q->where('title', 'LIKE', "%{$query}%");
             })
             ->orWhereHas('subtype', function($q) use ($query) {
-                $q->where('name', 'LIKE', "%{$query}%");
+                $q->where('title', 'LIKE', "%{$query}%");
             })
             ->get();
 

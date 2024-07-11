@@ -491,7 +491,8 @@
         grid-template-columns: repeat(5, 1fr);
     }
 
-    .sub-list {
+    .sub-item:hover .sub-list,
+    .sub-list li:hover .sub-sub-list {
         display: none;
     }
 
@@ -507,10 +508,6 @@
 
     .sub-list li a {
         color: #000;
-    }
-
-    .sub-sub-list {
-        display: none;
     }
 
     .sub-item .sub-list .sub-sub-list.active {

@@ -30,7 +30,7 @@ class ProductController extends Controller
     }
     public function show($locale, $slug){
         // Получаем текущий продукт по его slug
-        $untrProduct = Product::with('subtype.parentSubtype.type')->where('slug', $slug)->firstOrFail();
+        $untrProduct = Product::with('subtype.parentSubtype.type')->where('slug', $slug)->with('blocks')->firstOrFail();
 
         // Получаем все продукты из той же категории, исключая текущий продукт
         $untrProducts = AdvNews::where('type', 'products')->paginate(99);

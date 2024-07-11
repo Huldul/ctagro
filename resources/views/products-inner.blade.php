@@ -107,40 +107,44 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="products-inner__container about__container">
-                            <div class="products-inner__right">
-                                <h2>{{ $product->desc_title3 }}</h2>
-                                <p>{!! $product->desc_main3 !!}</p>
-                                <p></p>
-                                <p class="hidden-text">{{ $product->desc_hidden_main3 }}</p>
+                        @foreach($product->blocks as $index => $block)
+                            @if($index % 2 == 0)
+                                <div class="products-inner__container about__container products-inner-reverse">
+                                    <div class="products-inner__left">
+                                        <img src="{{ asset('storage/' . $block->image) }}" alt="">
+                                    </div>
+                                    <div class="products-inner__right">
+                                        <h2>{{ $block->title }}</h2>
+                                        <p>{!! $block->main !!}</p>
+                                        <p class="hidden-text">{{ $block->hidden_main }}</p>
 
-                                @if($product->desc_hidden_main3 != "")
-                                    <button class="show-btn products-inner__btn">
-                                        Подробнее
-                                    </button>
-                                @endif
-                            </div>
-                            <div class="products-inner__left">
-                                <img src="{{ asset('storage/' . $product->desc_image3) }}" alt="">
-                            </div>
-                        </div>
-                        <div class="products-inner__container about__container products-inner-reverse">
-                            <div class="products-inner__left">
-                                <img src="{{ asset('storage/' . $product->desc_image4) }}" alt="">
-                            </div>
-                            <div class="products-inner__right">
-                                <h2>{{ $product->desc_title4 }}</h2>
-                                <p>{!! $product->desc_main4 !!}</p>
-                                <p></p>
-                                <p class="hidden-text">{{ $product->desc_hidden_main4 }}</p>
+                                        @if($block->hidden_main != "")
+                                            <button class="show-btn products-inner__btn">
+                                                Подробнее
+                                            </button>
+                                        @endif
+                                    </div>
+                                </div>
+                            @else
+                                <div class="products-inner__container about__container">
+                                    <div class="products-inner__right">
+                                        <h2>{{ $block->title }}</h2>
+                                        <p>{!! $block->main !!}</p>
+                                        <p class="hidden-text">{{ $block->hidden_main }}</p>
 
-                                @if($product->desc_hidden_main4 != "")
-                                    <button class="show-btn products-inner__btn">
-                                        Подробнее
-                                    </button>
-                                @endif
-                            </div>
-                        </div>
+                                        @if($block->hidden_main != "")
+                                            <button class="show-btn products-inner__btn">
+                                                Подробнее
+                                            </button>
+                                        @endif
+                                    </div>
+                                    <div class="products-inner__left">
+                                        <img src="{{ asset('storage/' . $block->image) }}" alt="">
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+
                     </div>
 
                     <div id="characteristics" class="products-inner__wrapp">

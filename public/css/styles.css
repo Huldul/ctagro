@@ -350,7 +350,7 @@
 }
 .sub-list li {
     position: relative;
-    background-color: #fff;
+    background-color: #cbcaca;
     padding: 10px 5px 0;
 }
 .sub-list li:nth-last-of-type() {
@@ -380,7 +380,9 @@
 .sub-sub-list {
     display: none;
 }
-
+.sub-sub-list li {
+    background-color: #a8a7a7;
+}
 .sub-list li:hover .sub-sub-list {
     display: flex;
     flex-direction: column;

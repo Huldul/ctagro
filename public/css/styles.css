@@ -306,12 +306,6 @@
 }
 
 .search__result {
-    color: #000;
-    font-family: Arial;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 135%;
     display: none;
     width: 300px;
     padding: 10px;
@@ -325,8 +319,16 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height: 100%;
 }
-
+.search__result .product a {
+    color: #000;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+}
 .sub-item {
     position: relative;
     max-width: 245px;

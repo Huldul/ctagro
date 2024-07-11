@@ -125,22 +125,7 @@
                                     <img src="{{ asset('storage/' . $block->image) }}" alt="">
                                 </div>
                             </div>
-                            <div class="products-inner__container about__container products-inner-reverse">
-                                <div class="products-inner__left">
-                                    <img src="{{ asset('storage/' . $block->image) }}" alt="">
-                                </div>
-                                <div class="products-inner__right">
-                                    <h2>{{ $block->title }}</h2>
-                                    <p>{!! $block->main !!}</p>
-                                    <p class="hidden-text">{{ $block->hidden_main }}</p>
 
-                                    @if($block->hidden_main != "")
-                                        <button class="show-btn products-inner__btn">
-                                            Подробнее
-                                        </button>
-                                    @endif
-                                </div>
-                            </div>
 
                             @endif
                         @endforeach

@@ -13,17 +13,23 @@ class ProductSearchController extends Controller
     {
         $query = $request->input('query');
 
-        // Поиск по продуктам
-        $products = Product::where('title', 'LIKE', "%{$query}%")
-            ->orWhereHas('type', function($q) use ($query) {
-                $q->where('title', 'LIKE', "%{$query}%");
-            })
-            ->orWhereHas('subtype', function($q) use ($query) {
-                $q->where('title', 'LIKE', "%{$query}%");
-            })
-            ->get();
+        try {
+            // Поиск по продуктам
+            $products = Product::where('title', 'LIKE', "%{$query}%")
+                ->orWhereHas('type', function($q) use ($query) {
+                    $q->where('title', 'LIKE', "%{$query}%");
+                })
+                ->orWhereHas('subtype', function($q) use ($query) {
+                    $q->where('title', 'LIKE', "%{$query}%");
+                })
+                ->get();
 
-        return response()->json($products);
+            return response()->json($products);
+        } catch (\Exception $e) {
+            // Логирование ошибки
+            Log::error('Error in search method: ' . $e->getMessage());
+            return response()->json(['error' => 'Server Error'], 500);
+        }
     }
 }
 

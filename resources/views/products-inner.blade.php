@@ -109,39 +109,39 @@
                         </div>
                         @foreach($product->blocks as $index => $block)
                             @if($index % 2 == 0)
-                                <div class="products-inner__container about__container products-inner-reverse">
-                                    <div class="products-inner__left">
-                                        <img src="{{ asset('storage/' . $block->image) }}" alt="">
-                                    </div>
-                                    <div class="products-inner__right">
-                                        <h2>{{ $block->title }}</h2>
-                                        <p>{!! $block->main !!}</p>
-                                        <p class="hidden-text">{{ $block->hidden_main }}</p>
+                            <div class="products-inner__container about__container">
+                                <div class="products-inner__right">
+                                    <h2>{{ $block->title }}</h2>
+                                    <p>{!! $block->main !!}</p>
+                                    <p class="hidden-text">{{ $block->hidden_main }}</p>
 
-                                        @if($block->hidden_main != "")
-                                            <button class="show-btn products-inner__btn">
-                                                Подробнее
-                                            </button>
-                                        @endif
-                                    </div>
+                                    @if($block->hidden_main != "")
+                                        <button class="show-btn products-inner__btn">
+                                            Подробнее
+                                        </button>
+                                    @endif
                                 </div>
-                            @else
-                                <div class="products-inner__container about__container">
-                                    <div class="products-inner__right">
-                                        <h2>{{ $block->title }}</h2>
-                                        <p>{!! $block->main !!}</p>
-                                        <p class="hidden-text">{{ $block->hidden_main }}</p>
+                                <div class="products-inner__left">
+                                    <img src="{{ asset('storage/' . $block->image) }}" alt="">
+                                </div>
+                            </div>
+                            <div class="products-inner__container about__container products-inner-reverse">
+                                <div class="products-inner__left">
+                                    <img src="{{ asset('storage/' . $block->image) }}" alt="">
+                                </div>
+                                <div class="products-inner__right">
+                                    <h2>{{ $block->title }}</h2>
+                                    <p>{!! $block->main !!}</p>
+                                    <p class="hidden-text">{{ $block->hidden_main }}</p>
 
-                                        @if($block->hidden_main != "")
-                                            <button class="show-btn products-inner__btn">
-                                                Подробнее
-                                            </button>
-                                        @endif
-                                    </div>
-                                    <div class="products-inner__left">
-                                        <img src="{{ asset('storage/' . $block->image) }}" alt="">
-                                    </div>
+                                    @if($block->hidden_main != "")
+                                        <button class="show-btn products-inner__btn">
+                                            Подробнее
+                                        </button>
+                                    @endif
                                 </div>
+                            </div>
+
                             @endif
                         @endforeach
 

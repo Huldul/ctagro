@@ -36,4 +36,8 @@ class Product extends Model
     {
         return $this->belongsTo(Subtype::class);
     }
+    public function blocks()
+    {
+        return $this->hasMany(ExtraBlock::class);
+    }
 }

@@ -2867,7 +2867,9 @@
     .products__card h2 {
         font-size: 18px;
     }
-
+    .products-inner__container {
+        flex-direction: column-reverse;
+    }
     .products__card span {
         font-size: 18px;
     }
@@ -2881,7 +2883,7 @@
     }
 
     .products-inner-reverse {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .products-inner__left {

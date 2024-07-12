@@ -44,4 +44,8 @@ class Product extends Model
     {
         return $this->hasMany(AdvNews::class);
     }
+    public function videos()
+    {
+        return $this->hasMany(Video::class);
+    }
 }

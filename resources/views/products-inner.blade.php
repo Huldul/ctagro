@@ -167,7 +167,7 @@
                         канал.</span></h2>
                                 <div class="swiper video__slider">
                     <div class="swiper-wrapper">
-                        @foreach ($videos as $video)
+                        @foreach ($product->videos as $video)
                             <?php
                             $thumbnail_url = './img/about-img.png'; // URL изображения по умолчанию
 

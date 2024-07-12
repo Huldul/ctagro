@@ -226,7 +226,7 @@
                                 data.subtypes.forEach(function(subtype) {
                                     var locale = "{{ app()->getLocale() }}";
                                     var subtypeHtml = `
-                                        <div class="subtype">
+                                        <div class="product">
                                             <a href="/${locale}/product-subtypes/${subtype.slug}">
                                                 <h2>${subtype.title}</h2>
                                             </a>

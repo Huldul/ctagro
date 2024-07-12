@@ -227,7 +227,7 @@
                                     var locale = "{{ app()->getLocale() }}";
                                     var subtypeHtml = `
                                         <div class="subtype">
-                                            <a href="/${locale}/product-subtypes/{subtype.slug}">
+                                            <a href="/${locale}/product-subtypes/${subtype.slug}">
                                                 <h2>${subtype.name}</h2>
                                             </a>
                                         </div>

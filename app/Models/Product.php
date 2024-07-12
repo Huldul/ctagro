@@ -40,4 +40,8 @@ class Product extends Model
     {
         return $this->hasMany(ExtraBlock::class);
     }
+    public function news()
+    {
+        return $this->hasMany(AdvNews::class);
+    }
 }

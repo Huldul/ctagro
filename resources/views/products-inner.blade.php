@@ -240,7 +240,7 @@
                     </div>
                 </div>
                 <div class="products-inner__video-wrapper">
-                    @foreach ($products as $item)
+                    @foreach ($product->news as $item)
                         <div class="products-inner__card">
                             <img src="{{asset("storage/".$item->image)}}" alt="">
                             <div class="products-inner__content">

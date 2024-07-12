@@ -39,7 +39,7 @@ class PageController extends Controller
     }
     public function library_online()
     {
-        $inner_types = LibraryPdf::where('type', 'all')->paginate(16);
+        $inner_types = LibraryPdf::where('brand_id', null)->paginate(16);
 
         return view('catalog-library', [
             "inner_types" => $inner_types,

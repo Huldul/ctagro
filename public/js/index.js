@@ -392,15 +392,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
         document.getElementById('message').addEventListener('change', function() {
             var textarea = document.querySelector('textarea[name="text"]');
-            const option = document.getElementById('other-value');
-            const dataValue = option.getAttribute('data-value');
+            const selectedOption = select.options[select.selectedIndex];
+            const dataValue = selectedOption.getAttribute('data-value');
             if (dataValue === 'Other') {
                 textarea.classList.add('active');
             } else {
                 textarea.classList.remove('active');
             }
         });
-    }
+    };
 
 
 

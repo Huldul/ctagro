@@ -27,7 +27,7 @@ class ProductSearchController extends Controller
             Log::info('Products found: ' . $products->count());
 
             // Поиск по подтипам
-            $subtypes = Subtype::where('name', 'LIKE', "%{$query}%")->get();
+            $subtypes = Subtype::where('title', 'LIKE', "%{$query}%")->get();
 
             Log::info('Subtypes found: ' . $subtypes->count());
 

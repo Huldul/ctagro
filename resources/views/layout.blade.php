@@ -187,65 +187,66 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{asset("js/index.js")}}?v=1.43"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-    <script>
-        $(document).ready(function() {
-            $('form').on('submit', function(event) {
-                event.preventDefault();
 
-                var query = $('input[type="search"]').val();
+        <script>
+            $(document).ready(function() {
+                $('form').on('submit', function(event) {
+                    event.preventDefault();
 
-                $.ajax({
-                    url: "{{ route('product.search') }}",
-                    type: 'GET',
-                    data: { query: query },
-                    success: function(data) {
-                        var resultContainer = $('.search__result');
-                        resultContainer.empty();
+                    var query = $('input[type="search"]').val();
+                    var resultContainer = $('.search__result');
 
-                        if (data.products.length === 0 && data.subtypes.length === 0) {
-                            $('.search__result-not-found').show();
+                    $.ajax({
+                        url: "{{ route('product.search') }}",
+                        type: 'GET',
+                        data: { query: query },
+                        success: function(data) {
+                            resultContainer.empty();
+
+                            if (data.products.length === 0 && data.subtypes.length === 0) {
+                                $('.search__result-not-found').show();
+                                resultContainer.removeClass('active');
+                            } else {
+                                $('.search__result-not-found').hide();
+
+                                // Обработка продуктов
+                                data.products.forEach(function(product) {
+                                    var locale = "{{ app()->getLocale() }}";
+                                    var productHtml = `
+                                        <div class="product">
+                                            <a href="/${locale}/product/${product.slug}">
+                                                <h2>${product.title}</h2>
+                                            </a>
+                                        </div>
+                                    `;
+                                    resultContainer.append(productHtml);
+                                });
+
+                                // Обработка подтипов
+                                data.subtypes.forEach(function(subtype) {
+                                    var locale = "{{ app()->getLocale() }}";
+                                    var subtypeHtml = `
+                                        <div class="subtype">
+                                            <a href="/${locale}/product-subtypes/{subtype.slug}">
+                                                <h2>${subtype.name}</h2>
+                                            </a>
+                                        </div>
+                                    `;
+                                    resultContainer.append(subtypeHtml);
+                                });
+
+                                resultContainer.addClass('active');
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error: ' + error);
+                            $('.search__result-not-found').show().text('Server Error: ' + xhr.responseText);
                             resultContainer.removeClass('active');
-                        } else {
-                            $('.search__result-not-found').hide();
-
-                            // Обработка продуктов
-                            data.products.forEach(function(product) {
-                                var locale = "{{ app()->getLocale() }}";
-                                var productHtml = `
-                                    <div class="product">
-                                        <a href="/${locale}/product/${product.slug}">
-                                            <h2>${product.title}</h2>
-                                        </a>
-                                    </div>
-                                `;
-                                resultContainer.append(productHtml);
-                            });
-
-                            // Обработка подтипов
-                            data.subtypes.forEach(function(subtype) {
-                                var locale = "{{ app()->getLocale() }}";
-                                var subtypeHtml = `
-                                    <div class="subtype">
-                                        <a href="/${locale}/product-subtypes/{subtype.slug}">
-                                            <h2>${subtype.name}</h2>
-                                        </a>
-                                    </div>
-                                `;
-                                resultContainer.append(subtypeHtml);
-                            });
-
-                            resultContainer.addClass('active');
                         }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Error: ' + error);
-                        $('.search__result-not-found').show().text('Server Error: ' + xhr.responseText);
-                        resultContainer.removeClass('active');
-                    }
+                    });
                 });
             });
-        });
-        </script>
+            </script>
 
     @livewireScripts
 </body>

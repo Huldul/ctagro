@@ -202,12 +202,14 @@
                         var resultContainer = $('.search__result');
                         resultContainer.empty();
 
-                        if (data.length === 0) {
+                        if (data.products.length === 0 && data.subtypes.length === 0) {
                             $('.search__result-not-found').show();
                             resultContainer.removeClass('active');
                         } else {
                             $('.search__result-not-found').hide();
-                            data.forEach(function(product) {
+
+                            // Обработка продуктов
+                            data.products.forEach(function(product) {
                                 var locale = "{{ app()->getLocale() }}";
                                 var productHtml = `
                                     <div class="product">
@@ -218,8 +220,27 @@
                                 `;
                                 resultContainer.append(productHtml);
                             });
+
+                            // Обработка подтипов
+                            data.subtypes.forEach(function(subtype) {
+                                var locale = "{{ app()->getLocale() }}";
+                                var subtypeHtml = `
+                                    <div class="subtype">
+                                        <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => '']) }}/${subtype.slug}">
+                                            <h2>${subtype.name}</h2>
+                                        </a>
+                                    </div>
+                                `;
+                                resultContainer.append(subtypeHtml);
+                            });
+
                             resultContainer.addClass('active');
                         }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error: ' + error);
+                        $('.search__result-not-found').show().text('Server Error: ' + xhr.responseText);
+                        resultContainer.removeClass('active');
                     }
                 });
             });

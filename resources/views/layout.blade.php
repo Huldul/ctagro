@@ -208,7 +208,17 @@
                                 resultContainer.removeClass('active');
                             } else {
                                 $('.search__result-not-found').hide();
-
+                                data.subtypes.forEach(function(subtype) {
+                                    var locale = "{{ app()->getLocale() }}";
+                                    var subtypeHtml = `
+                                        <div class="product">
+                                            <a href="/${locale}/product-subtypes/${subtype.slug}">
+                                                <h2>${subtype.title}</h2>
+                                            </a>
+                                        </div>
+                                    `;
+                                    resultContainer.append(subtypeHtml);
+                                });
                                 // Обработка продуктов
                                 data.products.forEach(function(product) {
                                     var locale = "{{ app()->getLocale() }}";
@@ -223,17 +233,7 @@
                                 });
 
                                 // Обработка подтипов
-                                data.subtypes.forEach(function(subtype) {
-                                    var locale = "{{ app()->getLocale() }}";
-                                    var subtypeHtml = `
-                                        <div class="product">
-                                            <a href="/${locale}/product-subtypes/${subtype.slug}">
-                                                <h2>${subtype.title}</h2>
-                                            </a>
-                                        </div>
-                                    `;
-                                    resultContainer.append(subtypeHtml);
-                                });
+
 
                                 resultContainer.addClass('active');
                             }

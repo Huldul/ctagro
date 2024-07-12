@@ -3613,3 +3613,18 @@
 }
 
 /* error end */
+
+
+.up-path {
+    transform: translate(-20px, -35px);
+}
+
+.up-path-1 {
+    transform: translate(-34px, 0px);
+}
+.up-path-2 {
+    transform: translate(-27px, -10px);
+}
+.up-rect {
+    transform: translate(-34px, 0px);
+}

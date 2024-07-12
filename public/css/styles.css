@@ -3627,6 +3627,18 @@
 .up-path-2 {
     transform: translate(-27px, -10px);
 }
+.up-path-3 {
+    transform: translate(-45px, -5px);
+}
+.up-path-4 {
+    transform: translate(-45px, -5px);
+}
+.up-path-5 {
+    transform: translate(-20px, -25px);
+}
 .up-rect {
     transform: translate(-34px, 0px);
+}
+.up-rect-1 {
+    transform: translate(-45px, -5px);
 }

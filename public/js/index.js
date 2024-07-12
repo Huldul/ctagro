@@ -386,13 +386,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const select = document.querySelector('.select-wrapp select');
     const selectElem = document.querySelector('.select-wrapp span');
-    if(select) {
+    if (select) {
         select.addEventListener('change', () => {
             selectElem.style.display = 'none'
         });
-        document.getElementById('message').addEventListener('change', function() {
+        document.getElementById('message').addEventListener('change', function () {
             var textarea = document.querySelector('textarea[name="text"]');
-            const selectedOption = select.options[select.selectedIndex];
+            const selectedOption = this.options[this.selectedIndex];
             const dataValue = selectedOption.getAttribute('data-value');
             if (dataValue === 'Other') {
                 textarea.classList.add('active');
@@ -400,7 +400,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 textarea.classList.remove('active');
             }
         });
-    };
+    }
 
 
 

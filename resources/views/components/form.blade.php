@@ -16,27 +16,27 @@
                                 </div>
                                 <div class="select-wrapp">
                                     <select name="region" id="" required>
-                                        <option value="" disabled selected>Регионы</option>
-                                        <option value="Astana">Астана</option>
-                                        <option value="Almaty">Алматы</option>
-                                        <option value="Shymkent">Шымкент</option>
-                                        <option value="Akmola region">Акмолинская область</option>
-                                        <option value="Almaty region">Алматинская область</option>
-                                        <option value="Turkestan region">Туркестанская область</option>
-                                        <option value="West Kazakhstan region">Западно-Казахстанская область</option>
-                                        <option value="Atyrau region">Атырауская область</option>
-                                        <option value="Mangystau region">Мангыстауская область</option>
-                                        <option value="Aktobe region">Актюбинская область</option>
-                                        <option value="Kostanayskaya region">Костанайская область</option>
-                                        <option value="North Kazakhstan region">Северо-Казахстанская область</option>
-                                        <option value="Pavlodar region">Павлодарская область</option>
-                                        <option value="Karaganda region">Карагандинская область</option>
-                                        <option value="Abai region">Абайская область</option>
-                                        <option value="East Kazakhstan region">Восточно-Казахстанская область</option>
-                                        <option value="Zhetysuyskaya region">Жетысуйская область</option>
-                                        <option value="Zhambyl region">Жамбылская область</option>
-                                        <option value="Kyzylorda region">Кызылординская область</option>
-                                        <option value="Ulytauskaya region">Улытауская область</option>
+                                        <option data-value="regions" value="regions" disabled selected>Регионы</option>
+                                        <option data-value="Astana" value="Астана">Астана</option>
+                                        <option data-value="Almaty" value="Алматы">Алматы</option>
+                                        <option data-value="Shymkent" value="Шымкент">Шымкент</option>
+                                        <option data-value="Akmola region" value="Акмолинская область">Акмолинская область</option>
+                                        <option data-value="Almaty region" value="Алматинская область">Алматинская область</option>
+                                        <option data-value="Turkestan region" value="Туркестанская область">Туркестанская область</option>
+                                        <option data-value="West Kazakhstan region" value="Западно-Казахстанская область">Западно-Казахстанская область</option>
+                                        <option data-value="Atyrau region" value="Атырауская область">Атырауская область</option>
+                                        <option data-value="Mangystau region" value="Мангыстауская область">Мангыстауская область</option>
+                                        <option data-value="Aktobe region" value="Актюбинская область">Актюбинская область</option>
+                                        <option data-value="Kostanayskaya region" value="Костанайская область">Костанайская область</option>
+                                        <option data-value="North Kazakhstan region" value="Северо-Казахстанская область">Северо-Казахстанская область</option>
+                                        <option data-value="Pavlodar region" value="Павлодарская область">Павлодарская область</option>
+                                        <option data-value="Karaganda region" value="Карагандинская область">Карагандинская область</option>
+                                        <option data-value="Abai region" value="Абайская область">Абайская область</option>
+                                        <option data-value="East Kazakhstan region" value="Восточно-Казахстанская область">Восточно-Казахстанская область</option>
+                                        <option data-value="Zhetysuyskaya region" value="Жетысуйская область">Жетысуйская область</option>
+                                        <option data-value="Zhambyl region" value="Жамбылская область">Жамбылская область</option>
+                                        <option data-value="Kyzylorda region" value="Кызылординская область">Кызылординская область</option>
+                                        <option data-value="Ulytauskaya region" value="Улытауская область">Улытауская область</option>
 
                                     </select>
                                     <span>*</span>
@@ -50,12 +50,12 @@
                 <div class="select-wrapp">
                                     <select name="message" id="message" required>
                                         <option value="" disabled selected>Тема</option>
-                                        <option value="Agricultural machinery">сельхозтехника</option>
-                                        <option value="Vegetable growing">овощеводство</option>
-                                        <option value="Irrigation">орошение</option>
-                                        <option value="Service">сервис</option>
-                                        <option value="Spare parts">запасные части</option>
-                                        <option value="Other">другое</option>
+                                        <option data-value="Agricultural machinery" value="сельхозтехника">сельхозтехника</option>
+                                        <option data-value="Vegetable growing" value="овощеводство">овощеводство</option>
+                                        <option data-value="Irrigation" value="орошение">орошение</option>
+                                        <option data-value="Service" value="сервис">сервис</option>
+                                        <option data-value="Spare parts" value="запасные части">запасные части</option>
+                                        <option id="other-value" data-value="Other" value="другое">другое</option>
                                     </select>
                                 </div>
                     <textarea rows="1" name="text" placeholder="@trans('message')"></textarea>

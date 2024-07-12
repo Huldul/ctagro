@@ -6,8 +6,15 @@
         <div class="first__block-wrapper container">
             <h1>Онлайн каталог</h1>
         </div>
-    </section>@dd($inner_type)
-    <div id="report_1" class="df_container" data-file="/resources/views/catalog_ctagro.pdf"></div>
+    </section>
+    @php
+        // Декодирование JSON-строки
+        $fileData = json_decode($inner_type->file, true);
+
+        // Извлечение значения download_link
+        $downloadLink = $fileData[0]['download_link'] ?? null;
+    @endphp
+    <div id="report_1" class="df_container" data-file="{{ asset("storage/".$downloadLink) }}"></div>
 </main>
 
 @endsection

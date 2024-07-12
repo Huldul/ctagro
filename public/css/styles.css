@@ -1157,6 +1157,7 @@
     height: 16px;
     top: 35%;
     right: 10px;
+    z-index: -1;
 }
 
 .form__group input::placeholder,

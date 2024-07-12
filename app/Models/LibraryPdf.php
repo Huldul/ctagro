@@ -22,4 +22,8 @@ class LibraryPdf extends Model
             $model->slug = LibraryPdf::where('slug', '!=', $model->slug)->where('slug', $slug)->exists() ? $slug.'-'.uniqid() : $slug;
         });
     }
+    public function brand()
+    {
+        return $this->belongsTo(Brand::class);
+    }
 }

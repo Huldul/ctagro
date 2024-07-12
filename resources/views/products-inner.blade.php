@@ -164,8 +164,8 @@
             </section>
 
             <section class="products-inner__video container indent">
-                @dd($product->videos)
-                @if ($product->videos)
+
+                @if ($product->videos != [])
                     <h2 class="products-inner__title title">Хотите узнать о наc больше? <br><span>Переходите на наш youtube
                             канал.</span></h2>
                                     <div class="swiper video__slider">

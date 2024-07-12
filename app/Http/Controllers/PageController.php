@@ -59,6 +59,15 @@ class PageController extends Controller
             'inner_types'=>$inner_types
         ]);
     }
+    public function catalog_brand_page($locale,$slug){
+        $untrBrand = Brand::Where('slug', $slug)->first();
+
+        $brand = $untrBrand->translate(app()->getLocale());
+
+        return view('catalog-brand-inner', [
+            'brand'=>$brand
+        ]);
+    }
     public function partners(){
         $untrPart = Partner::paginate(16);
         $partners = $this->translateCollection($untrPart ,app()->getLocale());

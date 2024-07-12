@@ -18,14 +18,14 @@
                     <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
                 </svg>
             </li>
-            <li>Библиотека каталогов</li>
+            <li>{{$brand->title}}</li>
 
         </ul>
     </div>
     <section class="catalog-library container">
-        <h2 class="visually-hidden">Список каталогов</h2>
+        <h2 class="visually-hidden">>{{$brand->title}}</h2>
         <div class="catalog-brand__wrapper">
-            @foreach ($inner_types as $inner_type)
+            @foreach ($brand->products as $inner_type)
                 <a href="{{ route('catalog-online', ['locale' => app()->getLocale(), 'slug' => $inner_type->slug]) }}" class="catalog-brand__card">
                     <div class="catalog-brand__card-img">
                         <img src="{{ asset('storage/' . $inner_type->image) }}" alt="{{ $inner_type->title }}">
@@ -35,8 +35,8 @@
             @endforeach
         </div>
     </section>
-    <div class="pagination container">
+    {{-- <div class="pagination container">
         {{ $inner_types->links('vendor.pagination.custom') }}
-    </div>
+    </div> --}}
 </main>
 @endsection

@@ -6,7 +6,7 @@
         <div class="first__block-wrapper container">
             <h1>Онлайн каталог</h1>
         </div>
-    </section>
+    </section>@dd($inner_type)
     <div id="report_1" class="df_container" data-file="/resources/views/catalog_ctagro.pdf"></div>
 </main>
 

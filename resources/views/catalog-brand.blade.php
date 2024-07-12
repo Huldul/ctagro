@@ -30,7 +30,7 @@
 
         <div class="catalog-library__wrapper">
             @foreach ($inner_types as $inner_type)
-                <a href="{{ route('catalog-online', ['locale' => app()->getLocale(), 'slug' => $inner_type->slug]) }}" class="catalog-library__card" data-src="#report_1">
+                <a href="{{ route('catalog-brand-page', ['locale' => app()->getLocale(), 'slug' => $inner_type->slug]) }}" class="catalog-library__card" data-src="#report_1">
                     <img src="{{ asset('storage/' . $inner_type->image) }}" alt="{{ $inner_type->title }}">
                     <span>{{ $inner_type->title }}</span>
                 </a>

@@ -49,7 +49,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'm
 
     Route::get('/product-subtypes/{slug}',[ProductController::class, "subtypes"])->name('product.subtypes')->where('locale', '[a-zA-Z]{2}');
 
-
+    Route::get('/catalog-brand-page/{slug}',[PageController::class, "catalog_brand_page"])->name('catalog-brand-page')->where('locale', '[a-zA-Z]{2}');
 
     // partners
     // offers
@@ -89,7 +89,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/product/{slug}', [PageController::class, 'show'])->name('product.show.without_locale');
     Route::get('/catalog-brand-inner/{slug}', [PageController::class, 'catalog_brand_inner'])->name('catalog-brand-inner.without_locale');
     Route::get('/product-subtypes/{slug}',[ProductController::class, "subtypes"])->name('product.subtypes.without_locale');
-
+    Route::get('/catalog-brand-page/{slug}', [PageController::class, 'catalog_brand_page'])->name('catalog-brand-page.without_locale');
     // Другие роуты, которые должны работать без указания локали
 });
 

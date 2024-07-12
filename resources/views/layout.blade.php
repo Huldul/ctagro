@@ -226,7 +226,7 @@
                                 var locale = "{{ app()->getLocale() }}";
                                 var subtypeHtml = `
                                     <div class="subtype">
-                                        <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => '']) }}/${subtype.slug}">
+                                        <a href="/${locale}/product-subtypes/{subtype.slug}">
                                             <h2>${subtype.name}</h2>
                                         </a>
                                     </div>

@@ -51,7 +51,7 @@
             <section class="products-inner container">
 
                 <div class="products-inner__wrapper">
-                    <div class="products-inner__container about__container">
+                    <div class="products-inner__container about__container products-inner-reverse">
                         <div class="products-inner__left">
                             <img src="{{ asset('storage/' . $product->image) }}" alt="">
                         </div>

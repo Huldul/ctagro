@@ -28,7 +28,7 @@
                     <div class="service__left-text">
                         <h2 class="title">{!! $page->subtitle1 !!}</h2>
                         {!! $page->main1 !!}
-                        <p class="hidden-text">{!! $page->desc1 !!}</p>
+                        <p class="hidden-text">{{ $page->desc1 }}</p>
                         </div>
                         <button class="more-btn">Подробнее</button>
                     </div>
@@ -60,7 +60,7 @@
                     <div class="service__left-text">
                         <h2 class="title">{!! $page->subtitle2 !!}</h2>
                         {!! $page->main2 !!}
-                        <p class="hidden-text">{!! $page->desc2 !!}</p>
+                        <p class="hidden-text">{{ $page->desc2 }}</p>
                         </div>
                         <button class="more-btn">Подробнее</button>
                     </div>

@@ -30,7 +30,9 @@
                         {!! $page->main1 !!}
                         <p class="hidden-text">{{ $page->desc1 }}</p>
                         </div>
+                        @if($page->desc1 != "")
                         <button class="more-btn">Подробнее</button>
+                        @endif
                     </div>
                     <div class="service__right">
                         <img src="{{ asset("storage/".$page->image1) }}" alt="">
@@ -62,7 +64,9 @@
                         {!! $page->main2 !!}
                         <p class="hidden-text">{{ $page->desc2 }}</p>
                         </div>
+                        @if($page->desc2 != "")
                         <button class="more-btn">Подробнее</button>
+                        @endif
                     </div>
                 </div>
             </section>

@@ -3248,8 +3248,6 @@
 
 .service__left-text {
     margin-bottom: 30px;
-    height: 550px;
-    overflow: hidden;
 }
 .service__left-text.active {
     height: auto;

@@ -158,7 +158,68 @@
                                 </tbody>
                             </table> --}}
                         </div>
-
+                        <div class="mobile-table">
+                                    <div class="table-head">
+                                        <h3 id="table-title">название
+                                        </h3>
+                                        <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M16.0176 7.9834L10.4176 13.8167L4.81758 7.9834" stroke="#252520" stroke-width="2"/>
+                                        </svg>
+                                        <div class="table-head-hidden">
+                                        <div class="table-tabs">
+                                            <a class="active" href="#traktor">трактор</a>
+                                            <a href="#traktor1">трактор1</a>
+                                         </div>
+                                        </div>
+                                    </div>
+                                    <div class="table-body">
+                                        <ul id="traktor" class="table-content active">
+                                            <li>
+                                                <span>Двигатели</span>
+                                                <h4>DPS</h4>
+                                            </li>
+                                            <li>
+                                                <span>Количество цилиндров/тип</span>
+                                                <h4>6/ТI</h4>
+                                            </li>
+                                            <li>
+                                                <span>Рабочий объем</span>
+                                                <h4>6788 см3</h4>
+                                            </li>
+                                            <li>
+                                                <span>Номинальное число оборотов</span>
+                                                <h4>2200 об/мин</h4>
+                                            </li>
+                                            <li>
+                                                <span>Мощность (ECE R 120)1</span>
+                                                <h4>171/233 кВт/л. с.</h4>
+                                            </li>
+                                        </ul>
+                                        <ul id="traktor1" class="table-content">
+                                            <li>
+                                                <span>Двигатели</span>
+                                                <h4>DPSdasdas</h4>
+                                            </li>
+                                            <li>
+                                                <span>Количество цилиндров/тип</span>
+                                                <h4>6/ТI</h4>
+                                            </li>
+                                            <li>
+                                                <span>Рабочий объем</span>
+                                                <h4>6788 см3</h4>
+                                            </li>
+                                            <li>
+                                                <span>Номинальное число оборотов</span>
+                                                <h4>2200 об/мин</h4>
+                                            </li>
+                                            <li>
+                                                <span>Мощность (ECE R 120)1</span>
+                                                <h4>171/233 кВт/л. с.</h4>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                    </div>
                     </div>
                 </div>
             </section>

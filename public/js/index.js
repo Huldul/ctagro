@@ -610,6 +610,48 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
+
+    const tableHead = document.querySelector('.table-head');
+    const hiddenHead = document.querySelector('.table-head-hidden');
+    const tableHeadSvg = document.querySelector('.table-head svg');
+    tableHead.addEventListener('click', () => {
+        hiddenHead.classList.toggle('active');
+        if(hiddenHead.classList.contains('active')) {
+            tableHeadSvg.style.transform = 'rotate(180deg)';
+        } else {
+            tableHeadSvg.style.transform = 'rotate(0deg)';
+        }
+    });
+
+
+    const tableTabs = document.querySelectorAll(".table-tabs a");
+    // Добавляем обработчики событий для каждого таба
+    tableTabs.forEach(function (tab) { tab.addEventListener("click", function (e) {
+        e.preventDefault();
+        // Проверяем, не является ли выбранный таб уже активным
+        if (!tab.classList.contains("active")) {
+            // Удаляем активный класс у всех табов
+            tableTabs.forEach(function (tab) { tab.classList.remove("active");
+            });
+            // Добавляем активный класс выбранному табу
+            tab.classList.add("active");
+            // Обновляем заголовок
+            document.getElementById('table-title').textContent = tab.textContent + ' ';
+            // Получаем id соответствующего контейнера с содержимым таба
+            const targetId = tab.getAttribute("href").substr(1);
+            // Удаляем активный класс у всех контейнеров с содержимым табов
+            document.querySelectorAll(".table-content").forEach(function (tabContent) {
+                tabContent.classList.remove("active"); });
+                // Добавляем активный класс соответствующему контейнеру с содержимым выбранного таба
+                document.getElementById(targetId).classList.add("active");
+            }
+        });
+    }); // Устанавливаем активный класс для первого таба при загрузке страницы
+    if (tableTabs.length > 0) {
+        tableTabs[0].classList.add("active");
+        document.getElementById('table-title').textContent = tableTabs[0].textContent + ' ';
+        // Обновляем заголовок для первого таба
+        };
 });
 
 

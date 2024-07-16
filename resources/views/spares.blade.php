@@ -56,7 +56,7 @@
             <div class="service__left-text">
             <h2 class="title">{!! $page->subtitle2 !!}</h2>
                 {!! $page->main2 !!}
-                <!-- <div class="hidden-text">{!! $page->desc2 !!}</div> -->
+                <div class="hidden-text">{!! $page->desc2 !!}</div>
             </div>
                 <button class="more-btn">Подробнее</button>
             </div>

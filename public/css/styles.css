@@ -2860,6 +2860,7 @@
 }
 .mobile-table {
     display: none;
+    border: 1px solid #EBEBEB;
 }
 .table-head {
     background: #F1F1F1;
@@ -2875,7 +2876,7 @@
 .table-head h3 {
     color: #252520;
     font-family: Arial;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 700;
     line-height: 125%; /* 25px */
@@ -2889,10 +2890,15 @@
     overflow: hidden;
     background-color: #fff;
     transition: .3s;
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    background: #fff;
+    width: 100%;
 }
 .table-head-hidden.active {
-    height: auto;
-    overflow: auto;
+    height: 100%;
+    overflow: visible;
 }
 .table-content {
     display: none;
@@ -2900,6 +2906,28 @@
 .table-content.active {
     display: flex;
     flex-direction: column;
+}
+.table-content li {
+    padding: 14px;
+}
+.table-content li:not(:last-child) {
+    border-bottom: 1px solid #EBEBEB;
+}
+.table-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #fff;
+    padding: 14px 0;
+}
+.table-tabs a {
+    color:  #252520;
+    font-family: Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 125%; /* 25px */
+    padding-left: 15px;
 }
 @media (max-width:992px) {
     .products__wrapper {

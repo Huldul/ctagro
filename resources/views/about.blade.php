@@ -34,7 +34,7 @@
                         <div class="service__left-text">
                             <h2 class="about__title title">{!!$page->head_subtitle!!}</h2>
                             {!!$page->head_main!!}
-                            <!-- <p class="hidden-text"> {!!$page->head_desc!!}</p> -->
+                            <p class="hidden-text"> {!!$page->head_desc!!}</p>
                         </div>
                             <button class="more-btn" type="button">Подробнее</button>
                         </div>
@@ -49,7 +49,7 @@
                         <div class="about__left service__left">
                         <div class="service__left-text">
                             {!!$page->sec_main!!}
-                            <!-- <p class="hidden-text"> {!!$page->sec_desc!!}</p> -->
+                            <p class="hidden-text"> {!!$page->sec_desc!!}</p>
                         </div>
                             <button class="more-btn" type="button">Подробнее</button>
                         </div>

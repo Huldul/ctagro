@@ -65,7 +65,7 @@
                             <p class="hidden-text">{{ $product->dscription2 }}</p>
 
                             @if($product->dscription2 != "")
-                                <button class="show-btn products-inner__btn">
+                                <button class="more-btn products-inner__btn">
                                     Подробнее
                                 </button>
                             @endif
@@ -81,7 +81,7 @@
                                 <p class="hidden-text">{{ $product->desc_hidden_main1 }}</p>
 
                                 @if($product->desc_hidden_main1 != "")
-                                    <button class="show-btn products-inner__btn">
+                                    <button class="more-btn products-inner__btn">
                                         Подробнее
                                     </button>
                                 @endif
@@ -101,7 +101,7 @@
                                 <p class="hidden-text">{{ $product->desc_hidden_main2 }}</p>
 
                                 @if($product->desc_hidden_main2 != "")
-                                    <button class="show-btn products-inner__btn">
+                                    <button class="more-btn products-inner__btn">
                                         Подробнее
                                     </button>
                                 @endif
@@ -116,7 +116,7 @@
                                     <p class="hidden-text">{{ $block->hidden_main }}</p>
 
                                     @if($block->hidden_main != "")
-                                        <button class="show-btn products-inner__btn">
+                                        <button class="more-btn products-inner__btn">
                                             Подробнее
                                         </button>
                                     @endif

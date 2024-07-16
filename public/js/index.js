@@ -251,11 +251,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     moreContainers.forEach((container) => {
         const moreBtn = container.querySelector('.more-btn');
-        const moreText = container.querySelector('.service__left-text');
+        const moreText = container.querySelector('.hidden-text');
         const btn = container.querySelector('.products-inner__btn');
         const leftBlock = container.querySelector('.service__left');
-        const showBtn = container.querySelector('.show-btn');
-        const hiddenText = container.querySelector('.hidden-text');
+        // const showBtn = container.querySelector('.show-btn');
+        // const hiddenText = container.querySelector('.hidden-text');
 
         if (moreBtn && moreText) {
             moreBtn.addEventListener('click', () => {
@@ -276,18 +276,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         };
-        if(showBtn && hiddenText) {
-            showBtn.addEventListener('click', () => {
-                if(!hiddenText.classList.contains('active')) {
-                    hiddenText.classList.add('active');
-                    showBtn.textContent = 'Скрыть';
-                } else {
-                    hiddenText.classList.remove('active');
-                    showBtn.textContent = 'Подробнее';
-                }
+        // if(showBtn && hiddenText) {
+        //     showBtn.addEventListener('click', () => {
+        //         if(!hiddenText.classList.contains('active')) {
+        //             hiddenText.classList.add('active');
+        //             showBtn.textContent = 'Скрыть';
+        //         } else {
+        //             hiddenText.classList.remove('active');
+        //             showBtn.textContent = 'Подробнее';
+        //         }
 
-            });
-        }
+        //     });
+        // }
     });
 
     // Получаем ссылки на все табы

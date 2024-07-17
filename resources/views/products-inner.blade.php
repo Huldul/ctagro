@@ -159,7 +159,7 @@
                             </table> --}}
                         </div>
                         <div class="mobile-table">
-                                    <div class="table-head">
+                                    {{-- <div class="table-head">
                                         <h3 id="table-title">название
                                         </h3>
                                         <svg width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -217,7 +217,8 @@
                                                 <h4>171/233 кВт/л. с.</h4>
                                             </li>
                                         </ul>
-                                    </div>
+                                    </div> --}}
+                                    {!!$product->techs_mobile!!}
                                 </div>
                     </div>
                     </div>

@@ -3346,8 +3346,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    /* margin-top: 80px;
+    margin-bottom: 80px; */
 }
 
 .service__info-card {

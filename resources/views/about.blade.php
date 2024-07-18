@@ -112,7 +112,7 @@
                         <div class="about__left">
                             <h2 class="about__title title">{{$page->four_title}}</h2>
                             {!!$page->four_main!!}
-                            <a href="{{route("service", ['locale' => app()->getLocale()])}}">На страницу сервиса</a>
+                            <a class="about__link" href="{{route("service", ['locale' => app()->getLocale()])}}">На страницу сервиса</a>
                         </div>
                     </div>
                 </div>

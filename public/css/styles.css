@@ -1624,9 +1624,7 @@
     line-height: normal;
     margin-top: 30px;
 }
-.about__left p:last-of-type {
-    margin-bottom: 30px;
-}
+
 .hidden-text {
     display: none;
 }
@@ -1928,7 +1926,9 @@
     .about__left a {
         font-size: 16px;
     }
-
+    .about__link {
+        margin-top: 30px;
+    }
     .reverse {
         flex-direction: column-reverse;
     }
@@ -2873,17 +2873,16 @@
 .table-head::after {
     position: absolute;
     content: '';
-    top: 0;
-    right: 0;
+    top: 15px;
+    right: 15px;
     background: url('../img/mob-table-arrow.svg') center no-repeat;
     width: 20px;
     height: 20px;
-}
-.table-head svg {
-    position: absolute;
-    top: 30%;
-    right: 15px;
+    transform: rotate(180deg);
     transition: .3s;
+}
+.table-head::after.active {
+    transform: rotate(0);
 }
 .table-head h3 {
     color: #252520;

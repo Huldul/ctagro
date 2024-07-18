@@ -617,9 +617,9 @@ document.addEventListener('DOMContentLoaded', function () {
     tableHead.addEventListener('click', () => {
         hiddenHead.classList.toggle('active');
         if(hiddenHead.classList.contains('active')) {
-            tableHeadSvg.style.transform = 'rotate(180deg)';
+            tableHead.classList.add('active');
         } else {
-            tableHeadSvg.style.transform = 'rotate(0deg)';
+            tableHead.classList.remove('active');
         }
     });
 

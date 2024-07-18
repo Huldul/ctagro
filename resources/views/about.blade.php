@@ -51,7 +51,7 @@
                         <div class="about__left service__left">
                         <div class="service__left-text">
                             {!!$page->sec_main!!}
-                            <p class="hidden-text"> {{$page->sec_desc}}</p>
+                            <div class="hidden-text"> {!!$page->sec_desc!!}</div>
                         </div>
                         @if($page->sec_desc != "")
                         <button class="more-btn" type="button">Подробнее</button>

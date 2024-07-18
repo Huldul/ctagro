@@ -1926,7 +1926,7 @@
     .about__left a {
         font-size: 16px;
     }
-    .about__link {
+    .about__container .about__link {
         margin-top: 30px;
     }
     .reverse {

@@ -107,6 +107,7 @@
                                 @endif
                             </div>
                         </div>
+                        @dd($product->blocks)
                         @foreach($product->blocks as $index => $block)
                             @if($index % 2 == 0)
                             <div class="products-inner__container about__container">

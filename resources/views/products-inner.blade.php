@@ -62,7 +62,7 @@
                             </div>
                             <h2></h2>
                             {!! $product->dscription1 !!}
-                            <p class="hidden-text">{{ $product->dscription2 }}</p>
+                            <p class="hidden-text">{!! $product->dscription2 !!}</p>
 
                             @if($product->dscription2 != "")
                                 <button class="more-btn products-inner__btn">
@@ -78,7 +78,7 @@
                                 <h2>{{ $product->desc_title1 }}</h2>
                                 <p>{!! $product->desc_main1 !!}</p>
                                 <p></p>
-                                <p class="hidden-text">{{ $product->desc_hidden_main1 }}</p>
+                                <p class="hidden-text">{!! $product->desc_hidden_main1 !!}</p>
 
                                 @if($product->desc_hidden_main1 != "")
                                     <button class="more-btn products-inner__btn">
@@ -98,7 +98,7 @@
                                 <h2>{{ $product->desc_title2 }}</h2>
                                 <p>{!! $product->desc_main2 !!}</p>
                                 <p></p>
-                                <p class="hidden-text">{{ $product->desc_hidden_main2 }}</p>
+                                <p class="hidden-text">{!! $product->desc_hidden_main2 !!}</p>
 
                                 @if($product->desc_hidden_main2 != "")
                                     <button class="more-btn products-inner__btn">
@@ -114,7 +114,7 @@
                                     <div class="products-inner__right">
                                         <h2>{{ $block->title }}</h2>
                                         <p>{!! $block->main !!}</p>
-                                        <p class="hidden-text">{{ $block->hidden_main }}</p>
+                                        <p class="hidden-text">{!! $block->hidden_main !!}</p>
 
                                         @if($block->hidden_main != "")
                                             <button class="more-btn products-inner__btn">
@@ -134,7 +134,7 @@
                                     <div class="products-inner__right">
                                         <h2>{{ $block->title }}</h2>
                                         <p>{!! $block->main !!}</p>
-                                        <p class="hidden-text">{{ $block->hidden_main }}</p>
+                                        <p class="hidden-text">{!! $block->hidden_main !!}</p>
 
                                         @if($block->hidden_main != "")
                                             <button class="more-btn products-inner__btn">

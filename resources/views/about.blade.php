@@ -103,7 +103,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="about__container reverse">
+                    <div class="about__container">
                         <div class="about__right">
                             <div class="about__img">
                                 <img src="{{asset("storage/".$page->image4)}}" alt="">

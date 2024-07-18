@@ -614,14 +614,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const tableHead = document.querySelector('.table-head');
     const hiddenHead = document.querySelector('.table-head-hidden');
     const tableHeadSvg = document.querySelector('.table-head svg');
-    tableHead.addEventListener('click', () => {
-        hiddenHead.classList.toggle('active');
-        if(hiddenHead.classList.contains('active')) {
-            tableHead.classList.add('active');
-        } else {
-            tableHead.classList.remove('active');
-        }
-    });
+    if(tableHead) {
+        tableHead.addEventListener('click', () => {
+            hiddenHead.classList.toggle('active');
+            if(hiddenHead.classList.contains('active')) {
+                tableHead.classList.add('active');
+            } else {
+                tableHead.classList.remove('active');
+            }
+        });
+    }
+
 
 
     const tableTabs = document.querySelectorAll(".table-tabs a");

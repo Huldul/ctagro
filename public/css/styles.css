@@ -1624,7 +1624,9 @@
     line-height: normal;
     margin-top: 30px;
 }
-
+.about__left p:last-of-type {
+    margin-bottom: 30px;
+}
 .hidden-text {
     display: none;
 }
@@ -2868,6 +2870,15 @@
     cursor: pointer;
     position: relative;
 }
+.table-head::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    background: url('../img/mob-table-arrow.svg') center no-repeat;
+    width: 20px;
+    height: 20px;
+}
 .table-head svg {
     position: absolute;
     top: 30%;
@@ -2986,7 +2997,7 @@
     }
 }
 @media (max-width:767px) {
-    .products-inner__wrapp table {
+    .products-inner__table {
         display: none;
     }
     .mobile-table {

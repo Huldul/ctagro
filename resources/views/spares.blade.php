@@ -22,7 +22,7 @@
         </ul>
     </div>
     <section class="service container">
-        <div class="service__container about__container">
+        <div class="service__container about__container reverse">
             <div class="service__left">
                 <div class="service__left-text">
                 <h2 class="title">{!! $page->subtitle1 !!}</h2>
@@ -48,7 +48,7 @@
             </div>
             @endforeach
         </div> -->
-        <div class="service__container about__container reverse">
+        <div class="service__container about__container">
             <div class="service__right">
                 <img src="{{ asset("storage/".$page->image2) }}" alt="">
             </div>

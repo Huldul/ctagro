@@ -29,7 +29,7 @@
             </div>
             <section class="about container">
                 <div class="about__wrapper">
-                    <div class="about__container">
+                    <div class="about__container reverse">
                         <div class="about__left service__left">
                         <div class="service__left-text">
                             <h2 class="about__title title">{!!$page->head_subtitle!!}</h2>
@@ -44,7 +44,7 @@
                                 <img src="{{asset("storage/".$page->image1)}}" alt="">
                         </div>
                     </div>
-                    <div class="about__container reverse">
+                    <div class="about__container">
                         <div class="about__right service__right">
                                 <img src="{{asset("storage/".$page->image2)}}" alt="">
                         </div>
@@ -58,7 +58,7 @@
                         @endif
                         </div>
                     </div>
-                    <div class="about__container">
+                    <div class="about__container reverse">
                         <div class="about__left">
                             {!!$page->tr_main!!}
                             <div class="accordeon-wrapper">

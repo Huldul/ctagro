@@ -2639,6 +2639,7 @@
 }
 
 .products-inner__left {
+    width: 100%;
     max-width: 640px;
     max-height: 415px;
 }

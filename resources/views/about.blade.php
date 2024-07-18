@@ -34,7 +34,7 @@
                         <div class="service__left-text">
                             <h2 class="about__title title">{!!$page->head_subtitle!!}</h2>
                             {!!$page->head_main!!}
-                            <div class="hidden-text"> {{$page->head_desc}}</div>
+                            <div class="hidden-text"> {!!$page->head_desc!!}</div>
                         </div>
                         @if($page->head_desc != "")
                             <button class="more-btn" type="button">Подробнее</button>

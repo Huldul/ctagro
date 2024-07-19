@@ -79,7 +79,7 @@
                         <a href="./catalog-inner.html">Орошение</a>
                     </li> --}}
                     <li>
-                        <a href="{{ route('catalog-library', ['locale' => app()->getLocale()]) }}">@trans('catalog_library')</a>
+                        <a href="{{ route('library_online', ['locale' => app()->getLocale()]) }}">@trans('catalog_library')</a>
                     </li>
                     </ul>
                 </div>
@@ -97,7 +97,7 @@
                         <a href="./catalog-inner.html">Орошение</a>
                     </li> --}}
                     <li>
-                        <a href="{{ route('catalog-library', ['locale' => app()->getLocale()]) }}">@trans('catalog_library')</a>
+                        <a href="{{ route('library_online', ['locale' => app()->getLocale()]) }}">@trans('catalog_library')</a>
                     </li>
                 </ul>
                 <div class="navigation__list-mob">

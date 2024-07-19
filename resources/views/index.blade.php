@@ -50,7 +50,7 @@
                     <div class="guarantee__left">
                         <h2 class="guarantee__title title">{{$page->subtitle2}}</h2>
                        {!!$page->desc2!!}
-                        <a href="#">@trans('more_details')</a>
+                        <a href="/about">@trans('more_details')</a>
                     </div>
                     <div class="guarantee__right">
                         <img src="{{asset("storage/".$page->image1)}}" alt="">

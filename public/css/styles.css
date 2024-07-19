@@ -1274,7 +1274,7 @@
     }
 
     .nav-btn {
-        top: 150px;
+        top: 135px;
     }
 
     .video__slider .nav-btn {
@@ -3246,7 +3246,7 @@
 
 @media (max-width:992px) {
     .partners-inner__wrapper {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
 
     .partners-inner__left {

@@ -1241,7 +1241,7 @@
     }
 
     .guarantee__wrapper {
-        flex-direction: column;
+        flex-direction: column-reverse;
         align-items: baseline;
     }
 

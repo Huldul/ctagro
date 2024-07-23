@@ -81,11 +81,17 @@
                             $currentLocale = app()->getLocale();
                             $currentUrl = url()->current();
                             $segments = request()->segments();
-                            $firstSegment = $segments[0] ?? '';
+
+                            // Remove the current locale from the segments
+                            if (in_array($currentLocale, ['ru', 'kz', 'en'])) {
+                                array_shift($segments);
+                            }
+
+                            $urlWithoutLocale = implode('/', $segments);
                         @endphp
-                        <a class="change-color rus" href="{{ url('ru/' . implode('/', array_slice($segments, 1))) }}">Рус</a>
-                        <a class="change-color kz" href="{{ url('kz/' . implode('/', array_slice($segments, 1))) }}">Қаз</a>
-                        <a class="change-color en" href="{{ url('en/' . implode('/', array_slice($segments, 1))) }}">Eng</a>
+                        <a class="change-color rus" href="{{ url('ru/' . $urlWithoutLocale) }}">Рус</a>
+                        <a class="change-color kz" href="{{ url('kz/' . $urlWithoutLocale) }}">Қаз</a>
+                        <a class="change-color en" href="{{ url('en/' . $urlWithoutLocale) }}">Eng</a>
                     </div>
 
                 </div>

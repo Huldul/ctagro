@@ -18,7 +18,7 @@ use App\Http\Controllers\ProductSearchController;
 |
 */
 Route::get('/search', [ProductSearchController::class, 'search'])->name('product.search');
-Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => ['locale']], function() {
+Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'middleware' => 'locale'], function() {
     Route::get('/', [PageController::class, 'index'])->name('home');
     Route::get('/about', [PageController::class, 'about'])->name('about');
     Route::get('/policy', [PageController::class, 'policy'])->name('policy');
@@ -53,33 +53,84 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'm
 });
 
 Route::post('/sendOrder', [ApplicationController::class, 'send_order'])->name('sendOrder');
-Route::group(['middleware' => 'web'], function () {
-    Route::get('/', [PageController::class, 'index'])->name('home.without_locale');
-    Route::get('/about', [PageController::class, 'about'])->name('about.without_locale');
-    Route::get('/policy', [PageController::class, 'policy'])->name('policy.without_locale');
-    Route::get('/partners', [PageController::class, 'partners'])->name('partners.without_locale');
-    Route::get('/offers', [PageController::class, 'offers'])->name('offers.without_locale');
-    Route::get('/news', [PageController::class, 'news'])->name('news.without_locale');
-    Route::get('/media', [PageController::class, 'media'])->name('media.without_locale');
-    Route::get('/reviews', [PageController::class, 'reviews'])->name('reviews.without_locale');
-    Route::get('/catalog', [PageController::class, 'catalog'])->name('catalog.without_locale');
-    Route::get('/catalog-library', [PageController::class, 'catalog_library'])->name('catalog-library.without_locale');
-    Route::get('/catalog-online/{slug}', [PageController::class, 'catalog_online'])->name('catalog-online.without_locale');
-    Route::get('/catalog-brand', [PageController::class, 'catalog_brand'])->name('catalog-brand.without_locale');
-    Route::get('/service', [PageController::class, 'service'])->name('service.without_locale');
-    Route::get('/spares', [PageController::class, 'spares'])->name('spares.without_locale');
-    Route::get('/contacts', [PageController::class, 'contacts'])->name('contacts.without_locale');
 
-    Route::get('/partners-inner/{slug}', [PageController::class, 'partners_inner'])->name('partners-inner.without_locale');
-    Route::get('/offers-inner/{slug}', [PageController::class, 'offers_inner'])->name('offers-inner.without_locale');
-    Route::get('/news-inner/{slug}', [PageController::class, 'news_inner'])->name('news-inner.without_locale');
-    Route::get('/reviews-inner/{slug}', [PageController::class, 'reviews_inner'])->name('reviews-inner.without_locale');
-    Route::get('/media-inner/{slug}', [PageController::class, 'media_inner'])->name('media-inner.without_locale');
-    Route::get('/catalog-inner/{slug}', [PageController::class, 'catalog_inner'])->name('catalog-inner.without_locale');
-    Route::get('/product/{slug}', [PageController::class, 'show'])->name('product.show.without_locale');
-    Route::get('/catalog-brand-inner/{slug}', [PageController::class, 'catalog_brand_inner'])->name('catalog-brand-inner.without_locale');
-    Route::get('/product-subtypes/{slug}', [ProductController::class, 'subtypes'])->name('product.subtypes.without_locale');
-    Route::get('/catalog-brand-page/{slug}', [PageController::class, 'catalog_brand_page'])->name('catalog-brand-page.without_locale');
+Route::group(['middleware' => 'web'], function () {
+    Route::get('/', function () {
+        return redirect()->route('home', ['locale' => 'ru']);
+    });
+    Route::get('/about', function () {
+        return redirect()->route('about', ['locale' => 'ru']);
+    });
+    Route::get('/policy', function () {
+        return redirect()->route('policy', ['locale' => 'ru']);
+    });
+    Route::get('/partners', function () {
+        return redirect()->route('partners', ['locale' => 'ru']);
+    });
+    Route::get('/offers', function () {
+        return redirect()->route('offers', ['locale' => 'ru']);
+    });
+    Route::get('/news', function () {
+        return redirect()->route('news', ['locale' => 'ru']);
+    });
+    Route::get('/media', function () {
+        return redirect()->route('media', ['locale' => 'ru']);
+    });
+    Route::get('/reviews', function () {
+        return redirect()->route('reviews', ['locale' => 'ru']);
+    });
+    Route::get('/catalog', function () {
+        return redirect()->route('catalog', ['locale' => 'ru']);
+    });
+    Route::get('/catalog-library', function () {
+        return redirect()->route('catalog-library', ['locale' => 'ru']);
+    });
+    Route::get('/catalog-online/{slug}', function ($slug) {
+        return redirect()->route('catalog-online', ['locale' => 'ru', 'slug' => $slug]);
+    });
+    Route::get('/catalog-brand', function () {
+        return redirect()->route('catalog-brand', ['locale' => 'ru']);
+    });
+    Route::get('/service', function () {
+        return redirect()->route('service', ['locale' => 'ru']);
+    });
+    Route::get('/spares', function () {
+        return redirect()->route('spares', ['locale' => 'ru']);
+    });
+    Route::get('/contacts', function () {
+        return redirect()->route('contacts', ['locale' => 'ru']);
+    });
+
+    Route::get('/partners-inner/{slug}', function ($slug) {
+        return redirect()->route('partners-inner', ['locale' => 'ru', 'slug' => $slug]);
+    });
+    Route::get('/offers-inner/{slug}', function ($slug) {
+        return redirect()->route('offers-inner', ['locale' => 'ru', 'slug' => $slug]);
+    });
+    Route::get('/news-inner/{slug}', function ($slug) {
+        return redirect()->route('news-inner', ['locale' => 'ru', 'slug' => $slug]);
+    });
+    Route::get('/reviews-inner/{slug}', function ($slug) {
+        return redirect()->route('reviews-inner', ['locale' => 'ru', 'slug' => $slug]);
+    });
+    Route::get('/media-inner/{slug}', function ($slug) {
+        return redirect()->route('media-inner', ['locale' => 'ru', 'slug' => $slug]);
+    });
+    Route::get('/catalog-inner/{slug}', function ($slug) {
+        return redirect()->route('catalog-inner', ['locale' => 'ru', 'slug' => $slug]);
+    });
+    Route::get('/product/{slug}', function ($slug) {
+        return redirect()->route('product.show', ['locale' => 'ru', 'slug' => $slug]);
+    });
+    Route::get('/catalog-brand-inner/{slug}', function ($slug) {
+        return redirect()->route('catalog-brand-inner', ['locale' => 'ru', 'slug' => $slug]);
+    });
+    Route::get('/product-subtypes/{slug}', function ($slug) {
+        return redirect()->route('product.subtypes', ['locale' => 'ru', 'slug' => $slug]);
+    });
+    Route::get('/catalog-brand-page/{slug}', function ($slug) {
+        return redirect()->route('catalog-brand-page', ['locale' => 'ru', 'slug' => $slug]);
+    });
     // Другие роуты, которые должны работать без указания локали
 });
 

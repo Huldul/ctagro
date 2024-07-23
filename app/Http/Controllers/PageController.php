@@ -356,7 +356,7 @@ class PageController extends Controller
 
         if ($transtype instanceof Type) {
             $seo = (object)[
-                'title' => $transtype->seo_title,
+                'title' => !empty($transtype->seo_title) ? $transtype->seo_title : $transtype->title,
                 'subtitle' => $transtype->seo_description,
                 'keywords' => $transtype->seo_keywords,
 
@@ -407,12 +407,12 @@ class PageController extends Controller
 
         if ($transtype instanceof Brand) {
             $seo = (object)[
-                'title' => $transtype->seo_title,
+                'title' => !empty($transtype->seo_title) ? $transtype->seo_title : $transtype->title,
                 'subtitle' => $transtype->seo_description,
                 'keywords' => $transtype->seo_keywords,
-
             ];
         }
+
         return view('catalog-library-inner', [
             'products' => $prods,
             'brand' => $transtype,

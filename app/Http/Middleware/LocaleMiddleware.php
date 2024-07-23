@@ -15,31 +15,35 @@ class LocaleMiddleware
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
-{
-    $excludedPaths = ['admin', 'admin/*', 'sendOrder', 'sendApplication', 'sendRespond', 'search'];
+    {
+        $excludedPaths = ['admin', 'admin/*', 'sendOrder', 'sendApplication', 'sendRespond', 'search'];
 
-    foreach ($excludedPaths as $path) {
-        if ($request->is($path)) {
-            return $next($request);
+        foreach ($excludedPaths as $path) {
+            if ($request->is($path)) {
+                return $next($request);
+            }
         }
-    }
 
-    $locale = $request->segment(1);
+        $locale = $request->segment(1);
 
-    if (in_array($locale, config('app.locales'))) {
-        if ($locale === 'ru') {
+        if (in_array($locale, config('app.locales'))) {
+            if ($locale === 'ru') {
+                App::setLocale($locale);
+                $newUrl = preg_replace('/^\/ru/', '', $request->getRequestUri());
+                return redirect($newUrl);
+            }
             App::setLocale($locale);
-            $newUrl = str_replace('/' . $locale, '', $request->getRequestUri());
-            return redirect($newUrl);
+        } else {
+            $locale = 'ru';
+            App::setLocale($locale);
         }
-        App::setLocale($locale);
-    } else {
-        $locale = 'ru';
-        App::setLocale($locale);
-    }
 
-    return $next($request);
-}
+        // Добавление локали в запрос для маршрутов
+        $request->route()->forgetParameter('locale');
+        $request->route()->setParameter('locale', $locale);
+
+        return $next($request);
+    }
 
 
 }

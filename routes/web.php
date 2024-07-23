@@ -50,10 +50,20 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'm
     Route::get('/product-subtypes/{slug}',[ProductController::class, "subtypes"])->name('product.subtypes')->where('locale', '[a-zA-Z]{2}');
 
     Route::get('/catalog-brand-page/{slug}',[PageController::class, "catalog_brand_page"])->name('catalog-brand-page')->where('locale', '[a-zA-Z]{2}');
-});
 
+    // partners
+    // offers
+    // news
+    // media
+    // reviews
+    // // catalog-inner
+    // catalog-library
+    // service
+    // spares
+    // contacts
+});
 Route::post('/sendOrder', [ApplicationController::class, 'send_order'])->name('sendOrder');
-Route::middleware(['locale'])->group(function() {
+Route::group(['middleware' => 'web'], function () {
     Route::get('/', [PageController::class, 'index'])->name('home.without_locale');
     Route::get('/about',[PageController::class, "about"])->name('about.without_locale');
     Route::get('/policy',[PageController::class, "policy"])->name('policy.without_locale');
@@ -72,7 +82,7 @@ Route::middleware(['locale'])->group(function() {
 
     Route::get('/partners-inner/{slug}', [PageController::class, 'partners_inner'])->name('partners-inner.without_locale');
     Route::get('/offers-inner/{slug}', [PageController::class, 'offers_inner'])->name('offers-inner.without_locale');
-    Route::get('/news-inner/{slug}', [PageController::class, 'news_inner'])->name('news-inner.without_locale');
+    Route::get('/onews-inner/{slug}', [PageController::class, 'news_inner'])->name('news-inner.without_locale');
     Route::get('/reviews-inner/{slug}',[PageController::class, "reviews_inner"])->name('reviews-inner.without_locale');
     Route::get('/media-inner/{slug}', [PageController::class, 'media_inner'])->name('media-inner.without_locale');
     Route::get('/catalog-inner/{slug}', [PageController::class, 'catalog_inner'])->name('catalog-inner.without_locale');
@@ -80,7 +90,9 @@ Route::middleware(['locale'])->group(function() {
     Route::get('/catalog-brand-inner/{slug}', [PageController::class, 'catalog_brand_inner'])->name('catalog-brand-inner.without_locale');
     Route::get('/product-subtypes/{slug}',[ProductController::class, "subtypes"])->name('product.subtypes.without_locale');
     Route::get('/catalog-brand-page/{slug}', [PageController::class, 'catalog_brand_page'])->name('catalog-brand-page.without_locale');
+    // Другие роуты, которые должны работать без указания локали
 });
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

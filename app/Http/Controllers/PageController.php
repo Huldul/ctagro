@@ -25,6 +25,12 @@ class PageController extends Controller
         $untrpage = CustomPage::findOrFail(1);
         $page = $untrpage->translate(app()->getLocale());
         $videos = Video::Where("type", "gs")->get();
+        $seo = (object)[
+            'title' => "ГЛАВНАЯ СТРАНИЦА",
+            'subtitle' => "ГЛАВНАЯ СТРАНИЦА",
+            'keywords' => "ГЛАВНАЯ СТРАНИЦА",
+
+        ];
         return view('index', [
             'meds'=>$meds,
             'videos'=>$videos,
@@ -64,6 +70,13 @@ class PageController extends Controller
     public function catalog_brand(){
         $untr_inner_types = Brand::paginate(16);
         $inner_types = $this->translateCollection($untr_inner_types ,app()->getLocale());
+
+        $seo = (object)[
+            'title' => "НАШИ ПАРТНЕРЫ",
+            'subtitle' => "НАШИ ПАРТНЕРЫ",
+            'keywords' => "НАШИ ПАРТНЕРЫ",
+
+        ];
         return view('catalog-brand', [
             'inner_types'=>$inner_types,
             'seo' => $seo,

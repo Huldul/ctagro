@@ -88,6 +88,7 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'm
     Route::get('/catalog-brand-inner/{slug}',[PageController::class, "catalog_brand_inner"])->name('catalog-brand-inner');
     Route::get('/product-subtypes/{slug}',[ProductController::class, "subtypes"])->name('product.subtypes');
     Route::get('/catalog-brand-page/{slug}',[PageController::class, "catalog_brand_page"])->name('catalog-brand-page');
+    Route::get('/catalog-library', [PageController::class, "catalog_library"])->name('library_online'); // Добавьте этот маршрут
 });
 
 // Маршруты без префикса локали
@@ -116,6 +117,7 @@ Route::middleware('locale')->group(function() {
     Route::get('/catalog-brand-inner/{slug}', [PageController::class, 'catalog_brand_inner'])->name('catalog-brand-inner.without_locale');
     Route::get('/product-subtypes/{slug}',[ProductController::class, "subtypes"])->name('product.subtypes.without_locale');
     Route::get('/catalog-brand-page/{slug}', [PageController::class, 'catalog_brand_page'])->name('catalog-brand-page.without_locale');
+    Route::get('/catalog-library', [PageController::class, "catalog_library"])->name('library_online.without_locale'); // Добавьте этот маршрут
 });
 
 

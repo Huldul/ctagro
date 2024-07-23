@@ -88,7 +88,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/catalog-online/{slug}', function ($slug) {
         return app()->call('App\Http\Controllers\PageController@catalog_online', ['locale' => 'ru', 'slug' => $slug]);
     })->name('catalog-online.without_locale');
-    Route::get('/library-online/{slug}', function ($slug) {
+    Route::get('/library-online', function ($slug) {
         return app()->call('App\Http\Controllers\PageController@library_online', ['locale' => 'ru', 'slug' => $slug]);
     })->name('library_online.without_locale');
     Route::get('/catalog-brand', function () {

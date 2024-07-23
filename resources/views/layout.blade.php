@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Миссия компании</title>
+    <title>{{$seo->title}}</title>
+
+    <meta name="description" content="{{$seo->subtitle}}">
+    <meta name="keywords" content="{{$seo->keywords}}">
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/js/dflip/css/dflip.min.css">

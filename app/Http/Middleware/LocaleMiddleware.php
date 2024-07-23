@@ -42,11 +42,19 @@ class LocaleMiddleware
             }
         } else {
             App::setLocale($locale);
+
+            // Если локаль 'ru', убираем её из URL
+            if ($locale === 'ru') {
+                $newUrl = $request->getPathInfo();
+
+                // Если локаль есть в URL, убираем её и выполняем редирект
+                if (preg_match('#^/ru(/|$)#', $newUrl)) {
+                    $newUrl = preg_replace('#^/ru(/|$)#', '/', $newUrl);
+                    return redirect($newUrl);
+                }
+            }
         }
 
         return $next($request);
-
-
-
     }
 }

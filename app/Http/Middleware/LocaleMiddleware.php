@@ -25,11 +25,11 @@ class LocaleMiddleware
             }
         }
 
+        // Допустимые локали
+        $locales = config('app.locales', ['ru', 'kz', 'en']);
+
         // Определяем локаль из первого сегмента URL
         $locale = $request->segment(1);
-
-        // Допустимые локали
-        $locales = config('app.locales');
 
         // Проверяем, допустима ли эта локаль
         if (in_array($locale, $locales)) {
@@ -37,11 +37,13 @@ class LocaleMiddleware
 
             // Если локаль 'ru', убираем её из URL
             if ($locale === 'ru') {
-                $newUrl = preg_replace('#^/ru(/|$)#', '/', $request->getRequestUri());
+                $newUrl = $request->getRequestUri();
+                $newUrl = preg_replace('#^/ru(/|$)#', '/', $newUrl);
                 return redirect($newUrl);
             }
         } else {
-            $locale = 'ru'; // Локаль по умолчанию
+            // Локаль по умолчанию
+            $locale = 'ru';
             App::setLocale($locale);
         }
 

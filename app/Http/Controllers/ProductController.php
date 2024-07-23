@@ -23,13 +23,22 @@ class ProductController extends Controller
         $untrProds = $transtype->products; // Получаем коллекцию продуктов
         $products = $this->translateCollection($untrProds, app()->getLocale());
         // Получаем все видео
+        $seo = (object)[];
 
+        if ($subtype instanceof Subtype) {
+            $seo = (object)[
+                'title' => $subtype->seo_title,
+                'subtitle' => $subtype->seo_description,
+                'keywords' => $subtype->seo_keywords,
+
+            ];
+        }
 
         // Возвращаем представление с переданными данными
         return view('products', [
             'products' => $products,
             'subtype' => $transtype,
-
+            'seo' => $seo,
         ]);
     }
     public function show($locale, $slug){
@@ -52,11 +61,21 @@ class ProductController extends Controller
         // Получаем все видео
         $videos = Video::all();
 
+        $seo = (object)[];
+
+        if ($product instanceof Product) {
+            $seo = (object)[
+                'title' => $product->seo_title,
+                'subtitle' => $product->seo_description,
+                'keywords' => $product->seo_keywords,
+            ];
+        }
         // Возвращаем представление с переданными данными
         return view('products-inner', [
             'products' => $products,
             'product' => $product,
             'videos' => $videos,
+            'seo' => $seo,
         ]);
     }
 

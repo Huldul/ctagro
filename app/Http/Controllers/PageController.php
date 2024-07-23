@@ -29,6 +29,7 @@ class PageController extends Controller
             'meds'=>$meds,
             'videos'=>$videos,
             'page'=>$page,
+            'seo' => $seo,
         ]);
     }
     public function about(){
@@ -36,6 +37,7 @@ class PageController extends Controller
         $page = $untrpage->translate(app()->getLocale());
         return view('about', [
             'page'=>$page,
+            'seo' => $seo,
         ]);
     }
     public function library_online()
@@ -44,6 +46,7 @@ class PageController extends Controller
 
         return view('catalog-library', [
             "inner_types" => $inner_types,
+            'seo' => $seo,
         ]);
     }
 
@@ -55,13 +58,15 @@ class PageController extends Controller
         $inner_type = LibraryPdf::Where('slug', $slug)->first();
         return view('catalog-online', [
             "inner_type"=>$inner_type,
+            'seo' => $seo,
         ]);
     }
     public function catalog_brand(){
         $untr_inner_types = Brand::paginate(16);
         $inner_types = $this->translateCollection($untr_inner_types ,app()->getLocale());
         return view('catalog-brand', [
-            'inner_types'=>$inner_types
+            'inner_types'=>$inner_types,
+            'seo' => $seo,
         ]);
     }
     public function catalog_brand_page($locale,$slug){
@@ -73,15 +78,36 @@ class PageController extends Controller
 
         $brand = $untrBrand->translate(app()->getLocale());
 
+        $seo = (object)[];
+
+        if ($brand instanceof Brand) {
+            $seo = (object)[
+                'title' => $brand->seo_title,
+                'subtitle' => $brand->seo_description,
+                'keywords' => $brand->seo_keywords,
+
+            ];
+        }
+
         return view('catalog-brand-inner', [
-            'brand'=>$brand
+            'brand'=>$brand,
+            'seo' => $seo,
+
         ]);
     }
     public function partners(){
         $untrPart = Partner::paginate(16);
         $partners = $this->translateCollection($untrPart ,app()->getLocale());
+
+        $seo = (object)[
+            'title' => "НАШИ ПАРТНЕРЫ",
+            'subtitle' => "НАШИ ПАРТНЕРЫ",
+            'keywords' => "НАШИ ПАРТНЕРЫ",
+
+        ];
         return view('partners', [
             'partners'=>$partners,
+            'seo' => $seo,
         ]);
     }
     public function partners_inner($locale,$slug){
@@ -93,22 +119,55 @@ class PageController extends Controller
 
         $partner = $untrPartner->translate(app()->getLocale());
 
+
+        $seo = (object)[];
+
+        if ($partner instanceof Partner) {
+            $seo = (object)[
+                'title' => $partner->seo_title,
+                'subtitle' => $partner->seo_description,
+                'keywords' => $partner->seo_keywords,
+
+            ];
+        }
+
         return view('partners-inner', [
-            'partner'=>$partner
+            'partner'=>$partner,
+            'seo' => $seo,
         ]);
     }
     public function offers(){
         $untrOff = Offer::paginate(4);
         $offers = $this->translateCollection($untrOff ,app()->getLocale());
+
+
+        $seo = (object)[
+            'title' => "СПЕЦПРЕДЛОЖЕНИЯ",
+            'subtitle' => "СПЕЦПРЕДЛОЖЕНИЯ",
+            'keywords' => "СПЕЦПРЕДЛОЖЕНИЯ",
+
+        ];
         return view('offers', [
             'offers'=>$offers,
+            'seo' => $seo,
         ]);
     }
     public function reviews(){
         $untrReviews = Review::paginate(16);
         $reviews = $this->translateCollection($untrReviews ,app()->getLocale());
+
+        $seo = (object)[];
+
+        $seo = (object)[
+            'title' => "ОТЗЫВЫ",
+            'subtitle' => "ОТЗЫВЫ",
+            'keywords' => "ОТЗЫВЫ",
+
+        ];
+
         return view('reviews', [
             'reviews'=>$reviews,
+            'seo' => $seo,
         ]);
     }
     public function reviews_inner($locale,$slug){
@@ -120,8 +179,21 @@ class PageController extends Controller
 
         $review = $untrReview->translate(app()->getLocale());
 
+
+        $seo = (object)[];
+
+        if ($review instanceof Review) {
+            $seo = (object)[
+                'title' => $review->seo_title,
+                'subtitle' => $review->seo_description,
+                'keywords' => $review->seo_keywords,
+
+            ];
+        }
+
         return view('reviews-inner', [
             'review'=>$review,
+            'seo' => $seo,
         ]);
     }
     public function offers_inner($locale,$slug){
@@ -133,16 +205,37 @@ class PageController extends Controller
 
         $offer = $untrOff->translate(app()->getLocale());
 
+        $seo = (object)[];
+
+        if ($offer instanceof Offer) {
+            $seo = (object)[
+                'title' => $offer->seo_title,
+                'subtitle' => $offer->seo_description,
+                'keywords' => $offer->seo_keywords,
+
+            ];
+        }
+
         return view('offers-inner', [
-            'offer'=>$offer
+            'offer'=>$offer,
+            'seo' => $seo,
         ]);
     }
 
     public function news(){
         $untrNews = News::paginate(16);
         $news = $this->translateCollection($untrNews ,app()->getLocale());
+
+        $seo = (object)[
+            'title' => "НОВОСТИ",
+            'subtitle' => "НОВОСТИ",
+            'keywords' => "НОВОСТИ",
+
+        ];
+
         return view('news',[
             'news'=>$news,
+            'seo' => $seo,
         ]);
     }
     public function news_inner($locale,$slug){
@@ -154,8 +247,20 @@ class PageController extends Controller
 
         $news = $untrNews->translate(app()->getLocale());
 
+        $seo = (object)[];
+
+        if ($news instanceof News) {
+            $seo = (object)[
+                'title' => $news->seo_title,
+                'subtitle' => $news->seo_description,
+                'keywords' => $news->seo_keywords,
+
+            ];
+        }
+
         return view('news-inner', [
-            'news'=>$news
+            'news'=>$news,
+            'seo' => $seo,
         ]);
     }
     public function media(){
@@ -163,6 +268,7 @@ class PageController extends Controller
         $meds = $this->translateCollection($untrMeds ,app()->getLocale());
         return view('media',[
             'meds'=>$meds,
+            'seo' => $seo,
         ]);
     }
     public function media_inner($locale,$slug){
@@ -174,8 +280,20 @@ class PageController extends Controller
 
         $news = $untrNews->translate(app()->getLocale());
 
+        $seo = (object)[];
+
+        if ($news instanceof Med) {
+            $seo = (object)[
+                'title' => $news->seo_title,
+                'subtitle' => $news->seo_description,
+                'keywords' => $news->seo_keywords,
+
+            ];
+        }
+
         return view('media-inner', [
-            'med'=>$news
+            'med'=>$news,
+            'seo' => $seo,
         ]);
     }
     // public function reviews(){
@@ -207,9 +325,20 @@ class PageController extends Controller
             throw new \Exception('Expected a LengthAwarePaginator instance.');
         }
 
+        $seo = (object)[];
+
+        if ($transtype instanceof Type) {
+            $seo = (object)[
+                'title' => $transtype->seo_title,
+                'subtitle' => $transtype->seo_description,
+                'keywords' => $transtype->seo_keywords,
+
+            ];
+        }
         return view('catalog-inner', [
             'products' => $prods,
             'type' => $transtype,
+            'seo' => $seo,
         ]);
     }
 
@@ -218,8 +347,20 @@ class PageController extends Controller
     public function catalog_library(){
         $untrTypes = Type::paginate(12);
         $inner_types = $this->translateCollection($untrTypes ,app()->getLocale());
+
+        $seo = (object)[];
+
+        if ($inner_types instanceof Type) {
+            $seo = (object)[
+                'title' => $inner_types->seo_title,
+                'subtitle' => $inner_types->seo_description,
+                'keywords' => $inner_types->seo_keywords,
+
+            ];
+        }
         return view('catalog', [
-            'inner_types'=>$inner_types
+            'inner_types'=>$inner_types,
+            'seo' => $seo,
         ]);
     }
     public function catalog_brand_inner($locale, $slug) {
@@ -235,9 +376,20 @@ class PageController extends Controller
         $untrProds = $type->products; // Получаем коллекцию продуктов
         $prods = $this->translateCollection($untrProds, app()->getLocale());
 
+        $seo = (object)[];
+
+        if ($transtype instanceof Brand) {
+            $seo = (object)[
+                'title' => $transtype->seo_title,
+                'subtitle' => $transtype->seo_description,
+                'keywords' => $transtype->seo_keywords,
+
+            ];
+        }
         return view('catalog-library-inner', [
             'products' => $prods,
             'brand' => $transtype,
+            'seo' => $seo,
         ]);
     }
 
@@ -253,11 +405,22 @@ class PageController extends Controller
 
         $untrEx = OtherExtraBlock::where('page', 'service')->paginate(99);
         $blocks = $this->translateCollection($untrEx ,app()->getLocale());
+        $seo = (object)[];
+
+        if ($page instanceof CustomPage) {
+            $seo = (object)[
+                'title' => $page->seo_title,
+                'subtitle' => $page->seo_description,
+                'keywords' => $page->seo_keywords,
+
+            ];
+        }
         return view('service', [
             'page'=>$page,
             'videos'=>$videos,
             'news'=>$news,
             'blocks'=>$blocks,
+            'seo' => $seo,
         ]);
     }
     public function spares(){
@@ -270,19 +433,50 @@ class PageController extends Controller
         $news = $this->translateCollection($untrNews ,app()->getLocale());
         $untrEx = OtherExtraBlock::where('page', 'spares')->paginate(99);
         $blocks = $this->translateCollection($untrEx ,app()->getLocale());
+
+        $seo = (object)[];
+
+        if ($page instanceof CustomPage) {
+            $seo = (object)[
+                'title' => $page->seo_title,
+                'subtitle' => $page->seo_description,
+                'keywords' => $page->seo_keywords,
+
+            ];
+        }
+
         return view('spares', [
             'page'=>$page,
             'videos'=>$videos,
             'news'=>$news,
             'blocks'=>$blocks,
+            'seo' => $seo,
         ]);
     }
     public function contacts(){
-        return view('contacts');
+        $seo = (object)[
+            'title' => "КОНТАКТЫ",
+            'subtitle' => "КОНТАКТЫ",
+            'keywords' => "КОНТАКТЫ",
+
+        ];
+        return view('contacts', [
+            'seo' => $seo,
+        ]);
     }
 
     public function policy(){
-        return view('policy');
+
+        $seo = (object)[
+            'title' => "Политика конфиденциальности",
+            'subtitle' => "Политика конфиденциальности",
+            'keywords' => "Политика конфиденциальности",
+
+        ];
+
+        return view('policy', [
+            'seo' => $seo,
+        ]);
     }
     // about
     // partners

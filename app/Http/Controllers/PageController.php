@@ -25,11 +25,11 @@ class PageController extends Controller
         $untrpage = CustomPage::findOrFail(1);
         $page = $untrpage->translate(app()->getLocale());
         $videos = Video::Where("type", "gs")->get();
+
         $seo = (object)[
             'title' => "ГЛАВНАЯ СТРАНИЦА",
             'subtitle' => "ГЛАВНАЯ СТРАНИЦА",
             'keywords' => "ГЛАВНАЯ СТРАНИЦА",
-
         ];
         return view('index', [
             'meds'=>$meds,

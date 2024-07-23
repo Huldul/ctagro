@@ -30,28 +30,23 @@ class LocaleMiddleware
 
         // Проверяем, допустима ли эта локаль
         if (!in_array($locale, config('app.locales'))) {
-            // Если локаль не допустима, устанавливаем локаль по умолчанию и выполняем редирект
+            // Если нет, устанавливаем локаль по умолчанию и выполняем редирект
             $locale = 'ru'; // Локаль по умолчанию
             App::setLocale($locale);
 
-            // Формируем URL без добавления локали, если это ru
-            $newUrl = $request->getPathInfo();
+            // Формируем URL с добавлением локали
+            $newUrl = '/' . $locale . $request->getPathInfo();
             // Проверяем, нужен ли редирект
-            if ($request->getPathInfo() !== '/') {
+            if ($request->getPathInfo() !== '/' . $locale) {
                 return redirect($newUrl);
             }
-        } elseif ($locale === 'ru') {
-            // Устанавливаем локаль и убираем её из URL
-            App::setLocale($locale);
-
-            // Убираем 'ru' из URL
-            $newUrl = preg_replace("#^/ru#", '', $request->getPathInfo());
-
-            return redirect($newUrl);
         } else {
             App::setLocale($locale);
         }
 
         return $next($request);
+
+
+
     }
 }

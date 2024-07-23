@@ -11,6 +11,10 @@ use App\Models\Subtype;
 class ProductController extends Controller
 {
     public function subtypes($locale, $slug){
+        if (is_null($slug)) {
+            $slug = $locale;
+            $locale = app()->getLocale();
+        }
         $subtype = Subtype::where("slug", $slug)->first();
         if (!$subtype) {
             abort(404, 'Type not found');
@@ -29,6 +33,10 @@ class ProductController extends Controller
         ]);
     }
     public function show($locale, $slug){
+        if (is_null($slug)) {
+            $slug = $locale;
+            $locale = app()->getLocale();
+        }
         // Получаем текущий продукт по его slug
         $untrProduct = Product::with('subtype.parentSubtype.type')->where('slug', $slug)->with('blocks')->firstOrFail();
 

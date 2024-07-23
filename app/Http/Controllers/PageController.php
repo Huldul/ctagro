@@ -47,6 +47,10 @@ class PageController extends Controller
     }
 
     public function catalog_online($locale,$slug){
+        if (is_null($slug)) {
+            $slug = $locale;
+            $locale = app()->getLocale();
+        }
         $inner_type = LibraryPdf::Where('slug', $slug)->first();
         return view('catalog-online', [
             "inner_type"=>$inner_type,
@@ -60,6 +64,10 @@ class PageController extends Controller
         ]);
     }
     public function catalog_brand_page($locale,$slug){
+        if (is_null($slug)) {
+            $slug = $locale;
+            $locale = app()->getLocale();
+        }
         $untrBrand = Brand::Where('slug', $slug)->first();
 
         $brand = $untrBrand->translate(app()->getLocale());
@@ -76,6 +84,10 @@ class PageController extends Controller
         ]);
     }
     public function partners_inner($locale,$slug){
+        if (is_null($slug)) {
+            $slug = $locale;
+            $locale = app()->getLocale();
+        }
         $untrPartner = Partner::Where('slug', $slug)->first();
 
         $partner = $untrPartner->translate(app()->getLocale());
@@ -99,6 +111,10 @@ class PageController extends Controller
         ]);
     }
     public function reviews_inner($locale,$slug){
+        if (is_null($slug)) {
+            $slug = $locale;
+            $locale = app()->getLocale();
+        }
         $untrReview = Review::Where('slug', $slug)->first();
 
         $review = $untrReview->translate(app()->getLocale());
@@ -108,6 +124,10 @@ class PageController extends Controller
         ]);
     }
     public function offers_inner($locale,$slug){
+        if (is_null($slug)) {
+            $slug = $locale;
+            $locale = app()->getLocale();
+        }
         $untrOff = Offer::Where('slug', $slug)->first();
 
         $offer = $untrOff->translate(app()->getLocale());
@@ -125,6 +145,10 @@ class PageController extends Controller
         ]);
     }
     public function news_inner($locale,$slug){
+        if (is_null($slug)) {
+            $slug = $locale;
+            $locale = app()->getLocale();
+        }
         $untrNews = News::Where('slug', $slug)->first();
 
         $news = $untrNews->translate(app()->getLocale());
@@ -141,6 +165,10 @@ class PageController extends Controller
         ]);
     }
     public function media_inner($locale,$slug){
+        if (is_null($slug)) {
+            $slug = $locale;
+            $locale = app()->getLocale();
+        }
         $untrNews = Med::Where('slug', $slug)->first();
 
         $news = $untrNews->translate(app()->getLocale());
@@ -157,6 +185,10 @@ class PageController extends Controller
     //     ]);
     // }
     public function catalog_inner($locale, $slug) {
+        if (is_null($slug)) {
+            $slug = $locale;
+            $locale = app()->getLocale();
+        }
         $type = Type::where("slug", $slug)->first();
         if (!$type) {
             abort(404, 'Type not found');
@@ -190,6 +222,10 @@ class PageController extends Controller
         ]);
     }
     public function catalog_brand_inner($locale, $slug) {
+        if (is_null($slug)) {
+            $slug = $locale;
+            $locale = app()->getLocale();
+        }
         $type = Brand::where("slug", $slug)->first();
         if (!$type) {
             abort(404, 'Type not found');

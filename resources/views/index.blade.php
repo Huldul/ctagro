@@ -39,7 +39,7 @@
                     </a> --}}
                     <a href="{{ route('library_online', ['locale' => app()->getLocale()]) }}" class="equipment__card">
                         <div class="equipment__card-img">
-                            <img src="{{asset("img/equipment-img.png")}}" alt="">
+                            <img src="{{asset("storage/".setting('.library_image'))}}" alt="">
                             <span>@trans('catalog_library')</span>
                         </div>
                     </a>

@@ -50,18 +50,8 @@ Route::group(['prefix' => '{locale}', 'where' => ['locale' => '[a-zA-Z]{2}'], 'm
     Route::get('/product-subtypes/{slug}',[ProductController::class, "subtypes"])->name('product.subtypes')->where('locale', '[a-zA-Z]{2}');
 
     Route::get('/catalog-brand-page/{slug}',[PageController::class, "catalog_brand_page"])->name('catalog-brand-page')->where('locale', '[a-zA-Z]{2}');
-
-    // partners
-    // offers
-    // news
-    // media
-    // reviews
-    // // catalog-inner
-    // catalog-library
-    // service
-    // spares
-    // contacts
 });
+
 Route::post('/sendOrder', [ApplicationController::class, 'send_order'])->name('sendOrder');
 Route::middleware(['locale'])->group(function() {
     Route::get('/', [PageController::class, 'index'])->name('home.without_locale');

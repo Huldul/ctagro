@@ -38,6 +38,7 @@ class LocaleMiddleware
             // Если локаль 'ru', убираем её из URL
             if ($locale === 'ru') {
                 $newUrl = preg_replace('#^/ru(/|$)#', '/', $request->getRequestUri());
+                $request->attributes->set('locale', 'ru'); // Устанавливаем локаль в атрибуты запроса
                 return redirect($newUrl);
             }
         } else {

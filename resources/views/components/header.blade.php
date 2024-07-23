@@ -79,7 +79,6 @@
                     <div class="header__lang-group">
                         @php
                             $currentLocale = app()->getLocale();
-                            $currentUrl = url()->current();
                             $segments = request()->segments();
 
                             // Remove the current locale from the segments if it's present

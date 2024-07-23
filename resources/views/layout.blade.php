@@ -4,10 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @if(isset($seo->title) && !empty($seo->title))
     <title>{{$seo->title}}</title>
+    @else
+        <title>Ctagro</title>
+    @endif
 
-    <meta name="description" content="{{$seo->subtitle}}">
-    <meta name="keywords" content="{{$seo->keywords}}">
+    @if(isset($seo->subtitle) && !empty($seo->subtitle))
+        <meta name="description" content="{{$seo->subtitle}}">
+    @endif
+
+    @if(isset($seo->keywords) && !empty($seo->keywords))
+        <meta name="keywords" content="{{$seo->keywords}}">
+    @endif
+
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="/js/dflip/css/dflip.min.css">

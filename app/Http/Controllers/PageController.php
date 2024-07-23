@@ -184,7 +184,7 @@ class PageController extends Controller
     //         'meds'=>$meds,
     //     ]);
     // }
-    public function catalog_inner($locale, $slug) {
+    public function catalog_inner($locale = "ru", $slug) {
         if (is_null($slug)) {
             $slug = $locale;
             $locale = app()->getLocale();

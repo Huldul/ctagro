@@ -50,6 +50,12 @@ class PageController extends Controller
     {
         $inner_types = LibraryPdf::where('brand_id', null)->paginate(16);
 
+        $seo = (object)[
+            'title' => "БИБЛИОТЕКА КАТАЛОГОВ",
+            'subtitle' => "БИБЛИОТЕКА КАТАЛОГОВ",
+            'keywords' => "БИБЛИОТЕКА КАТАЛОГОВ",
+        ];
+
         return view('catalog-library', [
             "inner_types" => $inner_types,
             'seo' => $seo,

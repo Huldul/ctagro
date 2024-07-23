@@ -41,6 +41,11 @@ class PageController extends Controller
     public function about(){
         $untrpage = AboutPage::firstOrFail();
         $page = $untrpage->translate(app()->getLocale());
+        $seo = (object)[
+            'title' => "МИССИЯ КОМПАНИИ",
+            'subtitle' => "МИССИЯ КОМПАНИИ",
+            'keywords' => "МИССИЯ КОМПАНИИ",
+        ];
         return view('about', [
             'page'=>$page,
             'seo' => $seo,

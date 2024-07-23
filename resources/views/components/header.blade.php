@@ -63,34 +63,37 @@
 		        </div>
                 </button>
                 <div class="header__lang change-color">
-                    <span>@switch(app()->getLocale())
-                        @case('ru')
-                            Рус
-                            @break
-                        @case('kz')
-                            Қаз
-                            @break
-                        @case('en')
-                            Eng
-                            @break
-                        @default
-                            Рус
-                    @endswitch</span>
+                    <span>
+                        @switch(app()->getLocale())
+                            @case('ru')
+                                Рус
+                                @break
+                            @case('kz')
+                                Қаз
+                                @break
+                            @default
+                                Рус
+                        @endswitch
+                    </span>
                     <div class="header__lang-group">
                         @php
-                            $currentLocale = app()->getLocale();
-                            $segments = request()->segments();
+                            $currentUrl = request()->fullUrl();
 
-                            // Remove the current locale from the segments if it's present
-                            if (in_array($currentLocale, ['ru', 'kz', 'en'])) {
-                                array_shift($segments);
+                            function addLocaleToUrl($url, $locale) {
+                                $parsedUrl = parse_url($url);
+                                $path = isset($parsedUrl['path']) ? $parsedUrl['path'] : '';
+                                $pathSegments = explode('/', trim($path, '/'));
+                                if (in_array($pathSegments[0], ['ru', 'kz'])) {
+                                    $pathSegments[0] = $locale;
+                                } else {
+                                    array_unshift($pathSegments, $locale);
+                                }
+                                $newPath = implode('/', $pathSegments);
+                                return url($newPath) . (isset($parsedUrl['query']) ? '?' . $parsedUrl['query'] : '');
                             }
-
-                            $urlWithoutLocale = implode('/', $segments);
                         @endphp
-                        <a class="change-color rus" href="{{ url('ru/' . $urlWithoutLocale) }}">Рус</a>
-                        <a class="change-color kz" href="{{ url('kz/' . $urlWithoutLocale) }}">Қаз</a>
-                        <a class="change-color en" href="{{ url('en/' . $urlWithoutLocale) }}">Eng</a>
+                        <a class="change-color rus" href="{{ addLocaleToUrl($currentUrl, 'ru') }}">Рус</a>
+                        <a class="change-color kz" href="{{ addLocaleToUrl($currentUrl, 'kz') }}">Қаз</a>
                     </div>
 
                 </div>

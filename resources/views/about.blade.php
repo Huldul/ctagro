@@ -116,6 +116,43 @@
                         </div>
                     </div>
                 </div>
+                @foreach($blocks as $index => $block)
+                    @if($index % 2 == 0)
+                        <div class="about__container">
+                            <div class="about__right">
+                                <h2 class="about__title title">{{ $block->title }}</h2>
+                                <p>{!! $block->main !!}</p>
+                                <div class="hidden-text">{!! $block->hidden_main !!}</div>
+
+                                @if($block->hidden_main != "")
+                                    <button class="more-btn products-inner__btn">
+                                        Подробнее
+                                    </button>
+                                @endif
+                            </div>
+                            <div class="about__img">
+                                <img src="{{ asset('storage/' . $block->image) }}" alt="">
+                            </div>
+                        </div>
+                    @else
+                        <div class="about__container reverse">
+                            <div class="about__img">
+                                <img src="{{ asset('storage/' . $block->image) }}" alt="">
+                            </div>
+                            <div class="about__right">
+                                <h2 class="about__title title">{{ $block->title }}</h2>
+                                <p>{!! $block->main !!}</p>
+                                <div class="hidden-text">{!! $block->hidden_main !!}</div>
+
+                                @if($block->hidden_main != "")
+                                    <button class="more-btn products-inner__btn">
+                                        Подробнее
+                                    </button>
+                                @endif
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
             </section>
             <section class="mission container indent">
                 <h2 class="mission__title title">{{$page->mission_title}}</h2>

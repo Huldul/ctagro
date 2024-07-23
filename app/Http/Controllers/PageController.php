@@ -41,6 +41,8 @@ class PageController extends Controller
     public function about(){
         $untrpage = AboutPage::firstOrFail();
         $page = $untrpage->translate(app()->getLocale());
+        $untrEx = OtherExtraBlock::where('page', 'about')->paginate(99);
+        $blocks = $this->translateCollection($untrEx ,app()->getLocale());
         $seo = (object)[
             'title' => "Миссия компании",
             'subtitle' => "Миссия компании",

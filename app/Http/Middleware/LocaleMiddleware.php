@@ -18,32 +18,35 @@ class LocaleMiddleware
     {
         $excludedPaths = ['admin', 'admin/*', 'sendOrder', 'sendApplication', 'sendRespond', 'search'];
 
+        // Проверяем, соответствует ли текущий запрос одному из исключённых путей
         foreach ($excludedPaths as $path) {
             if ($request->is($path)) {
-                return $next($request);
+                return $next($request); // Пропускаем дальше без изменения
             }
         }
 
+        // Определяем локаль из первого сегмента URL
         $locale = $request->segment(1);
 
-        if (in_array($locale, config('app.locales'))) {
-            if ($locale === 'ru') {
-                App::setLocale($locale);
-                $newUrl = preg_replace('/^\/ru/', '', $request->getRequestUri());
+        // Проверяем, допустима ли эта локаль
+        if (!in_array($locale, config('app.locales'))) {
+            // Если нет, устанавливаем локаль по умолчанию и выполняем редирект
+            $locale = 'ru'; // Локаль по умолчанию
+            App::setLocale($locale);
+
+            // Формируем URL с добавлением локали
+            $newUrl = '/' . $locale . $request->getPathInfo();
+            // Проверяем, нужен ли редирект
+            if ($request->getPathInfo() !== '/' . $locale) {
                 return redirect($newUrl);
             }
-            App::setLocale($locale);
         } else {
-            $locale = 'ru';
             App::setLocale($locale);
         }
 
-        // Добавление локали в запрос для маршрутов
-        $request->route()->forgetParameter('locale');
-        $request->route()->setParameter('locale', $locale);
-
         return $next($request);
+
+
+
     }
-
-
 }

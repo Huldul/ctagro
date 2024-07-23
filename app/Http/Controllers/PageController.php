@@ -42,9 +42,9 @@ class PageController extends Controller
         $untrpage = AboutPage::firstOrFail();
         $page = $untrpage->translate(app()->getLocale());
         $seo = (object)[
-            'title' => "МИССИЯ КОМПАНИИ",
-            'subtitle' => "МИССИЯ КОМПАНИИ",
-            'keywords' => "МИССИЯ КОМПАНИИ",
+            'title' => "Миссия компании",
+            'subtitle' => "Миссия компании",
+            'keywords' => "Миссия компании",
         ];
         return view('about', [
             'page'=>$page,
@@ -56,9 +56,9 @@ class PageController extends Controller
         $inner_types = LibraryPdf::where('brand_id', null)->paginate(16);
 
         $seo = (object)[
-            'title' => "БИБЛИОТЕКА КАТАЛОГОВ",
-            'subtitle' => "БИБЛИОТЕКА КАТАЛОГОВ",
-            'keywords' => "БИБЛИОТЕКА КАТАЛОГОВ",
+            'title' => "Библиотека каталогов",
+            'subtitle' => "Библиотека каталогов",
+            'keywords' => "Библиотека каталогов",
         ];
 
         return view('catalog-library', [
@@ -83,9 +83,9 @@ class PageController extends Controller
         $inner_types = $this->translateCollection($untr_inner_types ,app()->getLocale());
 
         $seo = (object)[
-            'title' => "НАШИ ПАРТНЕРЫ",
-            'subtitle' => "НАШИ ПАРТНЕРЫ",
-            'keywords' => "НАШИ ПАРТНЕРЫ",
+            'title' => "Бренды",
+            'subtitle' => "Бренды",
+            'keywords' => "Бренды",
 
         ];
         return view('catalog-brand', [
@@ -124,9 +124,9 @@ class PageController extends Controller
         $partners = $this->translateCollection($untrPart ,app()->getLocale());
 
         $seo = (object)[
-            'title' => "НАШИ ПАРТНЕРЫ",
-            'subtitle' => "НАШИ ПАРТНЕРЫ",
-            'keywords' => "НАШИ ПАРТНЕРЫ",
+            'title' => "Наши партнеры",
+            'subtitle' => "Наши партнеры",
+            'keywords' => "Наши партнеры",
 
         ];
         return view('partners', [
@@ -166,9 +166,9 @@ class PageController extends Controller
 
 
         $seo = (object)[
-            'title' => "СПЕЦПРЕДЛОЖЕНИЯ",
-            'subtitle' => "СПЕЦПРЕДЛОЖЕНИЯ",
-            'keywords' => "СПЕЦПРЕДЛОЖЕНИЯ",
+            'title' => "Спецпредложения",
+            'subtitle' => "Спецпредложения",
+            'keywords' => "Спецпредложения",
 
         ];
         return view('offers', [
@@ -183,9 +183,9 @@ class PageController extends Controller
         $seo = (object)[];
 
         $seo = (object)[
-            'title' => "ОТЗЫВЫ",
-            'subtitle' => "ОТЗЫВЫ",
-            'keywords' => "ОТЗЫВЫ",
+            'title' => "Отзывы",
+            'subtitle' => "Отзывы",
+            'keywords' => "Отзывы",
 
         ];
 
@@ -251,9 +251,9 @@ class PageController extends Controller
         $news = $this->translateCollection($untrNews ,app()->getLocale());
 
         $seo = (object)[
-            'title' => "НОВОСТИ",
-            'subtitle' => "НОВОСТИ",
-            'keywords' => "НОВОСТИ",
+            'title' => "Новости",
+            'subtitle' => "Новости",
+            'keywords' => "Новости",
 
         ];
 
@@ -479,9 +479,9 @@ class PageController extends Controller
     }
     public function contacts(){
         $seo = (object)[
-            'title' => "КОНТАКТЫ",
-            'subtitle' => "КОНТАКТЫ",
-            'keywords' => "КОНТАКТЫ",
+            'title' => "Контакты",
+            'subtitle' => "Контакты",
+            'keywords' => "Контакты",
 
         ];
         return view('contacts', [

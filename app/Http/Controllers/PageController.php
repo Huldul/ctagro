@@ -342,7 +342,7 @@ class PageController extends Controller
         $transtype = $type->translate(app()->getLocale());
 
         // Получаем коллекцию подтипов с пагинацией
-        $untrProds = $type->subtypes()->paginate(10); // Примените нужный вам размер страницы
+        $untrProds = $type->subtypes()->paginate(12); // Примените нужный вам размер страницы
 
         // Переводим коллекцию с учетом пагинации
         $prods = $this->translateCollection($untrProds, app()->getLocale());

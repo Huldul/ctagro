@@ -50,11 +50,7 @@ class LocaleMiddleware
             $newUrl = '/' . $locale . $request->getPathInfo();
             return redirect($newUrl);
         }
-        if (!preg_match('/^[a-zA-Z]{2}$/', $request->segment(1))) {
-            $segments = $request->segments();
-            array_unshift($segments, 'ru'); // Добавляем 'ru' в начало
-            return redirect()->to(implode('/', $segments));
-        }
+
         return $next($request);
     }
 }

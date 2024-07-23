@@ -28,25 +28,33 @@ class LocaleMiddleware
         // Определяем локаль из первого сегмента URL
         $locale = $request->segment(1);
 
+        // Допустимые локали
+        $locales = config('app.locales');
+
         // Проверяем, допустима ли эта локаль
-        if (!in_array($locale, config('app.locales'))) {
-            // Если нет, устанавливаем локаль по умолчанию и выполняем редирект
-            $locale = 'ru'; // Локаль по умолчанию
+        if (in_array($locale, $locales)) {
             App::setLocale($locale);
 
-            // Формируем URL с добавлением локали
-            $newUrl = '/' . $locale . $request->getPathInfo();
-            // Проверяем, нужен ли редирект
-            if ($request->getPathInfo() !== '/' . $locale) {
+            // Если локаль 'ru', убираем её из URL
+            if ($locale === 'ru') {
+                $newUrl = preg_replace('#^/ru(/|$)#', '/', $request->getRequestUri());
                 return redirect($newUrl);
             }
         } else {
+            $locale = 'ru'; // Локаль по умолчанию
             App::setLocale($locale);
         }
 
+        // Если локаль не 'ru' и её нет в URL, добавляем её в URL
+        if ($locale !== 'ru' && !in_array($request->segment(1), $locales)) {
+            $newUrl = '/' . $locale . $request->getPathInfo();
+            return redirect($newUrl);
+        }
+        if (!preg_match('/^[a-zA-Z]{2}$/', $request->segment(1))) {
+            $segments = $request->segments();
+            array_unshift($segments, 'ru'); // Добавляем 'ru' в начало
+            return redirect()->to(implode('/', $segments));
+        }
         return $next($request);
-
-
-
     }
 }

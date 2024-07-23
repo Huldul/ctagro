@@ -78,20 +78,14 @@
                     @endswitch</span>
                     <div class="header__lang-group">
                         @php
-                            $currentRoute = Route::current();
-                            $currentRouteName = Route::currentRouteName();
-                            $parameters = $currentRoute ? $currentRoute->parameters() : [];
                             $currentLocale = app()->getLocale();
+                            $currentUrl = url()->current();
+                            $segments = request()->segments();
+                            $firstSegment = $segments[0] ?? '';
                         @endphp
-                        @if ($currentRouteName)
-                            <a class="change-color rus" href="{{ route($currentRouteName, array_merge($parameters, ['locale' => 'ru'])) }}">Рус</a>
-                            <a class="change-color kz" href="{{ route($currentRouteName, array_merge($parameters, ['locale' => 'kz'])) }}">Қаз</a>
-                            <a class="change-color en" href="{{ route($currentRouteName, array_merge($parameters, ['locale' => 'en'])) }}">Eng</a>
-                        @else
-                            <a class="change-color rus" href="{{ url('ru') }}">Рус</a>
-                            <a class="change-color kz" href="{{ url('kz') }}">Қаз</a>
-                            <a class="change-color en" href="{{ url('en') }}">Eng</a>
-                        @endif
+                        <a class="change-color rus" href="{{ url('ru/' . implode('/', array_slice($segments, 1))) }}">Рус</a>
+                        <a class="change-color kz" href="{{ url('kz/' . implode('/', array_slice($segments, 1))) }}">Қаз</a>
+                        <a class="change-color en" href="{{ url('en/' . implode('/', array_slice($segments, 1))) }}">Eng</a>
                     </div>
 
                 </div>

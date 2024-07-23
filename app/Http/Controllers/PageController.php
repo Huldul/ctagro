@@ -10,6 +10,7 @@ use App\Models\LibraryPdf;
 use App\Models\Med;
 use App\Models\News;
 use App\Models\Offer;
+use App\Models\OtherExtraBlock;
 use App\Models\Partner;
 use App\Models\Review;
 use App\Models\Type;
@@ -249,10 +250,14 @@ class PageController extends Controller
 
         $untrNews = AdvNews::where('type', 'service')->paginate(99);
         $news = $this->translateCollection($untrNews ,app()->getLocale());
+
+        $untrEx = OtherExtraBlock::where('page', 'service')->paginate(99);
+        $blocks = $this->translateCollection($untrEx ,app()->getLocale());
         return view('service', [
             'page'=>$page,
             'videos'=>$videos,
             'news'=>$news,
+            'blocks'=>$blocks,
         ]);
     }
     public function spares(){
@@ -263,11 +268,13 @@ class PageController extends Controller
 
         $untrNews = AdvNews::where('type', 'spares')->paginate(99);
         $news = $this->translateCollection($untrNews ,app()->getLocale());
-
+        $untrEx = OtherExtraBlock::where('page', 'spares')->paginate(99);
+        $blocks = $this->translateCollection($untrEx ,app()->getLocale());
         return view('spares', [
             'page'=>$page,
             'videos'=>$videos,
             'news'=>$news,
+            'blocks'=>$blocks,
         ]);
     }
     public function contacts(){

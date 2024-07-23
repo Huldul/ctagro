@@ -27,9 +27,9 @@ class PageController extends Controller
         $videos = Video::Where("type", "gs")->get();
 
         $seo = (object)[
-            'title' => "ГЛАВНАЯ СТРАНИЦА",
-            'subtitle' => "ГЛАВНАЯ СТРАНИЦА",
-            'keywords' => "ГЛАВНАЯ СТРАНИЦА",
+            'title' => "Главная страница",
+            'subtitle' => "Главная страница",
+            'keywords' => "Главная страница",
         ];
         return view('index', [
             'meds'=>$meds,

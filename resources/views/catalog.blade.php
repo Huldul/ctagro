@@ -3,7 +3,7 @@
 @section('content')
         <main>
             <section class="first__block">
-                <img src="{{asset("img/first-block-img.png")}}" alt="">
+                <img src="{{asset("storage/".setting('.catalog_image'))}}" alt="">
                 <div class="first__block-wrapper container">
                     <h1>Каталог</h1>
                 </div>

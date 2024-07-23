@@ -51,6 +51,7 @@ class PageController extends Controller
         return view('about', [
             'page'=>$page,
             'seo' => $seo,
+            'blocks' => $blocks,
         ]);
     }
     public function library_online()

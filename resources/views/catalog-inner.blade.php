@@ -3,7 +3,7 @@
 @section('content')
         <main>
             <section class="first__block">
-                <img src="{{asset("img/first-block-img.png")}}" alt="">
+                <img src="{{asset("storage/".$type->head_image)}}" alt="">
                 <div class="first__block-wrapper container">
                     <h1>{{$type->title}}</h1>
                 </div>

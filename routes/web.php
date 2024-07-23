@@ -96,6 +96,7 @@ $locales = config('app.locales');
 $defaultLocale = 'ru';
 
 // Группа маршрутов без префикса для локали по умолчанию
+// Группа маршрутов без префикса для локали по умолчанию
 Route::group(['middleware' => 'locale'], function() use ($defaultLocale) {
     Route::get('/', [PageController::class, "index"])->name('home');
     Route::get('/about', [PageController::class, "about"])->name('about');

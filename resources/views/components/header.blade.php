@@ -63,19 +63,21 @@
 		        </div>
                 </button>
                 <div class="header__lang change-color">
-                    <span>@switch(app()->getLocale())
-                        @case('ru')
-                            Рус
-                            @break
-                        @case('kz')
-                            Қаз
-                            @break
-                         @case('en')
-                            Eng
-                            @break
-                        @default
-                            Рус
-                    @endswitch</span>
+                    <span>
+                        @switch(app()->getLocale())
+                            @case('ru')
+                                Рус
+                                @break
+                            @case('kz')
+                                Қаз
+                                @break
+                            @case('en')
+                                Eng
+                                @break
+                            @default
+                                Рус
+                        @endswitch
+                    </span>
                     <div class="header__lang-group">
                         @php
                             $currentRoute = Route::current();
@@ -83,13 +85,16 @@
                             $parameters = $currentRoute ? $currentRoute->parameters() : [];
                         @endphp
                         @if ($currentRouteName)
-                            <a class="change-color rus" href="{{ route($currentRouteName, array_merge($parameters, ['locale' => 'ru'])) }}">Рус</a>
-                            <a class="change-color kz" href="{{ route($currentRouteName, array_merge($parameters, ['locale' => 'kz'])) }}">Қаз</a>
+                            <a class="change-color rus" href="{{ route($currentRouteName, array_merge(['locale' => 'ru'], $parameters)) }}">Рус</a>
+                            <a class="change-color kz" href="{{ route($currentRouteName, array_merge(['locale' => 'kz'], $parameters)) }}">Қаз</a>
+                            <a class="change-color en" href="{{ route($currentRouteName, array_merge(['locale' => 'en'], $parameters)) }}">Eng</a>
                         @else
                             <a class="change-color rus" href="#">Рус</a>
                             <a class="change-color kz" href="#">Қаз</a>
+                            <a class="change-color en" href="#">Eng</a>
                         @endif
                     </div>
+
 
                 </div>
                 <div class="header__search search">

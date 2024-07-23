@@ -51,6 +51,9 @@ class LocaleMiddleware
             return redirect($newUrl);
         }
 
+        // Добавляем локаль в запрос
+        $request->attributes->set('locale', $locale);
+
         return $next($request);
     }
 }

@@ -82,7 +82,7 @@
                             $currentUrl = url()->current();
                             $segments = request()->segments();
 
-                            // Remove the current locale from the segments
+                            // Remove the current locale from the segments if it's present
                             if (in_array($currentLocale, ['ru', 'kz', 'en'])) {
                                 array_shift($segments);
                             }

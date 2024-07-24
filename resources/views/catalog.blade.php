@@ -30,7 +30,7 @@
                     </a>
                     @endforeach
                     <a href="{{ route('library_online', ['locale' => app()->getLocale()]) }}" class="catalog__card">
-                        <img src="{{asset("img/equipment-img.png")}}" alt="">
+                        <img src="{{asset("storage/".setting('.library_image'))}}" alt="">
                         <span>Библиотека каталогов</span>
                     </a>
                 </div>

@@ -56,7 +56,7 @@
                             <img src="{{ asset('storage/' . $subsubtype->image) }}" alt="{{ $subsubtype->title }}">
                         </div>
                         <h2>{{ $subsubtype->title }}</h2>
-                        <span>{{$product->horse_power}}</span>
+
                         <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $subsubtype->slug]) }}"></a>
 </div>
                 @endforeach

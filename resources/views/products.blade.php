@@ -49,24 +49,26 @@
     </div>
     <section class="products container">
         <div class="products__wrapper">
-            @if($subtype->subtypes && $subtype->subtypes->count() > 0)
+        @if($subtype->subtypes && $subtype->subtypes->count() > 0)
                 @foreach ($subtype->subtypes as $subsubtype)
-                    <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $subsubtype->slug]) }}" class="catalog-inner__card">
-                        <div class="catalog-inner__img">
+                <div class="products__card">
+                        <div class="products__img">
                             <img src="{{ asset('storage/' . $subsubtype->image) }}" alt="{{ $subsubtype->title }}">
                         </div>
-                        <span>{{ $subsubtype->title }}</span>
-                    </a>
+                        <h2>{{ $subsubtype->title }}</h2>
+                        <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $subsubtype->slug]) }}"></a>
+</div>
                 @endforeach
             @else
                 @foreach ($products as $product)
-                    <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}" class="catalog-inner__card">
-                        <div class="catalog-inner__img">
+                <div class="products__card">
+                        <div class="products__img">
                             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}">
                         </div>
-                        <span>{{ $product->title }}</span>
+                        <h2>{{ $product->title }}</h2>
+                        <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">Подробнее</a>
 
-                    </a>
+</div>
                 @endforeach
             @endif
         </div>

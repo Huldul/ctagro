@@ -56,6 +56,7 @@
                             <img src="{{ asset('storage/' . $subsubtype->image) }}" alt="{{ $subsubtype->title }}">
                         </div>
                         <h2>{{ $subsubtype->title }}</h2>
+                        <span>мощность</span>
                         <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $subsubtype->slug]) }}"></a>
 </div>
                 @endforeach
@@ -66,6 +67,7 @@
                             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}">
                         </div>
                         <h2>{{ $product->title }}</h2>
+                        <span>мощность</span>
                         <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">Подробнее</a>
 
 </div>

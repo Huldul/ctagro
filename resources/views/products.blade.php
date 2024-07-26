@@ -19,7 +19,7 @@
                 </svg>
             </li>
             <li><a href="{{ route('catalog-library', ['locale' => app()->getLocale()]) }}">Каталог</a></li>
-            @if(isset($subtype->type))
+            @if($subtype->type)
             <li>
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
@@ -56,7 +56,7 @@
                             <img src="{{ asset('storage/' . $subsubtype->image) }}" alt="{{ $subsubtype->title }}">
                         </div>
                         <h2>{{ $subsubtype->title }}</h2>
-                        <span>мощность</span>
+                        <span>{{$product->horse_power}}</span>
                         <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $subsubtype->slug]) }}"></a>
 </div>
                 @endforeach

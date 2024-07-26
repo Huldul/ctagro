@@ -67,7 +67,7 @@
                             <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->title }}">
                         </div>
                         <h2>{{ $product->title }}</h2>
-                        <span>мощность</span>
+                        <span>{{$product->horse_power}}</span>
                         <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'slug' => $product->slug]) }}">Подробнее</a>
 
 </div>

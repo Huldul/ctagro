@@ -28,7 +28,7 @@
             </li>
             @foreach ($subtype->types as $type)
             <li>
-                <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $subtype->type->slug]) }}">{{ $subtype->type->title }}  </a>
+                <a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">{{ $type->title }}  </a>
             </li>
             @endforeach
             @endif

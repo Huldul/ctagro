@@ -27,7 +27,7 @@
                             </svg>
                         </li>
                         @foreach ($product->subtype->types as $type)
-                        <li><a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $product->subtype->type->slug]) }}">{{ $product->subtype->type->title }}  </a></li>
+                        <li><a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $type->slug]) }}">{{ $type->title }}  </a></li>
                         @endforeach
                     @endif
 

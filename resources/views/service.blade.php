@@ -47,7 +47,7 @@
                         @endphp
                         <div class="service__info-card">
                             <span>{{$advantage->title}}</span>
-                            <p>{{$advantage->main}}</p>
+                            <p>{!!$advantage->main!!}</p>
                             <!-- SVG content -->
                             <img src="{{ asset("storage/{$svgPath}") }}" width="59" height="59" viewBox="0 0 59 59" fill="none">
                         </div>

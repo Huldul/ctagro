@@ -293,6 +293,13 @@ class PageController extends Controller
     public function media(){
         $untrMeds = Med::paginate(12);
         $meds = $this->translateCollection($untrMeds ,app()->getLocale());
+
+        $seo = (object)[
+            'title' => "Пресса о нас",
+            'subtitle' => "Пресса о нас",
+            'keywords' => "Пресса о нас",
+
+        ];
         return view('media',[
             'meds'=>$meds,
             'seo' => $seo,

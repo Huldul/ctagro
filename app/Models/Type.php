@@ -28,6 +28,6 @@ class Type extends Model
     }
     public function subtypes()
     {
-        return $this->hasMany(Subtype::class);
+        return $this->belongsToMany(Subtype::class, 'type_subtypes', 'type_id', 'subtype_id');
     }
 }

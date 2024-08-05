@@ -32,9 +32,9 @@ class Subtype extends Model
         return $this->hasMany(Product::class);
     }
 
-    public function type()
+    public function types()
     {
-        return $this->belongsTo(Type::class);
+        return $this->belongsToMany(Type::class, 'type_subtypes', 'subtype_id', 'type_id');
     }
 
     public function parentSubtype()

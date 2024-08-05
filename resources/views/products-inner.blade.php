@@ -20,13 +20,15 @@
                     </li>
                     <li><a href="{{ route('catalog-library', ['locale' => app()->getLocale()]) }}">Каталог</a></li>
 
-                    @if ($product->subtype->type)
+                    @if ($product->subtype->types)
                         <li>
                             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.0037 8L6.00372 13L6.00372 3L11.0037 8Z" fill="#6EB513" />
                             </svg>
                         </li>
-                        <li><a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $product->subtype->type->slug]) }}">{{ $product->subtype->type->title }}</a></li>
+                        @foreach ($product->subtype->types as $type)
+                        <li><a href="{{ route('catalog-inner', ['locale' => app()->getLocale(), 'slug' => $product->subtype->type->slug]) }}">{{ $product->subtype->type->title }}  </a></li>
+                        @endforeach
                     @endif
 
                     @if ($product->subtype)

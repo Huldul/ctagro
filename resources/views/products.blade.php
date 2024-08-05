@@ -54,14 +54,22 @@
         <div class="products__wrapper">
         @if($subtype->subtypes && $subtype->subtypes->count() > 0)
                 @foreach ($subtype->subtypes as $subsubtype)
-                <div class="products__card">
+
+                <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $subsubtype->slug]) }}" class="catalog-inner__card">
+                    <div class="catalog-inner__img">
+                        <img src="{{ asset('storage/' . $subsubtype->image) }}" alt="{{ $subsubtype->title }}">
+                    </div>
+                    <span>{{ $subsubtype->title }}</span>
+                </a>
+
+                {{-- <div class="products__card">
                         <div class="products__img">
                             <img src="{{ asset('storage/' . $subsubtype->image) }}" alt="{{ $subsubtype->title }}">
                         </div>
                         <h2>{{ $subsubtype->title }}</h2>
 
                         <a href="{{ route('product.subtypes', ['locale' => app()->getLocale(), 'slug' => $subsubtype->slug]) }}">Подробнее</a>
-</div>
+                </div> --}}
                 @endforeach
             @else
                 @foreach ($products as $product)

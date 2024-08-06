@@ -115,8 +115,7 @@
                             <a class="about__link" href="{{route("service", ['locale' => app()->getLocale()])}}">На страницу сервиса</a>
                         </div>
                     </div>
-                </div>
-                @foreach($blocks as $index => $block)
+                    @foreach($blocks as $index => $block)
                     @if($index % 2 == 0)
                         <div class="about__container">
                             <div class="about__right">
@@ -153,6 +152,8 @@
                         </div>
                     @endif
                 @endforeach
+                </div>
+
             </section>
             <section class="mission container indent">
                 <h2 class="mission__title title">{{$page->mission_title}}</h2>

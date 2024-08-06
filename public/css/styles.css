@@ -1295,6 +1295,9 @@
     .map {
         margin-bottom: 70px;
     }
+    .contacts-map {
+        margin-bottom: 0;
+    }
 }
 @media (max-width:767px) {
     .video__slider {

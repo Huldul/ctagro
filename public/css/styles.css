@@ -1204,7 +1204,9 @@
 .map {
     margin-bottom: 150px;
 }
-
+.contacts-map {
+    margin-bottom: 0;
+}
 .map__title {
     margin-bottom: 40px;
 }

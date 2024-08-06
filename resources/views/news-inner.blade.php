@@ -47,7 +47,7 @@
         @if($news->image3)
             <img src="{{ asset('storage/' . $news->image3) }}" alt="{{ $news->title }}">
         @endif
-        @if($news->subtitle3)
+        @if($news->subtitle3 or $news->text3)
             <h2>{{ $news->subtitle3 }}</h2>
             <p>{!! $news->text3 !!}</p>
         @endif

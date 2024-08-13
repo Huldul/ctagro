@@ -256,7 +256,8 @@ class PageController extends Controller
     }
 
     public function news(){
-        $untrNews = News::paginate(16);
+        $untrNews = News::orderBy('created_at', 'desc')->paginate(16);
+
         $news = $this->translateCollection($untrNews ,app()->getLocale());
 
         $seo = (object)[

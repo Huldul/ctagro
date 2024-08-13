@@ -3143,7 +3143,7 @@
 
 .catalog-brand__wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     column-gap: 20px;
     row-gap: 40px;
     margin-bottom: 120px;
@@ -3179,6 +3179,9 @@
 @media (max-width:1200px) {
     .catalog-library__wrapper {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .catalog-brand__wrapper {
+        grid-template-columns: repeat(3,1fr);
     }
 }
 

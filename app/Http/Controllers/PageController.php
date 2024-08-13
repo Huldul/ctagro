@@ -76,6 +76,12 @@ class PageController extends Controller
             $locale = app()->getLocale();
         }
         $inner_type = LibraryPdf::Where('slug', $slug)->first();
+        $seo = (object)[
+            'title' => "Каталог",
+            'subtitle' => "Каталог",
+            'keywords' => "Каталог",
+
+        ];
         return view('catalog-online', [
             "inner_type"=>$inner_type,
             'seo' => $seo,

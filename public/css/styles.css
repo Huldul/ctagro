@@ -3737,10 +3737,18 @@
     transform: translate(-45px, -5px);
 }
 
-
 .path-transform {
-    transform: translate(-100px, -430px);
+    transform: translate(40px, -460px);
 }
 .path-transform1 {
     transform: translate(0px, 15px);
+}
+.path-transform2 {
+    transform: translate(-100px, -430px);
+}
+.path-transform3 {
+    transform: translate(340px, -156px);
+}
+.path-transform4 {
+    transform: translate(284px, -115px);
 }

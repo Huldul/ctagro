@@ -3730,6 +3730,9 @@
 .up-path-5 {
     transform: translate(-20px, -25px);
 }
+.up-path-6 {
+    transform: translate(0px, 10px);
+}
 .up-rect {
     transform: translate(-34px, 0px);
 }
@@ -3753,5 +3756,5 @@
     transform: translate(284px, -115px);
 }
 .path-transform5 {
-    transform: translate(40px, -500px);
+    transform: translate(4px, -499px);
 }

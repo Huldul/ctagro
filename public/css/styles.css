@@ -3736,3 +3736,11 @@
 .up-rect-1 {
     transform: translate(-45px, -5px);
 }
+
+
+.path-transform {
+    transform: translate(-100px, -430px);
+}
+.path-transform1 {
+    transform: translate(0px, 15px);
+}

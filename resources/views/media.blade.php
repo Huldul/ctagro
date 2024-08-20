@@ -3,7 +3,7 @@
 @section('content')
 <main>
     <section class="first__block">
-        <img src="{{ asset(setting('.press_image')) }}" alt="">
+        <img src="{{ asset("storage/".setting('.press_image')) }}" alt="">
         <div class="first__block-wrapper container">
             <h1>Пресса о нас</h1>
         </div>

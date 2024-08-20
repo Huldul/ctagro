@@ -3,7 +3,7 @@
 @section('content')
         <main>
             <section class="first__block">
-                <img src="{{asset(setting('.contact_image'))}}" alt="">
+                <img src="{{asset("storage/".setting('.contact_image'))}}" alt="">
                 <div class="first__block-wrapper container">
                     <h1>Контакты</h1>
                 </div>

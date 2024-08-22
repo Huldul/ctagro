@@ -1,6 +1,6 @@
 <section class="form about__form indent">
     <div class="form__wrapper">
-        <img src="{{asset("img/form-bg.png")}}" alt="">
+        <img src="{{asset("storage/".setting('.form_image'))}}" alt="">
         <div class="form__content container">
             <h2 class="form__title title">@trans('contact_us_for_details')</h2>
             <form action="/sendOrder" method="POST">

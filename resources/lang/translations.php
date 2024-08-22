@@ -33,8 +33,8 @@ return [
         'kz' => 'Жаңалықтар',
     ],
     'ct_assembly' => [
-        'ru' => 'Сборочное предприятие CT Assembly',
-        'kz' => 'CT Assembly құрастыру кәсіпорны',
+        'ru' => 'CT ASSEMBLY',
+        'kz' => 'CT ASSEMBLY',
     ],
     'special_offers' => [
         'ru' => 'Спецпредложения',

@@ -298,7 +298,7 @@
                         </h2>
                         <div class="social-wrapp">
                             <li>
-                                <a href="{{setting('.instagram')}}">
+                                <a target="_blank" href="{{setting('.instagram')}}">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -312,7 +312,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{setting('.tiktok')}}">
+                                <a target="_blank" href="{{setting('.tiktok')}}">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -323,7 +323,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{setting('.youtube')}}">
+                                <a target="_blank" href="{{setting('.youtube')}}">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -334,7 +334,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{setting('.facebook')}}">
+                                <a target="_blank" href="{{setting('.facebook')}}">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path
@@ -345,7 +345,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{setting('.adobe')}}">
+                                <a target="_blank" href="{{setting('.adobe')}}">
                                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path

@@ -1341,7 +1341,7 @@
     gap: 20px;
 }
 
-.navigation__list:not(:first-child) {
+.navigation__list:not(:first-of-type) {
     margin-left: auto;
 }
 

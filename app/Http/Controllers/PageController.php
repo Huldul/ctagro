@@ -129,7 +129,10 @@ class PageController extends Controller
         ]);
     }
     public function partners(){
-        $untrPart = Partner::paginate(16);
+        $untrPart = Partner::where('number', '>', 0) // Здесь 0 можно заменить на любое нужное тебе значение
+        ->orderBy('number', 'desc') // Сортировка по убыванию
+        ->paginate(16);
+
         $partners = $this->translateCollection($untrPart ,app()->getLocale());
 
         $seo = (object)[
@@ -356,7 +359,11 @@ class PageController extends Controller
         $transtype = $type->translate(app()->getLocale());
 
         // Получаем коллекцию подтипов с пагинацией
-        $untrProds = $type->subtypes()->paginate(12); // Примените нужный вам размер страницы
+        $untrProds = $type->subtypes()
+    ->where('number', '>', 0) // Фильтрация по полю number
+    ->orderBy('number', 'desc') // Сортировка по убыванию
+    ->paginate(12);
+ // Примените нужный вам размер страницы
 
         // Переводим коллекцию с учетом пагинации
         $prods = $this->translateCollection($untrProds, app()->getLocale());
@@ -386,7 +393,10 @@ class PageController extends Controller
 
 
     public function catalog_library(){
-        $untrTypes = Type::paginate(12);
+        $untrTypes = Type::where('number', '>', 0) // Здесь 0 можно заменить на любое нужное тебе значение
+    ->orderBy('number', 'desc') // Сортировка по убыванию
+    ->paginate(12);
+
         $inner_types = $this->translateCollection($untrTypes ,app()->getLocale());
 
         $seo = (object)[];

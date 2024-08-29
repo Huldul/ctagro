@@ -20,7 +20,11 @@ class ProductController extends Controller
             abort(404, 'Type not found');
         }
         $transtype = $subtype->translate(app()->getLocale());
-        $untrProds = $transtype->products; // Получаем коллекцию продуктов
+        $untrProds = $transtype->products()
+    ->where('number', '>', 0) // Фильтрация по полю number
+    ->orderBy('number', 'desc') // Сортировка по убыванию
+    ->get(); // Получение коллекции
+ // Получаем коллекцию продуктов
         $products = $this->translateCollection($untrProds, app()->getLocale());
         // Получаем все видео
         $seo = (object)[];

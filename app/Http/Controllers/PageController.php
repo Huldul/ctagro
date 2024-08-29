@@ -392,9 +392,9 @@ class PageController extends Controller
 
 
     public function catalog_library(){
-        $untrTypes = Type::where('number', '>', 0) // Здесь 0 можно заменить на любое нужное тебе значение
-    ->orderBy('number', 'desc') // Сортировка по убыванию
+        $untrTypes = Type::orderByRaw('number = 0, number IS NULL, number DESC')
     ->paginate(12);
+
 
         $inner_types = $this->translateCollection($untrTypes ,app()->getLocale());
 

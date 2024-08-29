@@ -129,8 +129,7 @@ class PageController extends Controller
         ]);
     }
     public function partners(){
-        $untrPart = Partner::where('number', '>', 0) // Здесь 0 можно заменить на любое нужное тебе значение
-        ->orderBy('number', 'desc') // Сортировка по убыванию
+        $untrPart = Partner::orderByRaw('number = 0, number IS NULL, number DESC')
         ->paginate(16);
 
         $partners = $this->translateCollection($untrPart ,app()->getLocale());

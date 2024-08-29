@@ -21,9 +21,9 @@ class ProductController extends Controller
         }
         $transtype = $subtype->translate(app()->getLocale());
         $untrProds = $transtype->products()
-    ->where('number', '>', 0) // Фильтрация по полю number
-    ->orderBy('number', 'desc') // Сортировка по убыванию
-    ->get(); // Получение коллекции
+    ->orderByRaw('number = 0, number IS NULL, number DESC')
+    ->get();
+// Получение коллекции
  // Получаем коллекцию продуктов
         $products = $this->translateCollection($untrProds, app()->getLocale());
         // Получаем все видео

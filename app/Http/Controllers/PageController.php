@@ -360,7 +360,6 @@ class PageController extends Controller
 
         // Получаем коллекцию подтипов с пагинацией
         $untrProds = $type->subtypes()
-    ->where('number', '>', 0) // Фильтрация по полю number
     ->orderBy('number', 'desc') // Сортировка по убыванию
     ->paginate(12);
  // Примените нужный вам размер страницы

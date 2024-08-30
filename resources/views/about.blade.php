@@ -50,6 +50,7 @@
                         </div>
                         <div class="about__left service__left">
                         <div class="service__left-text">
+                            <h2 class="about__title title">{!!$page->sec_subtitle!!}</h2>
                             {!!$page->sec_main!!}
                             <div class="hidden-text"> {!!$page->sec_desc!!}</div>
                         </div>
@@ -60,6 +61,7 @@
                     </div>
                     <div class="about__container reverse">
                         <div class="about__left">
+                            <h2 class="about__title title">{!!$page->tr_subtitle!!}</h2>
                             {!!$page->tr_main!!}
                             <div class="accordeon-wrapper">
                                 <div class="accordeon-wrap">

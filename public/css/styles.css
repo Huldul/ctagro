@@ -1619,7 +1619,9 @@
 .about__title span {
     font-weight: 700;
 }
-
+.about .about__left p {
+    color: #636362;
+}
 .about__left p {
     color: #252520;
     font-family: Arial;

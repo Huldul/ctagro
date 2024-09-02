@@ -64,6 +64,7 @@
                             <h2 class="about__title title">{!!$page->tr_subtitle!!}</h2>
                             {!!$page->tr_main!!}
                             <div class="accordeon-wrapper">
+                                @if($page->adv_main1 != "")
                                 <div class="accordeon-wrap">
                                     <div class="accordeon__box" data-accordeon-trigger="1">
                                         <p class="accordeon__title">{{$page->adv_title1}}</p>
@@ -72,6 +73,9 @@
                                         {!!$page->adv_main1!!}
                                     </div>
                                 </div>
+                                @endif
+
+                                @if($page->adv_main2 != "")
                                 <div class="accordeon-wrap">
                                     <div class="accordeon__box" data-accordeon-trigger="1">
                                         <p class="accordeon__title">{{$page->adv_title2}}</p>
@@ -80,6 +84,9 @@
                                         {!!$page->adv_main2!!}
                                     </div>
                                 </div>
+                                @endif
+
+                                @if($page->adv_main3 != "")
                                 <div class="accordeon-wrap">
                                     <div class="accordeon__box" data-accordeon-trigger="1">
                                         <p class="accordeon__title">{{$page->adv_title3}}</p>
@@ -88,6 +95,9 @@
                                         {!!$page->adv_main3!!}
                                     </div>
                                 </div>
+                                @endif
+
+                                @if($page->adv_main4 != "")
                                 <div class="accordeon-wrap">
                                     <div class="accordeon__box" data-accordeon-trigger="1">
                                         <p class="accordeon__title">{{$page->adv_title4}}</p>
@@ -96,7 +106,9 @@
                                         {!!$page->adv_main4!!}
                                     </div>
                                 </div>
+                                @endif
                             </div>
+
                             <a href="{{route("catalog-library", ['locale' => app()->getLocale()])}}">В каталог</a>
                         </div>
                         <div class="about__right">

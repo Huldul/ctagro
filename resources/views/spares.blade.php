@@ -29,7 +29,10 @@
                 {!! $page->main1 !!}
                 <div class="hidden-text">{!! $page->desc1 !!}</div>
                 </div>
+                @if($page->desc1 != "")
                 <button class="more-btn">Подробнее</button>
+                        @endif
+
             </div>
             <div class="service__right">
                 <img src="{{ asset("storage/".$page->image1) }}" alt="">

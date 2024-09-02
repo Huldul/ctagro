@@ -61,7 +61,9 @@
                 {!! $page->main2 !!}
                 <div class="hidden-text">{!! $page->desc2 !!}</div>
             </div>
-                <button class="more-btn">Подробнее</button>
+            @if($page->desc2 != "")
+            <button class="more-btn">Подробнее</button>
+                    @endif
             </div>
         </div>
         @foreach($blocks as $index => $block)

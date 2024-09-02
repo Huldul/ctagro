@@ -20,7 +20,10 @@ class ProductController extends Controller
             abort(404, 'Type not found');
         }
         $transtype = $subtype->translate(app()->getLocale());
-        $untrProds = $subtype->products()->orderByRaw('number = 0, number IS NULL, number DESC')->get();
+        $untrProds = $subtype->products()
+    ->orderByRaw('CASE WHEN number = 0 OR number IS NULL THEN 1 ELSE 0 END, number DESC')
+    ->get();
+
 // Получение коллекции
  // Получаем коллекцию продуктов
         $products = $this->translateCollection($untrProds, app()->getLocale());

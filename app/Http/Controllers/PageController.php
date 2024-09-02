@@ -359,8 +359,9 @@ class PageController extends Controller
 
         // Получаем коллекцию подтипов с пагинацией
         $untrProds = $type->subtypes()
-    ->orderByRaw('number = 0, number IS NULL, number DESC') // Сортировка: сначала по убыванию, потом пустые и нули
+    ->orderByRaw('CASE WHEN number = 0 OR number IS NULL THEN 1 ELSE 0 END, number DESC')
     ->paginate(12);
+
 
  // Примените нужный вам размер страницы
 

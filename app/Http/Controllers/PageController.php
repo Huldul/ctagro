@@ -129,8 +129,9 @@ class PageController extends Controller
         ]);
     }
     public function partners(){
-        $untrPart = Partner::orderByRaw('number = 0, number IS NULL, number DESC')
-        ->paginate(16);
+        $untrPart = Partner::orderByRaw('CASE WHEN number = 0 OR number IS NULL THEN 1 ELSE 0 END, number DESC')
+    ->paginate(16);
+
 
         $partners = $this->translateCollection($untrPart ,app()->getLocale());
 
